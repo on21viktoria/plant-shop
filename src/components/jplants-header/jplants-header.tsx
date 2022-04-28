@@ -8,7 +8,7 @@ import { Component, Host, h, Prop, State, Watch, getAssetPath } from '@stencil/c
 })
 export class JplantsHeader {
 @Prop() navLinksJson: string;
-@Prop() logo = "jplants-logo.jpg";
+@Prop() logo = "jplants-logo.png";
 @Prop() menuSymbol: string = "bi bi-list";
 
 @State() navLinks: Array<{iconClass: string, name: string, href: string}> = [];
