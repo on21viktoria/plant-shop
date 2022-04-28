@@ -1,0 +1,33 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
+
+:host {
+  display: block;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #EDF2ED;
+}
+
+.nav {
+  list-style: none;
+  display: flex;
+}
+
+.nav > li > a {
+  text-decoration: none;
+  background-color: #fff;
+  color: #707070;
+  border: 0.5px solid #707070;
+  border-radius: 13px;
+  font-size: 18px;
+  cursor: pointer;
+  margin: 10px;
+  padding: 3px 15px 3px 15px;
+}
+
+.nav > li > a > i {
+  padding: 3px 5px 5px 0px;
+}
