@@ -10,6 +10,10 @@ export namespace Components {
         "exampleProp": string;
         "exampleToUpperCase": () => Promise<void>;
     }
+    interface JplantsButton {
+        "buttonHref": string;
+        "buttonName": string;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -51,6 +55,12 @@ declare global {
     var HTMLExampleComponentElement: {
         prototype: HTMLExampleComponentElement;
         new (): HTMLExampleComponentElement;
+    };
+    interface HTMLJplantsButtonElement extends Components.JplantsButton, HTMLStencilElement {
+    }
+    var HTMLJplantsButtonElement: {
+        prototype: HTMLJplantsButtonElement;
+        new (): HTMLJplantsButtonElement;
     };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
@@ -96,6 +106,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "example-component": HTMLExampleComponentElement;
+        "jplants-button": HTMLJplantsButtonElement;
         "my-component": HTMLMyComponentElement;
         "sl-flip-card": HTMLSlFlipCardElement;
         "sl-footer": HTMLSlFooterElement;
@@ -109,6 +120,10 @@ declare namespace LocalJSX {
     interface ExampleComponent {
         "exampleProp"?: string;
         "onExampleEvent"?: (event: CustomEvent<string>) => void;
+    }
+    interface JplantsButton {
+        "buttonHref"?: string;
+        "buttonName"?: string;
     }
     interface MyComponent {
         /**
@@ -146,6 +161,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "example-component": ExampleComponent;
+        "jplants-button": JplantsButton;
         "my-component": MyComponent;
         "sl-flip-card": SlFlipCard;
         "sl-footer": SlFooter;
@@ -160,6 +176,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "example-component": LocalJSX.ExampleComponent & JSXBase.HTMLAttributes<HTMLExampleComponentElement>;
+            "jplants-button": LocalJSX.JplantsButton & JSXBase.HTMLAttributes<HTMLJplantsButtonElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "sl-flip-card": LocalJSX.SlFlipCard & JSXBase.HTMLAttributes<HTMLSlFlipCardElement>;
             "sl-footer": LocalJSX.SlFooter & JSXBase.HTMLAttributes<HTMLSlFooterElement>;
