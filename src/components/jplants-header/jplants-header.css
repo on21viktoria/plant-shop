@@ -31,3 +31,16 @@
 .nav > li > a > i {
   padding: 3px 5px 5px 0px;
 }
+
+.bi-list::before {
+  display: inline-block;
+  font-family: bootstrap-icons !important;
+  font-size: 40px;
+  padding-top: 15px;
+  padding-left: 15px;
+}
+
+#menu-button {
+  cursor: pointer;
+  color: #505050;
+}

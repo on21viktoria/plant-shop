@@ -12,7 +12,9 @@ export namespace Components {
     }
     interface JplantsHeader {
         "logo": string;
+        "logoHref": string;
         "menuSymbol": string;
+        "menuSymbolHref": string;
         "navLinksJson": string;
     }
     interface MyComponent {
@@ -124,7 +126,9 @@ declare namespace LocalJSX {
     }
     interface JplantsHeader {
         "logo"?: string;
+        "logoHref"?: string;
         "menuSymbol"?: string;
+        "menuSymbolHref"?: string;
         "navLinksJson"?: string;
     }
     interface MyComponent {
