@@ -6,7 +6,9 @@ import { Component, Host, h, Prop, State, Watch, getAssetPath } from '@stencil/c
   shadow: true,
   assetsDirs: ['assets']
 })
+
 export class JplantsHeader {
+
 @Prop() navLinksJson: string;
 @Prop() logo = "jplants-logo.png";
 @Prop() menuSymbol: string = "bi bi-list";
@@ -28,7 +30,7 @@ convertNavJson(){
 }
 
   render() {
-    const imageSrc = getAssetPath(`./assets/${this.logo}`);
+    const imageSrc = getAssetPath(`/dist/stencil-starter-on/dist/components/assets/${this.logo}`);
     return (
       <Host>
         <div class="header">
