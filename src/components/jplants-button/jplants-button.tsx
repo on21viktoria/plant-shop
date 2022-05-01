@@ -22,7 +22,7 @@ willShowButton(){
     return <Host>
       {
         this.willShowButton() && 
-        <a href="#" class="btn">
+        <a href="#">
           <button type="button" name="button">
           {this.buttonName}
           </button>
