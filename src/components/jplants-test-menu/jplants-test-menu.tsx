@@ -28,9 +28,9 @@ convertNavJson(){
     return (
       <Host>
         <ul class="nav">
-            {this.menuLinks.map(navLink => (
+            {this.menuLinks.map(menuLink => (
               <li>
-                <a href={navLink.href}><i class={navLink.iconClass}></i>{navLink.name}</a>
+                <a href={menuLink.href}><i class={menuLink.iconClass}></i>{menuLink.name}</a>
               </li>
             ))}
           </ul>

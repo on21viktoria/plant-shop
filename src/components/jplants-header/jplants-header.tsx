@@ -15,14 +15,12 @@ export class JplantsHeader {
 @Prop() logoHref = "#";
 @Prop() menuSymbol: string = "bi bi-list";
 @Prop() menuSymbolHref: string = "#";
-@Prop() menu = JplantsTestMenu;
 
-@Event() menuClicked: EventEmitter<JplantsTestMenu>;
 
 @State() navLinks: Array<{iconClass: string, name: string, href: string}> = [];
 
 clickHandler(){
-  
+ alert('Hello World') 
 }
 
 @Watch('navLinksJson')
@@ -55,7 +53,6 @@ convertNavJson(){
           </ul>
         </nav>
         </div>
-        <slot></slot>
       </Host>
     );
   }

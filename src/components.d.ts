@@ -5,7 +5,6 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { JplantsTestMenu } from "./components/jplants-test-menu/jplants-test-menu";
 export namespace Components {
     interface ExampleComponent {
         "exampleProp": string;
@@ -14,7 +13,6 @@ export namespace Components {
     interface JplantsHeader {
         "logo": string;
         "logoHref": string;
-        "menu": typeof JplantsTestMenu;
         "menuSymbol": string;
         "menuSymbolHref": string;
         "navLinksJson": string;
@@ -139,11 +137,9 @@ declare namespace LocalJSX {
     interface JplantsHeader {
         "logo"?: string;
         "logoHref"?: string;
-        "menu"?: typeof JplantsTestMenu;
         "menuSymbol"?: string;
         "menuSymbolHref"?: string;
         "navLinksJson"?: string;
-        "onMenuClicked"?: (event: CustomEvent<JplantsTestMenu>) => void;
     }
     interface JplantsTestMenu {
         "menuLinksJson"?: string;
