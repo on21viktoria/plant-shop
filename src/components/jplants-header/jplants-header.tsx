@@ -1,4 +1,5 @@
-import { Component, Host, h, Prop, State, Watch, getAssetPath } from '@stencil/core';
+import { Component, Host, h, Prop, State, Watch, getAssetPath, Event, EventEmitter } from '@stencil/core';
+import { JplantsTestMenu } from '../jplants-test-menu/jplants-test-menu';
 
 @Component({
   tag: 'jplants-header',
@@ -14,10 +15,15 @@ export class JplantsHeader {
 @Prop() logoHref = "#";
 @Prop() menuSymbol: string = "bi bi-list";
 @Prop() menuSymbolHref: string = "#";
+@Prop() menu = JplantsTestMenu;
 
+@Event() menuClicked: EventEmitter<JplantsTestMenu>;
 
 @State() navLinks: Array<{iconClass: string, name: string, href: string}> = [];
 
+clickHandler(){
+  
+}
 
 @Watch('navLinksJson')
 handleNavLinksJsonChanged(){
@@ -37,7 +43,7 @@ convertNavJson(){
     return (
       <Host>
         <div class="header">
-        <a id="menu-button" href={this.menuSymbolHref}><i class={this.menuSymbol}></i></a>
+        <a onClick={this.clickHandler}id="menu-button" href={this.menuSymbolHref}><i class={this.menuSymbol}></i></a>
         <a id="logo" href="#"><img src={imageSrc}/></a> 
         <nav>
           <ul class="nav">
@@ -49,6 +55,7 @@ convertNavJson(){
           </ul>
         </nav>
         </div>
+        <slot></slot>
       </Host>
     );
   }

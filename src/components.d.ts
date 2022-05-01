@@ -5,6 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { JplantsTestMenu } from "./components/jplants-test-menu/jplants-test-menu";
 export namespace Components {
     interface ExampleComponent {
         "exampleProp": string;
@@ -13,9 +14,13 @@ export namespace Components {
     interface JplantsHeader {
         "logo": string;
         "logoHref": string;
+        "menu": typeof JplantsTestMenu;
         "menuSymbol": string;
         "menuSymbolHref": string;
         "navLinksJson": string;
+    }
+    interface JplantsTestMenu {
+        "menuLinksJson": string;
     }
     interface MyComponent {
         /**
@@ -65,6 +70,12 @@ declare global {
         prototype: HTMLJplantsHeaderElement;
         new (): HTMLJplantsHeaderElement;
     };
+    interface HTMLJplantsTestMenuElement extends Components.JplantsTestMenu, HTMLStencilElement {
+    }
+    var HTMLJplantsTestMenuElement: {
+        prototype: HTMLJplantsTestMenuElement;
+        new (): HTMLJplantsTestMenuElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -110,6 +121,7 @@ declare global {
     interface HTMLElementTagNameMap {
         "example-component": HTMLExampleComponentElement;
         "jplants-header": HTMLJplantsHeaderElement;
+        "jplants-test-menu": HTMLJplantsTestMenuElement;
         "my-component": HTMLMyComponentElement;
         "sl-flip-card": HTMLSlFlipCardElement;
         "sl-footer": HTMLSlFooterElement;
@@ -127,9 +139,14 @@ declare namespace LocalJSX {
     interface JplantsHeader {
         "logo"?: string;
         "logoHref"?: string;
+        "menu"?: typeof JplantsTestMenu;
         "menuSymbol"?: string;
         "menuSymbolHref"?: string;
         "navLinksJson"?: string;
+        "onMenuClicked"?: (event: CustomEvent<JplantsTestMenu>) => void;
+    }
+    interface JplantsTestMenu {
+        "menuLinksJson"?: string;
     }
     interface MyComponent {
         /**
@@ -168,6 +185,7 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "example-component": ExampleComponent;
         "jplants-header": JplantsHeader;
+        "jplants-test-menu": JplantsTestMenu;
         "my-component": MyComponent;
         "sl-flip-card": SlFlipCard;
         "sl-footer": SlFooter;
@@ -183,6 +201,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "example-component": LocalJSX.ExampleComponent & JSXBase.HTMLAttributes<HTMLExampleComponentElement>;
             "jplants-header": LocalJSX.JplantsHeader & JSXBase.HTMLAttributes<HTMLJplantsHeaderElement>;
+            "jplants-test-menu": LocalJSX.JplantsTestMenu & JSXBase.HTMLAttributes<HTMLJplantsTestMenuElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "sl-flip-card": LocalJSX.SlFlipCard & JSXBase.HTMLAttributes<HTMLSlFlipCardElement>;
             "sl-footer": LocalJSX.SlFooter & JSXBase.HTMLAttributes<HTMLSlFooterElement>;
