@@ -4,6 +4,10 @@
   display: block;
 }
 
+* {
+  font-family: Montserrat;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
