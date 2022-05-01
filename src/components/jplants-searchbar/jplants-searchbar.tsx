@@ -1,4 +1,4 @@
-import { Component, Host, h } from '@stencil/core';
+import { Component, Host, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'jplants-searchbar',
@@ -7,10 +7,13 @@ import { Component, Host, h } from '@stencil/core';
 })
 export class JplantsSearchbar {
 
+
+  @Prop() searchBarName: string = 'Search';
+
   render() {
     return (
       <Host>
-        <slot></slot>
+        <button name={this.searchBarName}></button>
       </Host>
     );
   }
