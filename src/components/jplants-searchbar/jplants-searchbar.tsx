@@ -7,13 +7,15 @@ import { Component, Host, h, Prop } from '@stencil/core';
 })
 export class JplantsSearchbar {
 
-@Prop() searchBarName: string = 'Search';
+@Prop() searchBarName: string = 'Search...';
 
   render() {
     return (
       <Host>
+        <div class="searchbar-unit">
         <button type="button" name="button">{this.searchBarName}</button>
         <input type="search"></input>
+        </div>
       </Host>
     );
   }
