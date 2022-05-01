@@ -13,7 +13,7 @@ export class JplantsSearchbar {
   render() {
     return (
       <Host>
-        <button name={this.searchBarName}></button>
+        <button>{this.searchBarName}</button>
       </Host>
     );
   }

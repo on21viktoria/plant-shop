@@ -10,6 +10,10 @@ export namespace Components {
         "exampleProp": string;
         "exampleToUpperCase": () => Promise<void>;
     }
+    interface JplantsButton {
+        "buttonHref": string;
+        "buttonName": string;
+    }
     interface JplantsSearchbar {
         "searchBarName": string;
     }
@@ -54,6 +58,12 @@ declare global {
     var HTMLExampleComponentElement: {
         prototype: HTMLExampleComponentElement;
         new (): HTMLExampleComponentElement;
+    };
+    interface HTMLJplantsButtonElement extends Components.JplantsButton, HTMLStencilElement {
+    }
+    var HTMLJplantsButtonElement: {
+        prototype: HTMLJplantsButtonElement;
+        new (): HTMLJplantsButtonElement;
     };
     interface HTMLJplantsSearchbarElement extends Components.JplantsSearchbar, HTMLStencilElement {
     }
@@ -105,6 +115,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "example-component": HTMLExampleComponentElement;
+        "jplants-button": HTMLJplantsButtonElement;
         "jplants-searchbar": HTMLJplantsSearchbarElement;
         "my-component": HTMLMyComponentElement;
         "sl-flip-card": HTMLSlFlipCardElement;
@@ -119,6 +130,10 @@ declare namespace LocalJSX {
     interface ExampleComponent {
         "exampleProp"?: string;
         "onExampleEvent"?: (event: CustomEvent<string>) => void;
+    }
+    interface JplantsButton {
+        "buttonHref"?: string;
+        "buttonName"?: string;
     }
     interface JplantsSearchbar {
         "searchBarName"?: string;
@@ -159,6 +174,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "example-component": ExampleComponent;
+        "jplants-button": JplantsButton;
         "jplants-searchbar": JplantsSearchbar;
         "my-component": MyComponent;
         "sl-flip-card": SlFlipCard;
@@ -174,6 +190,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "example-component": LocalJSX.ExampleComponent & JSXBase.HTMLAttributes<HTMLExampleComponentElement>;
+            "jplants-button": LocalJSX.JplantsButton & JSXBase.HTMLAttributes<HTMLJplantsButtonElement>;
             "jplants-searchbar": LocalJSX.JplantsSearchbar & JSXBase.HTMLAttributes<HTMLJplantsSearchbarElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "sl-flip-card": LocalJSX.SlFlipCard & JSXBase.HTMLAttributes<HTMLSlFlipCardElement>;
