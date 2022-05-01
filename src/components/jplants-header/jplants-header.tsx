@@ -1,5 +1,4 @@
-import { Component, Host, h, Prop, State, Watch, getAssetPath, Event, EventEmitter } from '@stencil/core';
-import { JplantsTestMenu } from '../jplants-test-menu/jplants-test-menu';
+import { Component, Host, h, Prop, State, Watch, getAssetPath } from '@stencil/core';
 
 @Component({
   tag: 'jplants-header',

@@ -13,14 +13,14 @@ export class JplantsTestMenu {
 
 @Watch('menuLinksJson')
 handleNavLinksJsonChanged(){
-  this.convertNavJson();
+  this.convertMenuJson();
 }
 
 componentWillLoad(){
-  this.convertNavJson();
+  this.convertMenuJson();
 }
 
-convertNavJson(){
+convertMenuJson(){
   this.menuLinks = JSON.parse(this.menuLinksJson);
 }
 
