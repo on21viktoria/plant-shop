@@ -19,7 +19,7 @@ export class JplantsHeader {
 @State() navLinks: Array<{iconClass: string, name: string, href: string}> = [];
 
 clickHandler(){
- alert('Hello World') 
+ alert('The menu button as been clicked') 
 }
 
 @Watch('navLinksJson')
