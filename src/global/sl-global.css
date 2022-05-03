@@ -3,3 +3,9 @@
     --app-dark-mode-color: white;
     --app-light-mode-bg: ghostwhite;
 }
+
+.flexbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

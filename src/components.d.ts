@@ -10,6 +10,10 @@ export namespace Components {
         "exampleProp": string;
         "exampleToUpperCase": () => Promise<void>;
     }
+    interface JplantsQualitystatement {
+        "imgsrc": string;
+        "text": string;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -51,6 +55,12 @@ declare global {
     var HTMLExampleComponentElement: {
         prototype: HTMLExampleComponentElement;
         new (): HTMLExampleComponentElement;
+    };
+    interface HTMLJplantsQualitystatementElement extends Components.JplantsQualitystatement, HTMLStencilElement {
+    }
+    var HTMLJplantsQualitystatementElement: {
+        prototype: HTMLJplantsQualitystatementElement;
+        new (): HTMLJplantsQualitystatementElement;
     };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
@@ -96,6 +106,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "example-component": HTMLExampleComponentElement;
+        "jplants-qualitystatement": HTMLJplantsQualitystatementElement;
         "my-component": HTMLMyComponentElement;
         "sl-flip-card": HTMLSlFlipCardElement;
         "sl-footer": HTMLSlFooterElement;
@@ -109,6 +120,10 @@ declare namespace LocalJSX {
     interface ExampleComponent {
         "exampleProp"?: string;
         "onExampleEvent"?: (event: CustomEvent<string>) => void;
+    }
+    interface JplantsQualitystatement {
+        "imgsrc"?: string;
+        "text"?: string;
     }
     interface MyComponent {
         /**
@@ -146,6 +161,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "example-component": ExampleComponent;
+        "jplants-qualitystatement": JplantsQualitystatement;
         "my-component": MyComponent;
         "sl-flip-card": SlFlipCard;
         "sl-footer": SlFooter;
@@ -160,6 +176,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "example-component": LocalJSX.ExampleComponent & JSXBase.HTMLAttributes<HTMLExampleComponentElement>;
+            "jplants-qualitystatement": LocalJSX.JplantsQualitystatement & JSXBase.HTMLAttributes<HTMLJplantsQualitystatementElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "sl-flip-card": LocalJSX.SlFlipCard & JSXBase.HTMLAttributes<HTMLSlFlipCardElement>;
             "sl-footer": LocalJSX.SlFooter & JSXBase.HTMLAttributes<HTMLSlFooterElement>;

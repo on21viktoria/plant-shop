@@ -6,14 +6,16 @@ import { Component, Host, h, Prop } from '@stencil/core';
   shadow: true,
 })
 export class JplantsQualitystatement {
-  @Prop() imgsrc: string;
   @Prop() text: string;
+  @Prop() imgsrc: string
 
   render() {
     return (
       <Host>
         <div class ="container qualitystatement">
-          <img class="image-quality" src="../../images/sendWithLove.png" alt={this.text}/>
+          <div class="img-container">
+          <img class="image-quality" src={this.imgsrc} alt={this.text}/>
+          </div>
           <h3 class="header-quality">{this.text}</h3>
         </div>
         <slot></slot>

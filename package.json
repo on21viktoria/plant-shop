@@ -22,6 +22,7 @@
         "generate": "stencil generate"
     },
     "dependencies": {
+        "@mdi/font": "^6.6.96",
         "@stencil/core": "^2.14.2"
     },
     "license": "MIT"
