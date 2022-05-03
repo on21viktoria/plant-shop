@@ -1,0 +1,30 @@
+:host {
+  display: block;
+}
+
+.stars-rating {
+  display:flex;
+  flex-direction: row-reverse;
+  font-size:1.5em;
+  justify-content:space-around;
+  text-align:center;
+  width:5em;
+}
+
+.stars-rating input {
+  display:none;
+}
+
+.stars-rating label {
+  color:rgb(233, 233, 233);
+  cursor:pointer;
+}
+
+.stars-rating :checked ~ label {
+  color:#b1ebb1;
+}
+
+.stars-rating label:hover,
+.stars-rating label:hover ~ label {
+  color:#e2f4e2;
+}
