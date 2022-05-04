@@ -9,6 +9,7 @@
 
 | Property | Attribute | Description | Type     | Default     |
 | -------- | --------- | ----------- | -------- | ----------- |
+| `imgsrc` | `imgsrc`  |             | `string` | `undefined` |
 | `text`   | `text`    |             | `string` | `undefined` |
 
 

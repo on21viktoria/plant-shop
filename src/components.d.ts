@@ -12,6 +12,7 @@ export namespace Components {
     }
     interface JplantsQualitystatement {
         "imgsrc": string;
+        "link": string;
         "text": string;
     }
     interface MyComponent {
@@ -123,6 +124,7 @@ declare namespace LocalJSX {
     }
     interface JplantsQualitystatement {
         "imgsrc"?: string;
+        "link"?: string;
         "text"?: string;
     }
     interface MyComponent {
