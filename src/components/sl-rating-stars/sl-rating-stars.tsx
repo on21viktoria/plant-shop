@@ -10,7 +10,7 @@ export class SlRatingStars {
   render() {
     return (
       <Host>
-          <div class="stars-rating">
+          <div class="rating-stars">
             <input type="radio" id="5-stars" name="rating" value="5" />
             <label htmlFor="5-stars" class="star">★</label>
             <input type="radio" id="4-stars" name="rating" value="4" />
