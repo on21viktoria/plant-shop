@@ -1,5 +1,6 @@
 import { Component, Prop, h } from '@stencil/core';
 import { format } from '../../utils/utils';
+import { JplantsMenubar } from '../jplants-menubar/jplants-menubar';
 
 @Component({
   tag: 'my-component',
@@ -27,10 +28,17 @@ export class MyComponent {
   }
 
   private testTsx() {
-    return <span>Max Mustermann</span>
+    return <span>Max Mustermann</span>;
   }
 
   render() {
-    return <div>Hello, World! I'm {this.getText().length > 0 ? this.getText() : this.testTsx()}</div>;
+    return (
+      <div>
+        <div>Hello, World! I'm {this.getText().length > 0 ? this.getText() : this.testTsx()}</div>
+        <jplants-menubar
+        nav-items-links='[{"name":"Shop","href":"#"},{"name":"Angebote","href":"#"},{"name":"Plant-Basics","href":"#"},{"name":"How to care","href":"#"},{"name":"Galerie","href":"#"},{"name":"Blog","href":"#"}]'
+        ></jplants-menubar>
+      </div>
+    );
   }
 }

@@ -10,6 +10,9 @@ export namespace Components {
         "exampleProp": string;
         "exampleToUpperCase": () => Promise<void>;
     }
+    interface JplantsMenubar {
+        "navItemsLinks": string;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -51,6 +54,12 @@ declare global {
     var HTMLExampleComponentElement: {
         prototype: HTMLExampleComponentElement;
         new (): HTMLExampleComponentElement;
+    };
+    interface HTMLJplantsMenubarElement extends Components.JplantsMenubar, HTMLStencilElement {
+    }
+    var HTMLJplantsMenubarElement: {
+        prototype: HTMLJplantsMenubarElement;
+        new (): HTMLJplantsMenubarElement;
     };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
@@ -96,6 +105,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "example-component": HTMLExampleComponentElement;
+        "jplants-menubar": HTMLJplantsMenubarElement;
         "my-component": HTMLMyComponentElement;
         "sl-flip-card": HTMLSlFlipCardElement;
         "sl-footer": HTMLSlFooterElement;
@@ -109,6 +119,10 @@ declare namespace LocalJSX {
     interface ExampleComponent {
         "exampleProp"?: string;
         "onExampleEvent"?: (event: CustomEvent<string>) => void;
+    }
+    interface JplantsMenubar {
+        "navItemsLinks"?: string;
+        "onOnShow"?: (event: CustomEvent<any>) => void;
     }
     interface MyComponent {
         /**
@@ -146,6 +160,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "example-component": ExampleComponent;
+        "jplants-menubar": JplantsMenubar;
         "my-component": MyComponent;
         "sl-flip-card": SlFlipCard;
         "sl-footer": SlFooter;
@@ -160,6 +175,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "example-component": LocalJSX.ExampleComponent & JSXBase.HTMLAttributes<HTMLExampleComponentElement>;
+            "jplants-menubar": LocalJSX.JplantsMenubar & JSXBase.HTMLAttributes<HTMLJplantsMenubarElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "sl-flip-card": LocalJSX.SlFlipCard & JSXBase.HTMLAttributes<HTMLSlFlipCardElement>;
             "sl-footer": LocalJSX.SlFooter & JSXBase.HTMLAttributes<HTMLSlFooterElement>;
