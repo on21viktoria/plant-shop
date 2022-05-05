@@ -39,6 +39,8 @@ export namespace Components {
     }
     interface SlImgGallery {
     }
+    interface SlPlantFooter {
+    }
     interface SlServiceCard {
         "slDarkMode": boolean;
         "slImgSrc": string;
@@ -88,6 +90,12 @@ declare global {
         prototype: HTMLSlImgGalleryElement;
         new (): HTMLSlImgGalleryElement;
     };
+    interface HTMLSlPlantFooterElement extends Components.SlPlantFooter, HTMLStencilElement {
+    }
+    var HTMLSlPlantFooterElement: {
+        prototype: HTMLSlPlantFooterElement;
+        new (): HTMLSlPlantFooterElement;
+    };
     interface HTMLSlServiceCardElement extends Components.SlServiceCard, HTMLStencilElement {
     }
     var HTMLSlServiceCardElement: {
@@ -102,6 +110,7 @@ declare global {
         "sl-header": HTMLSlHeaderElement;
         "sl-hero-section": HTMLSlHeroSectionElement;
         "sl-img-gallery": HTMLSlImgGalleryElement;
+        "sl-plant-footer": HTMLSlPlantFooterElement;
         "sl-service-card": HTMLSlServiceCardElement;
     }
 }
@@ -139,6 +148,8 @@ declare namespace LocalJSX {
     }
     interface SlImgGallery {
     }
+    interface SlPlantFooter {
+    }
     interface SlServiceCard {
         "slDarkMode"?: boolean;
         "slImgSrc"?: string;
@@ -152,6 +163,7 @@ declare namespace LocalJSX {
         "sl-header": SlHeader;
         "sl-hero-section": SlHeroSection;
         "sl-img-gallery": SlImgGallery;
+        "sl-plant-footer": SlPlantFooter;
         "sl-service-card": SlServiceCard;
     }
 }
@@ -166,6 +178,7 @@ declare module "@stencil/core" {
             "sl-header": LocalJSX.SlHeader & JSXBase.HTMLAttributes<HTMLSlHeaderElement>;
             "sl-hero-section": LocalJSX.SlHeroSection & JSXBase.HTMLAttributes<HTMLSlHeroSectionElement>;
             "sl-img-gallery": LocalJSX.SlImgGallery & JSXBase.HTMLAttributes<HTMLSlImgGalleryElement>;
+            "sl-plant-footer": LocalJSX.SlPlantFooter & JSXBase.HTMLAttributes<HTMLSlPlantFooterElement>;
             "sl-service-card": LocalJSX.SlServiceCard & JSXBase.HTMLAttributes<HTMLSlServiceCardElement>;
         }
     }
