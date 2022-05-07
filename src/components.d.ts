@@ -12,23 +12,8 @@ export namespace Components {
     }
     interface JplantArticle {
         "articleImage": string;
-        "articleInformation": string;
         "articleText": string;
         "articleTitle": string;
-    }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
     }
     interface JplantsButton {
         "buttonColor": string;
@@ -58,12 +43,6 @@ declare global {
         prototype: HTMLJplantArticleElement;
         new (): HTMLJplantArticleElement;
     };
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
-    }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
-    };
     interface HTMLJplantsButtonElement extends Components.JplantsButton, HTMLStencilElement {
     }
     var HTMLJplantsButtonElement: {
@@ -85,7 +64,6 @@ declare global {
     interface HTMLElementTagNameMap {
         "example-component": HTMLExampleComponentElement;
         "jplant-article": HTMLJplantArticleElement;
-        "my-component": HTMLMyComponentElement;
         "jplants-button": HTMLJplantsButtonElement;
         "jplants-header": HTMLJplantsHeaderElement;
         "jplants-menubar": HTMLJplantsMenubarElement;
@@ -98,36 +76,8 @@ declare namespace LocalJSX {
     }
     interface JplantArticle {
         "articleImage"?: string;
-        "articleInformation"?: string;
         "articleText"?: string;
         "articleTitle"?: string;
-    }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
-    }
-    interface SlFlipCard {
-    }
-    interface SlFooter {
-        "slDarkMode"?: boolean;
-        "slDatenschutz"?: string;
-        "slImpressum"?: string;
-    }
-    interface SlHeader {
-        "slDarkMode"?: boolean;
-    }
-    interface SlHeroSection {
-        "slHeroHeadline"?: string;
     }
     interface JplantsButton {
         "buttonColor"?: string;
@@ -147,11 +97,6 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "example-component": ExampleComponent;
         "jplant-article": JplantArticle;
-        "my-component": MyComponent;
-        "sl-flip-card": SlFlipCard;
-        "sl-footer": SlFooter;
-        "sl-header": SlHeader;
-        "sl-hero-section": SlHeroSection;
         "jplants-button": JplantsButton;
         "jplants-header": JplantsHeader;
         "jplants-menubar": JplantsMenubar;
@@ -163,7 +108,6 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "example-component": LocalJSX.ExampleComponent & JSXBase.HTMLAttributes<HTMLExampleComponentElement>;
             "jplant-article": LocalJSX.JplantArticle & JSXBase.HTMLAttributes<HTMLJplantArticleElement>;
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "jplants-button": LocalJSX.JplantsButton & JSXBase.HTMLAttributes<HTMLJplantsButtonElement>;
             "jplants-header": LocalJSX.JplantsHeader & JSXBase.HTMLAttributes<HTMLJplantsHeaderElement>;
             "jplants-menubar": LocalJSX.JplantsMenubar & JSXBase.HTMLAttributes<HTMLJplantsMenubarElement>;

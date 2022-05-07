@@ -9,20 +9,16 @@ export class JplantArticle {
 @Prop() articleImage:string;
 @Prop() articleTitle:string;
 @Prop() articleText:string;
-@Prop() articleInformation:string;
 
   render() {
     return (
-      <Host>
 
         <div class ="Pflanzentipps">
           <img src={this.articleImage}/>
           <h3>{this.articleTitle}</h3>
           <p>{this.articleText}</p>
-          <h4>{this.articleInformation}</h4>
-        </div>
-        
-      </Host>
+          <jplants-button button-name="Weiterlesen" button-href="#" button-icon-class="" button-color="default"></jplants-button>
+        </div> 
     );
   }
 
