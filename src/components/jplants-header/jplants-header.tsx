@@ -12,15 +12,8 @@ export class JplantsHeader {
 @Prop() navLinksJson: string;
 @Prop() logo = "jplants-logo.png";
 @Prop() logoHref = "#";
-@Prop() menuSymbol: string = "bi bi-list";
-@Prop() menuSymbolHref: string = "#";
-
 
 @State() navLinks: Array<{iconClass: string, name: string, href: string}> = [];
-
-clickHandler(){
- alert('The menu button as been clicked') 
-}
 
 @Watch('navLinksJson')
 handleNavLinksJsonChanged(){
@@ -40,7 +33,8 @@ convertNavJson(){
     return (
       <Host>
         <div class="header">
-        <a onClick={this.clickHandler}id="menu-button" href={this.menuSymbolHref}><i class={this.menuSymbol}></i></a>
+        <jplants-menubar
+          nav-items-links='[{"name":"Shop","href":"#"},{"name":"Angebote","href":"#"},{"name":"Plant-Basics","href":"#"},{"name":"How to care","href":"#"},{"name":"Galerie","href":"#"},{"name":"Blog","href":"#"}]'>       </jplants-menubar>
         <a id="logo" href="#"><img src={imageSrc}/></a> 
         <nav>
           <ul class="nav">
