@@ -10,6 +10,10 @@ export namespace Components {
         "exampleProp": string;
         "exampleToUpperCase": () => Promise<void>;
     }
+    interface JplantsToast {
+        "toastMessage": string;
+        "toastTitle": string;
+    }
 }
 declare global {
     interface HTMLExampleComponentElement extends Components.ExampleComponent, HTMLStencilElement {
@@ -18,8 +22,15 @@ declare global {
         prototype: HTMLExampleComponentElement;
         new (): HTMLExampleComponentElement;
     };
+    interface HTMLJplantsToastElement extends Components.JplantsToast, HTMLStencilElement {
+    }
+    var HTMLJplantsToastElement: {
+        prototype: HTMLJplantsToastElement;
+        new (): HTMLJplantsToastElement;
+    };
     interface HTMLElementTagNameMap {
         "example-component": HTMLExampleComponentElement;
+        "jplants-toast": HTMLJplantsToastElement;
     }
 }
 declare namespace LocalJSX {
@@ -27,8 +38,13 @@ declare namespace LocalJSX {
         "exampleProp"?: string;
         "onExampleEvent"?: (event: CustomEvent<string>) => void;
     }
+    interface JplantsToast {
+        "toastMessage"?: string;
+        "toastTitle"?: string;
+    }
     interface IntrinsicElements {
         "example-component": ExampleComponent;
+        "jplants-toast": JplantsToast;
     }
 }
 export { LocalJSX as JSX };
@@ -36,6 +52,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "example-component": LocalJSX.ExampleComponent & JSXBase.HTMLAttributes<HTMLExampleComponentElement>;
+            "jplants-toast": LocalJSX.JplantsToast & JSXBase.HTMLAttributes<HTMLJplantsToastElement>;
         }
     }
 }
