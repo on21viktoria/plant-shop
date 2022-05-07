@@ -1,6 +1,5 @@
 import { Component, Element, Prop, State, h, Host } from '@stencil/core';
 
-
 @Component({
   tag: 'jplants-slider',
   styleUrl: 'jplants-slider.css',
@@ -33,8 +32,8 @@ export class JplantsSlider {
     this.sliderList = this.el.shadowRoot.querySelector('.slides-wrapper');
     this.slideWidth = (this.slides[0] as HTMLElement).offsetWidth;
     // for (let type in this.controls) {this.controls[type] = this.el.shadowRoot.querySelector(type)
-  // console.log("componentDidLoad", this.slideWidth, this.controls[type], type)
-  // };
+    // console.log("componentDidLoad", this.slideWidth, this.controls[type], type)
+    // };
     this.updateControls();
   }
 
@@ -58,16 +57,16 @@ export class JplantsSlider {
     if (this.controls[type]) this.controls[type].disabled = !enabled;
   }
 
-  setSlotNames(){
-    for(let i=0; i<=(this.numberOfSlides-1); i++) {
-      this.slotNames.push("slide"+i.toString());
+  setSlotNames() {
+    for (let i = 0; i <= this.numberOfSlides - 1; i++) {
+      this.slotNames.push('slide' + i.toString());
     }
-    console.log("setSlotNames",this.slotNames)
+    console.log('setSlotNames', this.slotNames);
   }
 
-  getSlotNames(): string[]{
+  getSlotNames(): string[] {
     const names = this.slotNames;
-    console.log("getSlotNames", names)
+    console.log('getSlotNames', names);
     return names;
   }
 
@@ -88,10 +87,15 @@ export class JplantsSlider {
           <a class="control forward" onClick={this.slide.bind(this, 1)}>
             &#10095;
           </a>
-          <div class="slides-wrapper"> {this.setSlotNames()}
-          {this.getSlotNames().map(name => {
-            return <div><slot name={name}></slot></div>
-          })}
+          <div class="slides-wrapper">
+            {this.setSlotNames()}
+            {this.getSlotNames().map(name => {
+              return (
+                <div>
+                  <slot name={name}></slot>
+                </div>
+              );
+            })}
           </div>
           <div class="dot-container">
             <span class="dot"></span>
@@ -103,5 +107,3 @@ export class JplantsSlider {
     );
   }
 }
-
-
