@@ -41,6 +41,7 @@ export namespace Components {
     }
     interface SlPlantFooter {
         "footerLinksJson": string;
+        "logo": string;
     }
     interface SlServiceCard {
         "slDarkMode": boolean;
@@ -151,6 +152,7 @@ declare namespace LocalJSX {
     }
     interface SlPlantFooter {
         "footerLinksJson"?: string;
+        "logo"?: string;
     }
     interface SlServiceCard {
         "slDarkMode"?: boolean;

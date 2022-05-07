@@ -4,17 +4,19 @@ import { Component, Host, h, Prop, State, Watch } from '@stencil/core';
   tag: 'sl-plant-footer',
   styleUrl: 'sl-plant-footer.css',
   shadow: true,
+  assetsDirs: ['assets']
 })
 export class SlPlantFooter {
 
   @Prop() footerLinksJson: string;
+  @Prop() logo="logo_jPLANTS.png";
+  
   @Watch('footerLinksJson')
-
   handleFooterLinksJasonChanged(){
     this.convertJson();
   }
   
-  @State() footerlinks: Array<{name: string, href: string}> = [];
+  @State() footerlinks: Array<{zeile1: string, href1: string, zeile2: string, href2: string, zeile3: string, href3: string}> = [];
 
   componentWillLoad(){
   this.convertJson();
@@ -25,55 +27,24 @@ export class SlPlantFooter {
   }
 
   render() {
+    /*const imageSrc = getAssetPath(`/dist/stencil-starter-on/dist/components/assets/${this.logo}`);*/
     return (
       <Host>
         <footer>
           <ul class ="footer_links">
-            {this.footerlinks.map(footerlinks=> (
-               <li>
-              <a href={footerlinks.href}>{footerlinks.name}</a>
+          <img src="src/logo_jPLANTS.png"/>
+            {this.footerlinks.map(footerlink=> (
+              <li>
+              <a href={footerlink.href3}>{footerlink.zeile1}</a>
+              <br></br>
+              <a href={footerlink.href3}>{footerlink.zeile2}</a>
+              <br></br>
+              <a href={footerlink.href3}>{footerlink.zeile3}</a>
               </li>))}
+             <p>© 2021 JPlants, Inc. All rights reserved.</p>
           </ul>
         </footer>   
       </Host>
     );
   }
 }
-
-
-/*<div class="footer">
-          <div>
-            <slot name="sl-column1">
-            </slot>
-          </div>
-          <div>
-            <a href='https://docs.google.com/document/d/1Agp5_kJokmiP4ucfFMRTUyiobUhXR0L8PWeUV3JxknU/edit'>
-              Über uns
-            </a>
-            <br></br>
-            <a href='https://docs.google.com/document/d/1Agp5_kJokmiP4ucfFMRTUyiobUhXR0L8PWeUV3JxknU/edit'>
-              Mission
-            </a>
-            <br></br>
-            <a href='https://docs.google.com/document/d/1Agp5_kJokmiP4ucfFMRTUyiobUhXR0L8PWeUV3JxknU/edit'>
-              Nachhaltigkeit
-            </a>
-          </div>
-          <div>
-            <a href='https://docs.google.com/document/d/1Agp5_kJokmiP4ucfFMRTUyiobUhXR0L8PWeUV3JxknU/edit'>
-              FAQ
-            </a>
-            <br></br>
-            <a href='https://docs.google.com/document/d/1Agp5_kJokmiP4ucfFMRTUyiobUhXR0L8PWeUV3JxknU/edit'>
-              Impressum
-            </a>
-            <br></br>
-            <a href='https://docs.google.com/document/d/1Agp5_kJokmiP4ucfFMRTUyiobUhXR0L8PWeUV3JxknU/edit'>
-              Community
-            </a>
-          </div>
-          <div>
-            <slot name="sl-column5">
-            </slot>
-          </div>
-        </div>*/
