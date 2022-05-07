@@ -25,6 +25,7 @@ export namespace Components {
         "navItemsLinks": string;
     }
     interface JplantsToast {
+        "toastButtonTitle": string;
         "toastMessage": string;
         "toastPosition": string;
         "toastTitle": string;
@@ -91,6 +92,7 @@ declare namespace LocalJSX {
     }
     interface JplantsToast {
         "onShow"?: (event: CustomEvent<any>) => void;
+        "toastButtonTitle"?: string;
         "toastMessage"?: string;
         "toastPosition"?: string;
         "toastTitle"?: string;
