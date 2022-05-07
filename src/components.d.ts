@@ -11,7 +11,7 @@ export namespace Components {
         "exampleToUpperCase": () => Promise<void>;
     }
     interface JplantsSlider {
-        "numberOfSlides": number;
+        "numberOfSlides"?: number;
         "showStatus": boolean;
     }
 }

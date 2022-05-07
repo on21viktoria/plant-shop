@@ -9,7 +9,7 @@
 	overflow: hidden;
 }
 
-.ul {
+.slides-wrapper {
 	display: flex;
   width: 100%;
 	margin: 0;
@@ -51,7 +51,7 @@
 		opacity: .25;
 	}
 
-	.control.arrow-forward {
+	.control.forward {
 		right: 0;
 	}
 
