@@ -6,6 +6,13 @@ export const config: Config = {
   outputTargets: [
     {
       type: 'dist',
+      copy: [
+        {
+        src: '**/*.{jpg,png}',
+        dest: 'dist/components/assets',
+        warn: true,
+        }
+        ],
       esmLoaderPath: '../loader',
     },
   ],

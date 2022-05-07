@@ -10,6 +10,8 @@ export namespace Components {
         "exampleProp": string;
         "exampleToUpperCase": () => Promise<void>;
     }
+    interface JplantsCustomergallery {
+    }
     interface MyComponent {
         /**
           * The first name
@@ -37,8 +39,6 @@ export namespace Components {
     interface SlHeroSection {
         "slHeroHeadline": string;
     }
-    interface SlImgGallery {
-    }
     interface SlServiceCard {
         "slDarkMode": boolean;
         "slImgSrc": string;
@@ -51,6 +51,12 @@ declare global {
     var HTMLExampleComponentElement: {
         prototype: HTMLExampleComponentElement;
         new (): HTMLExampleComponentElement;
+    };
+    interface HTMLJplantsCustomergalleryElement extends Components.JplantsCustomergallery, HTMLStencilElement {
+    }
+    var HTMLJplantsCustomergalleryElement: {
+        prototype: HTMLJplantsCustomergalleryElement;
+        new (): HTMLJplantsCustomergalleryElement;
     };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
@@ -82,12 +88,6 @@ declare global {
         prototype: HTMLSlHeroSectionElement;
         new (): HTMLSlHeroSectionElement;
     };
-    interface HTMLSlImgGalleryElement extends Components.SlImgGallery, HTMLStencilElement {
-    }
-    var HTMLSlImgGalleryElement: {
-        prototype: HTMLSlImgGalleryElement;
-        new (): HTMLSlImgGalleryElement;
-    };
     interface HTMLSlServiceCardElement extends Components.SlServiceCard, HTMLStencilElement {
     }
     var HTMLSlServiceCardElement: {
@@ -96,12 +96,12 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "example-component": HTMLExampleComponentElement;
+        "jplants-customergallery": HTMLJplantsCustomergalleryElement;
         "my-component": HTMLMyComponentElement;
         "sl-flip-card": HTMLSlFlipCardElement;
         "sl-footer": HTMLSlFooterElement;
         "sl-header": HTMLSlHeaderElement;
         "sl-hero-section": HTMLSlHeroSectionElement;
-        "sl-img-gallery": HTMLSlImgGalleryElement;
         "sl-service-card": HTMLSlServiceCardElement;
     }
 }
@@ -109,6 +109,8 @@ declare namespace LocalJSX {
     interface ExampleComponent {
         "exampleProp"?: string;
         "onExampleEvent"?: (event: CustomEvent<string>) => void;
+    }
+    interface JplantsCustomergallery {
     }
     interface MyComponent {
         /**
@@ -137,8 +139,6 @@ declare namespace LocalJSX {
     interface SlHeroSection {
         "slHeroHeadline"?: string;
     }
-    interface SlImgGallery {
-    }
     interface SlServiceCard {
         "slDarkMode"?: boolean;
         "slImgSrc"?: string;
@@ -146,12 +146,12 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "example-component": ExampleComponent;
+        "jplants-customergallery": JplantsCustomergallery;
         "my-component": MyComponent;
         "sl-flip-card": SlFlipCard;
         "sl-footer": SlFooter;
         "sl-header": SlHeader;
         "sl-hero-section": SlHeroSection;
-        "sl-img-gallery": SlImgGallery;
         "sl-service-card": SlServiceCard;
     }
 }
@@ -160,12 +160,12 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "example-component": LocalJSX.ExampleComponent & JSXBase.HTMLAttributes<HTMLExampleComponentElement>;
+            "jplants-customergallery": LocalJSX.JplantsCustomergallery & JSXBase.HTMLAttributes<HTMLJplantsCustomergalleryElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "sl-flip-card": LocalJSX.SlFlipCard & JSXBase.HTMLAttributes<HTMLSlFlipCardElement>;
             "sl-footer": LocalJSX.SlFooter & JSXBase.HTMLAttributes<HTMLSlFooterElement>;
             "sl-header": LocalJSX.SlHeader & JSXBase.HTMLAttributes<HTMLSlHeaderElement>;
             "sl-hero-section": LocalJSX.SlHeroSection & JSXBase.HTMLAttributes<HTMLSlHeroSectionElement>;
-            "sl-img-gallery": LocalJSX.SlImgGallery & JSXBase.HTMLAttributes<HTMLSlImgGalleryElement>;
             "sl-service-card": LocalJSX.SlServiceCard & JSXBase.HTMLAttributes<HTMLSlServiceCardElement>;
         }
     }
