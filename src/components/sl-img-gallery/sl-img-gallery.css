@@ -13,7 +13,7 @@ h3 {
 
 .sl-img-grid {
     display: grid;
-    grid-gap: 20px;
+    grid-gap: 30px;
     grid-template-columns: 1fr 1fr;
 }
 
@@ -24,12 +24,12 @@ h3 {
 }
 
 .grow {
-    transition: all 0.3s ease;
+    transition: all 0.1s ease;
 }
 
 .grow:hover {
-    -webkit-transform: scale(1.15);
-    -ms-transform: scale(1.15);
-    transform: scale(1.15);
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
     transition: all 0.3s ease;
 }
