@@ -2,11 +2,19 @@
   display: block;
 }
 
+h1 {
+  font-size: 30px !important;
+  text-align: center !important;
+  font-family: 'Montserat', sans-serif !important;
+  color: #707070 !important;
+}
+
 .slider-container {
 	position: relative;
 	width: 100%;
 	margin: 20px auto 0px auto;
 	overflow: hidden;
+  border-bottom: 1px solid #BEBEBE;
 }
 
 .slides-wrapper {
@@ -19,11 +27,15 @@
 }
 
 ::slotted(div) {
+  padding: 10px;
+  display: flex;
 	flex: 1 0 auto;
 	width: 100vw;
 	margin: auto;
-	height: 400px;
-	background-color: lightgreen;
+	/* height: 400px; */
+	background-color: #EDF2ED;
+  flex-direction: row-reverse;
+  justify-content: space-between
 }
 
 /* ::slotted(:nth-child(even)) {
