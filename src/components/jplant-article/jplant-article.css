@@ -1,0 +1,30 @@
+:host {
+  display: block;
+}
+
+.Produkt {
+  background-color: white;
+  height: 500px;
+  width: 250px;
+  flex-wrap: wrap;
+  padding: 20px;
+  box-shadow: 0px 0px 12px 0px lightgrey;
+}
+
+img {
+  width: 100%;
+}
+
+p {
+  font-size: 12px;
+}
+
+h3 {
+  font-size: 15px
+}
+
+img:hover {
+  max-width: initial;
+  max-height: initial;
+  transition: all .3s ease-in-out;
+}
