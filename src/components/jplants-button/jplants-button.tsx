@@ -27,7 +27,7 @@ willShowButton(){
         <a href={this.buttonHref}>
           <button type="button" class={this.buttonColor}>
           <slot></slot>
-          {/* <i class={this.buttonIconClass}></i> */}
+          <i class={this.buttonIconClass}></i>
           {this.buttonName}
           </button>
         </a>

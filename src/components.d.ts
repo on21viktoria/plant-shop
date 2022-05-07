@@ -26,6 +26,7 @@ export namespace Components {
     }
     interface JplantsToast {
         "toastMessage": string;
+        "toastPosition": string;
         "toastTitle": string;
     }
 }
@@ -91,6 +92,7 @@ declare namespace LocalJSX {
     interface JplantsToast {
         "onShow"?: (event: CustomEvent<any>) => void;
         "toastMessage"?: string;
+        "toastPosition"?: string;
         "toastTitle"?: string;
     }
     interface IntrinsicElements {
