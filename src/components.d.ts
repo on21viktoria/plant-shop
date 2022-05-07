@@ -11,6 +11,10 @@ export namespace Components {
         "exampleToUpperCase": () => Promise<void>;
     }
     interface JplantArticle {
+        "articleImage": string;
+        "articleInformation": string;
+        "articleText": string;
+        "articleTitle": string;
     }
     interface MyComponent {
         /**
@@ -120,6 +124,10 @@ declare namespace LocalJSX {
         "onExampleEvent"?: (event: CustomEvent<string>) => void;
     }
     interface JplantArticle {
+        "articleImage"?: string;
+        "articleInformation"?: string;
+        "articleText"?: string;
+        "articleTitle"?: string;
     }
     interface MyComponent {
         /**

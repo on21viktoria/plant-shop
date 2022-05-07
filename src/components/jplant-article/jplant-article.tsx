@@ -1,4 +1,4 @@
-import { Component, Host, h } from '@stencil/core';
+import { Component, Host, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'jplant-article',
@@ -6,24 +6,22 @@ import { Component, Host, h } from '@stencil/core';
   shadow: true,
 })
 export class JplantArticle {
+@Prop() articleImage:string;
+@Prop() articleTitle:string;
+@Prop() articleText:string;
+@Prop() articleInformation:string;
 
   render() {
     return (
       <Host>
-        <slot>
 
-        <div class ="Produkt">
-          <img src='src/components/jplant-article/philodendron-prince-of-orange_300x300.jpg'/>
-          <h3>Philodendron Prince of Orange</h3>
-          <p>Du fragst dich woher der Trend 'Orange is the new black' stammt? 
-            Ganz klar von unserer Trendsetter-Pflanze schlechthin!
-            Der Philodendron 'Prince of Orange' setzt mit seinen Farben die Trends
-            für die neue Saison und ist das It-Piece in den Wohnungen der
-            Plantaddicts. Bist du hip genug für diese Pflanze?</p>
-          <h4>95,00€</h4>
+        <div class ="Pflanzentipps">
+          <img src={this.articleImage}/>
+          <h3>{this.articleTitle}</h3>
+          <p>{this.articleText}</p>
+          <h4>{this.articleInformation}</h4>
         </div>
         
-        </slot>
       </Host>
     );
   }
