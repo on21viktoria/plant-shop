@@ -50,6 +50,8 @@ export namespace Components {
         "slDarkMode": boolean;
         "slImgSrc": string;
         "slLink": string;
+    interface JplantsMenubar {
+        "navItemsLinks": string;
     }
 }
 declare global {
@@ -84,28 +86,11 @@ declare global {
         new (): HTMLSlFooterElement;
     };
     interface HTMLSlHeaderElement extends Components.SlHeader, HTMLStencilElement {
+    interface HTMLJplantsMenubarElement extends Components.JplantsMenubar, HTMLStencilElement {
     }
-    var HTMLSlHeaderElement: {
-        prototype: HTMLSlHeaderElement;
-        new (): HTMLSlHeaderElement;
-    };
-    interface HTMLSlHeroSectionElement extends Components.SlHeroSection, HTMLStencilElement {
-    }
-    var HTMLSlHeroSectionElement: {
-        prototype: HTMLSlHeroSectionElement;
-        new (): HTMLSlHeroSectionElement;
-    };
-    interface HTMLSlImgGalleryElement extends Components.SlImgGallery, HTMLStencilElement {
-    }
-    var HTMLSlImgGalleryElement: {
-        prototype: HTMLSlImgGalleryElement;
-        new (): HTMLSlImgGalleryElement;
-    };
-    interface HTMLSlServiceCardElement extends Components.SlServiceCard, HTMLStencilElement {
-    }
-    var HTMLSlServiceCardElement: {
-        prototype: HTMLSlServiceCardElement;
-        new (): HTMLSlServiceCardElement;
+    var HTMLJplantsMenubarElement: {
+        prototype: HTMLJplantsMenubarElement;
+        new (): HTMLJplantsMenubarElement;
     };
     interface HTMLElementTagNameMap {
         "example-component": HTMLExampleComponentElement;
@@ -117,6 +102,7 @@ declare global {
         "sl-hero-section": HTMLSlHeroSectionElement;
         "sl-img-gallery": HTMLSlImgGalleryElement;
         "sl-service-card": HTMLSlServiceCardElement;
+        "jplants-menubar": HTMLJplantsMenubarElement;
     }
 }
 declare namespace LocalJSX {
@@ -175,6 +161,13 @@ declare namespace LocalJSX {
         "sl-hero-section": SlHeroSection;
         "sl-img-gallery": SlImgGallery;
         "sl-service-card": SlServiceCard;
+    interface JplantsMenubar {
+        "navItemsLinks"?: string;
+        "onOnShow"?: (event: CustomEvent<any>) => void;
+    }
+    interface IntrinsicElements {
+        "example-component": ExampleComponent;
+        "jplants-menubar": JplantsMenubar;
     }
 }
 export { LocalJSX as JSX };
@@ -190,6 +183,7 @@ declare module "@stencil/core" {
             "sl-hero-section": LocalJSX.SlHeroSection & JSXBase.HTMLAttributes<HTMLSlHeroSectionElement>;
             "sl-img-gallery": LocalJSX.SlImgGallery & JSXBase.HTMLAttributes<HTMLSlImgGalleryElement>;
             "sl-service-card": LocalJSX.SlServiceCard & JSXBase.HTMLAttributes<HTMLSlServiceCardElement>;
+            "jplants-menubar": LocalJSX.JplantsMenubar & JSXBase.HTMLAttributes<HTMLJplantsMenubarElement>;
         }
     }
 }
