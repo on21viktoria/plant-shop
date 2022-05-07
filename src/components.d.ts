@@ -30,25 +30,19 @@ export namespace Components {
          */
         "middle": string;
     }
-    interface SlFlipCard {
+    interface JplantsButton {
+        "buttonColor": string;
+        "buttonHref": string;
+        "buttonIconClass": string;
+        "buttonName": string;
     }
-    interface SlFooter {
-        "slDarkMode": boolean;
-        "slDatenschutz": string;
-        "slImpressum": string;
+    interface JplantsHeader {
+        "logo": string;
+        "logoHref": string;
+        "navLinksJson": string;
     }
-    interface SlHeader {
-        "slDarkMode": boolean;
-    }
-    interface SlHeroSection {
-        "slHeroHeadline": string;
-    }
-    interface SlImgGallery {
-    }
-    interface SlServiceCard {
-        "slDarkMode": boolean;
-        "slImgSrc": string;
-        "slLink": string;
+    interface JplantsMenubar {
+        "navItemsLinks": string;
     }
 }
 declare global {
@@ -70,52 +64,31 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
-    interface HTMLSlFlipCardElement extends Components.SlFlipCard, HTMLStencilElement {
+    interface HTMLJplantsButtonElement extends Components.JplantsButton, HTMLStencilElement {
     }
-    var HTMLSlFlipCardElement: {
-        prototype: HTMLSlFlipCardElement;
-        new (): HTMLSlFlipCardElement;
+    var HTMLJplantsButtonElement: {
+        prototype: HTMLJplantsButtonElement;
+        new (): HTMLJplantsButtonElement;
     };
-    interface HTMLSlFooterElement extends Components.SlFooter, HTMLStencilElement {
+    interface HTMLJplantsHeaderElement extends Components.JplantsHeader, HTMLStencilElement {
     }
-    var HTMLSlFooterElement: {
-        prototype: HTMLSlFooterElement;
-        new (): HTMLSlFooterElement;
+    var HTMLJplantsHeaderElement: {
+        prototype: HTMLJplantsHeaderElement;
+        new (): HTMLJplantsHeaderElement;
     };
-    interface HTMLSlHeaderElement extends Components.SlHeader, HTMLStencilElement {
+    interface HTMLJplantsMenubarElement extends Components.JplantsMenubar, HTMLStencilElement {
     }
-    var HTMLSlHeaderElement: {
-        prototype: HTMLSlHeaderElement;
-        new (): HTMLSlHeaderElement;
-    };
-    interface HTMLSlHeroSectionElement extends Components.SlHeroSection, HTMLStencilElement {
-    }
-    var HTMLSlHeroSectionElement: {
-        prototype: HTMLSlHeroSectionElement;
-        new (): HTMLSlHeroSectionElement;
-    };
-    interface HTMLSlImgGalleryElement extends Components.SlImgGallery, HTMLStencilElement {
-    }
-    var HTMLSlImgGalleryElement: {
-        prototype: HTMLSlImgGalleryElement;
-        new (): HTMLSlImgGalleryElement;
-    };
-    interface HTMLSlServiceCardElement extends Components.SlServiceCard, HTMLStencilElement {
-    }
-    var HTMLSlServiceCardElement: {
-        prototype: HTMLSlServiceCardElement;
-        new (): HTMLSlServiceCardElement;
+    var HTMLJplantsMenubarElement: {
+        prototype: HTMLJplantsMenubarElement;
+        new (): HTMLJplantsMenubarElement;
     };
     interface HTMLElementTagNameMap {
         "example-component": HTMLExampleComponentElement;
         "jplant-article": HTMLJplantArticleElement;
         "my-component": HTMLMyComponentElement;
-        "sl-flip-card": HTMLSlFlipCardElement;
-        "sl-footer": HTMLSlFooterElement;
-        "sl-header": HTMLSlHeaderElement;
-        "sl-hero-section": HTMLSlHeroSectionElement;
-        "sl-img-gallery": HTMLSlImgGalleryElement;
-        "sl-service-card": HTMLSlServiceCardElement;
+        "jplants-button": HTMLJplantsButtonElement;
+        "jplants-header": HTMLJplantsHeaderElement;
+        "jplants-menubar": HTMLJplantsMenubarElement;
     }
 }
 declare namespace LocalJSX {
@@ -156,12 +129,20 @@ declare namespace LocalJSX {
     interface SlHeroSection {
         "slHeroHeadline"?: string;
     }
-    interface SlImgGallery {
+    interface JplantsButton {
+        "buttonColor"?: string;
+        "buttonHref"?: string;
+        "buttonIconClass"?: string;
+        "buttonName"?: string;
     }
-    interface SlServiceCard {
-        "slDarkMode"?: boolean;
-        "slImgSrc"?: string;
-        "slLink"?: string;
+    interface JplantsHeader {
+        "logo"?: string;
+        "logoHref"?: string;
+        "navLinksJson"?: string;
+    }
+    interface JplantsMenubar {
+        "navItemsLinks"?: string;
+        "onOnShow"?: (event: CustomEvent<any>) => void;
     }
     interface IntrinsicElements {
         "example-component": ExampleComponent;
@@ -171,8 +152,9 @@ declare namespace LocalJSX {
         "sl-footer": SlFooter;
         "sl-header": SlHeader;
         "sl-hero-section": SlHeroSection;
-        "sl-img-gallery": SlImgGallery;
-        "sl-service-card": SlServiceCard;
+        "jplants-button": JplantsButton;
+        "jplants-header": JplantsHeader;
+        "jplants-menubar": JplantsMenubar;
     }
 }
 export { LocalJSX as JSX };
@@ -182,12 +164,9 @@ declare module "@stencil/core" {
             "example-component": LocalJSX.ExampleComponent & JSXBase.HTMLAttributes<HTMLExampleComponentElement>;
             "jplant-article": LocalJSX.JplantArticle & JSXBase.HTMLAttributes<HTMLJplantArticleElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
-            "sl-flip-card": LocalJSX.SlFlipCard & JSXBase.HTMLAttributes<HTMLSlFlipCardElement>;
-            "sl-footer": LocalJSX.SlFooter & JSXBase.HTMLAttributes<HTMLSlFooterElement>;
-            "sl-header": LocalJSX.SlHeader & JSXBase.HTMLAttributes<HTMLSlHeaderElement>;
-            "sl-hero-section": LocalJSX.SlHeroSection & JSXBase.HTMLAttributes<HTMLSlHeroSectionElement>;
-            "sl-img-gallery": LocalJSX.SlImgGallery & JSXBase.HTMLAttributes<HTMLSlImgGalleryElement>;
-            "sl-service-card": LocalJSX.SlServiceCard & JSXBase.HTMLAttributes<HTMLSlServiceCardElement>;
+            "jplants-button": LocalJSX.JplantsButton & JSXBase.HTMLAttributes<HTMLJplantsButtonElement>;
+            "jplants-header": LocalJSX.JplantsHeader & JSXBase.HTMLAttributes<HTMLJplantsHeaderElement>;
+            "jplants-menubar": LocalJSX.JplantsMenubar & JSXBase.HTMLAttributes<HTMLJplantsMenubarElement>;
         }
     }
 }
