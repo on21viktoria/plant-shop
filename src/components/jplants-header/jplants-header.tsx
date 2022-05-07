@@ -35,11 +35,11 @@ convertNavJson(){
         <div class="header">
         <jplants-menubar
           nav-items-links='[{"name":"Shop","href":"#"},{"name":"Angebote","href":"#"},{"name":"Plant-Basics","href":"#"},{"name":"How to care","href":"#"},{"name":"Galerie","href":"#"},{"name":"Blog","href":"#"}]'>       </jplants-menubar>
-        <a id="logo" href="#"><img src={imageSrc}/></a> 
+        <a id="logo" href="#"><img src={imageSrc}/></a>
         <nav>
           <ul class="nav">
             {this.navLinks.map(navLink => (
-              <jplants-button button-name={navLink.name} button-href={navLink.href}><i class={navLink.iconClass}></i></jplants-button>
+              <jplants-button button-name={navLink.name} button-href={navLink.href} button-color="white"><i class={navLink.iconClass}></i></jplants-button>
             ))}
           </ul>
         </nav>

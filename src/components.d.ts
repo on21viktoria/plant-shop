@@ -11,6 +11,7 @@ export namespace Components {
         "exampleToUpperCase": () => Promise<void>;
     }
     interface JplantsButton {
+        "buttonColor": string;
         "buttonHref": string;
         "buttonIconClass": string;
         "buttonName": string;
@@ -62,6 +63,7 @@ declare namespace LocalJSX {
         "onExampleEvent"?: (event: CustomEvent<string>) => void;
     }
     interface JplantsButton {
+        "buttonColor"?: string;
         "buttonHref"?: string;
         "buttonIconClass"?: string;
         "buttonName"?: string;

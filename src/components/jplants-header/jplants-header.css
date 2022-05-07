@@ -38,3 +38,7 @@
   font-family: bootstrap-icons !important;
   padding: 0px 5px 3px 0px !important;
 }
+
+.bi::before {
+  vertical-align: middle;
+}
