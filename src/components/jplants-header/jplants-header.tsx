@@ -39,9 +39,7 @@ convertNavJson(){
         <nav>
           <ul class="nav">
             {this.navLinks.map(navLink => (
-              <li>
-                <a href={navLink.href}><i class={navLink.iconClass}></i>{navLink.name}</a>
-              </li>
+              <jplants-button button-name={navLink.name} button-href={navLink.href}><i class={navLink.iconClass}></i></jplants-button>
             ))}
           </ul>
         </nav>

@@ -9,6 +9,7 @@ export class JplantsButton {
 
 @Prop() buttonName: string;
 @Prop() buttonHref: string;
+@Prop() buttonIconClass: string;
 
 willShowButton(){
   if(this.buttonName && this.buttonHref){
@@ -22,8 +23,10 @@ willShowButton(){
     return <Host>
       {
         this.willShowButton() && 
-        <a href="#">
-          <button type="button" name="button">
+        <a href={this.buttonHref}>
+          <button type="button">
+          <slot></slot>
+          {/* <i class={this.buttonIconClass}></i> */}
           {this.buttonName}
           </button>
         </a>

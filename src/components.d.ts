@@ -12,6 +12,7 @@ export namespace Components {
     }
     interface JplantsButton {
         "buttonHref": string;
+        "buttonIconClass": string;
         "buttonName": string;
     }
     interface JplantsHeader {
@@ -62,6 +63,7 @@ declare namespace LocalJSX {
     }
     interface JplantsButton {
         "buttonHref"?: string;
+        "buttonIconClass"?: string;
         "buttonName"?: string;
     }
     interface JplantsHeader {
