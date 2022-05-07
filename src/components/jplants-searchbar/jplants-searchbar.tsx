@@ -9,12 +9,16 @@ export class JplantsSearchbar {
 
 @Prop() searchBarName: string = 'Search';
 
+enterSearch() {
+  alert('Sorry, leider besitzt unsere Seite noch keine Suchfunktion.')
+}
+
   render() {
     return (
       <Host>
         <div class="searchbar-unit">
         <input type="search"></input>
-        <button type="button" name="button">{this.searchBarName}</button>
+        <button onClick={() => this.enterSearch()}type="button" name="button">{this.searchBarName}</button>
         </div>
       </Host>
     );
