@@ -1,14 +1,20 @@
-import { Component, Host, h, Prop } from '@stencil/core';
+import { Component, Host, h, Prop, Listen } from '@stencil/core';
 
 @Component({
   tag: 'card-component',
   styleUrl: 'card-component.css',
   shadow: true,
 })
-export class ExampleComponent {
+export class CardComponent {
   @Prop() name: string;
   @Prop() price: string;
   @Prop() image: string;
+  @Prop() tags?: string;
+
+  getTags(): string[]{
+    const tags = this.tags.split(',');
+    return tags
+  }
 
   render() {
     return (
@@ -17,14 +23,14 @@ export class ExampleComponent {
           <div class="card">
             <img src="https://images.unsplash.com/photo-1536323760109-ca8c07450053" alt="Lago di Braies" />
             <div class="card__details">
-              <span class="tag">Nature</span>
-
-              <span class="tag">Lake</span>
-              <div class="name">Lago di Braies</div>
-
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consectetur sodales morbi dignissim sed diam pharetra vitae ipsum odio.</p>
-
-              <button>Read more</button>
+              <div> {this.getTags().map(tag => {
+                return <span class="tag">{tag}</span>
+              })}
+              </div>
+              <div>
+                <div class="name">{this.name}</div>
+                <div class="price">{this.price}€</div>
+              </div>
             </div>
           </div>
         </div>

@@ -1,6 +1,13 @@
 :host{
-    display: block
+  display: inline-block;            
 }
+
+#container {
+  width: 300px;
+  margin: 0 auto;
+  margin-top: 20vh;
+}
+
 img {
   width: 100%;
   border-radius: 12px;
@@ -8,17 +15,10 @@ img {
   object-fit: cover;
 }
 
-#container {
-  max-width: 300px;
-  margin: 0 auto;
-  margin-top: 20vh;
-}
-
 .card {
-  background-color: white;
-  border: 1px solid #bacdd8;
-  padding: 8px;
+  background-color: #fafafa;
   border-radius: 12px;
+  box-shadow: 3px 5px 5px #888888;
 }
 
 .tag {
@@ -28,6 +28,7 @@ img {
   font-size: 12px;
   font-weight: 600;
   color: #788697;
+  margin: 1px;
 }
 
 .name {
@@ -55,5 +56,6 @@ button {
 }
 
 .card__details {
-  padding: 16px 8px 8px 8px;
+  padding: 16px 16px 16px 16px;
 }
+

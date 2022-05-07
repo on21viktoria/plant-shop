@@ -10,6 +10,7 @@ export namespace Components {
         "image": string;
         "name": string;
         "price": string;
+        "tags"?: string;
     }
     interface ExampleComponent {
         "exampleProp": string;
@@ -122,6 +123,7 @@ declare namespace LocalJSX {
         "image"?: string;
         "name"?: string;
         "price"?: string;
+        "tags"?: string;
     }
     interface ExampleComponent {
         "exampleProp"?: string;
