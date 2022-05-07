@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
     <script src="/dist/stencil-starter-on/stencil-starter-on.esm.js" type="module"></script>
     <link rel="stylesheet" href="/dist/stencil-starter-on/stencil-starter-on.css" />
     <title>your design guide</title>
     <script type="text/javascript" src="/ON-your-styleguide/script.js" defer></script>
-</head>
+  </head>
 
-<body>
-<jplants-slider>
-  <slot name="slide-one"><h1>Muttertag</h1></slot>
-  <slot name="slide-two"><h1>Die beliebtesten Zimmerpflanzen</h1></slot>
-  <slot name="slide-two"><h1>Get ready for Balkonien</h1></slot>
-</jplants-slider>
-</body>
+  <body>
+    <jplants-slider number-of-slides="3">
+      <div slot="slide1">
+        <h1>Muttertag</h1>
+        <p>Das ist ein Beispiel. Ich hoffe sehr, dass es angezeigt wird.</p>
+      </div>
+      <div slot="slide2">Beliebteste Zimmerpflanzen</div>
+      <div slot="slide3">Ready for Balkonien</div>
+      <!-- <div slot="slide-two">Die beliebtesten Zimmerpflanzen</div>
+      <div slot="slide-two">Get ready for Balkonien</div> -->
+    </jplants-slider>
+  </body>
 </html>

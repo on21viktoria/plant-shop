@@ -9,8 +9,10 @@ export class JplantsSlider {
   @Element() el: HTMLElement;
 
   @Prop() showStatus: boolean;
+  @Prop() numberOfSlides: number;
 
   @State() currentSlideNumber: number = 0;
+  // @State() slideNames: string[] = this.createSlotNames();
 
   private slidesCount: number = 0;
   private slides: NodeList;
@@ -22,12 +24,12 @@ export class JplantsSlider {
   };
 
   componentWillLoad() {
-    this.slides = this.el.querySelectorAll('li');
+    this.slides = this.el.querySelectorAll('div');
     this.slidesCount = this.slides.length;
   }
 
   componentDidLoad() {
-    this.sliderList = this.el.shadowRoot.querySelector('ul');
+    this.sliderList = this.el.shadowRoot.querySelector('.ul');
     this.slideWidth = (this.slides[0] as HTMLElement).offsetWidth;
     for (let type in this.controls) this.controls[type] = this.el.shadowRoot.querySelector('.btn_' + type);
     this.updateControls();
@@ -53,6 +55,22 @@ export class JplantsSlider {
     if (this.controls[type]) this.controls[type].disabled = !enabled;
   }
 
+  createSlotNames(){
+    let slidesArray: [{name: string}];
+    for(let i=0; i< (this.numberOfSlides-1); i++){
+      slidesArray.push({name: "slide"+i.toString()})
+      console.log(slidesArray)
+    }
+      return slidesArray;
+  }
+
+  // createSlots(){
+  //   for(let obj of this.slideNames){
+      // <div><slot name={obj.name}></slot></div>
+  //   }
+  // }
+
+
   render() {
     return (
       <Host>
@@ -71,9 +89,6 @@ export class JplantsSlider {
             &#10095;
           </a>
           <div class="ul">
-            <slot name='slider-one'></slot>
-            <slot name='slider-two'></slot>
-            <slot name='slider-three'></slot>
           </div>
           <div class="dot-container">
             <span class="dot"></span>

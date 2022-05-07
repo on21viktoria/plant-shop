@@ -18,7 +18,7 @@
 	transition: transform .5s ease-in-out;
 }
 
-::slotted() {
+::slotted(div) {
 	flex: 1 0 auto;
 	width: 100vw;
 	margin: auto;
@@ -26,10 +26,11 @@
 	background-color: lightgreen;
 }
 
-::slotted(:nth-child(even)) {
+/* ::slotted(:nth-child(even)) {
 	background-color: lightblue;
 	height: 400px;
-}
+  width: 100vw;
+} */
 
 .control {
 	position: absolute;

@@ -11,6 +11,7 @@ export namespace Components {
         "exampleToUpperCase": () => Promise<void>;
     }
     interface JplantsSlider {
+        "numberOfSlides": number;
         "showStatus": boolean;
     }
 }
@@ -38,6 +39,7 @@ declare namespace LocalJSX {
         "onExampleEvent"?: (event: CustomEvent<string>) => void;
     }
     interface JplantsSlider {
+        "numberOfSlides"?: number;
         "showStatus"?: boolean;
     }
     interface IntrinsicElements {
