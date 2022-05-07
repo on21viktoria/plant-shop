@@ -1,17 +1,18 @@
 :host {
   display: flex;
+  flex-wrap: wrap;
+  float: left;
+  align-items: center;
+  flex-direction: row;
 }
 
 .Pflanzentipps {
   background-color: white;
   height: 500px;
   width: 250px;
-  flex-wrap: wrap;
   padding: 20px;
   box-shadow: 0px 0px 12px 0px lightgrey;
-  float: left;
-  align-items: center;
-  flex-direction: row;
+  margin: 0 15px;
 }
 
 img {
@@ -23,8 +24,15 @@ img {
 
 p {
   font-size: 12px;
+  height: 185px;
 }
 
 h3 {
   font-size: 18px
+}
+
+h4 {
+  vertical-align: bottom;
+
+  
 }
