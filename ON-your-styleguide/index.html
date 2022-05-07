@@ -37,7 +37,9 @@
         </sl-hero-section>
         <div class="columns">
             <div class="column">
-                <sl-service-card sl-img-src="https://www.rd.com/wp-content/uploads/2019/05/American-shorthair-cat-scaled.jpg" sl-dark-mode sl-link="https://www.slezak-it.de">
+                <sl-service-card
+                    sl-img-src="https://www.rd.com/wp-content/uploads/2019/05/American-shorthair-cat-scaled.jpg"
+                    sl-dark-mode sl-link="https://www.slezak-it.de">
                     <div slot="slHeadline">Für Katzen</div>
                     <div slot="slContent">Alles für die Mieze</div>
                     <div slot="slLink">zur Website für Katzen</div>
@@ -49,7 +51,9 @@
                 </sl-service-card>
             </div>
             <div class="column">
-                <sl-service-card sl-img-src="https://www.mera-petfood.com/files/_processed_/b/b/csm_iStock-521697453_bb8fbb7807.jpg" sl-dark-mode sl-link="https://www.slezak-it.de">
+                <sl-service-card
+                    sl-img-src="https://www.mera-petfood.com/files/_processed_/b/b/csm_iStock-521697453_bb8fbb7807.jpg"
+                    sl-dark-mode sl-link="https://www.slezak-it.de">
                     <div slot="slHeadline">Für Hunde</div>
                     <div slot="slContent">Alles für den Wauzi</div>
                     <div slot="slLink">zur Website für Hunde</div>
@@ -59,86 +63,72 @@
         <div class="" style="text-align: center">
             <h3 class="is-size-3 pb-5">Unser FAQ</h3>
         </div>
-            <div class="columns is-centered">
-                <div class="column">
-                    <sl-flip-card>
-                        <slot slot="sl-front">
-                            <h4>Mein Fronttext</h4>
-                        </slot>
+        <div class="columns is-centered">
+            <div class="column">
+                <sl-flip-card>
+                    <slot slot="sl-front">
+                        <h4>Mein Fronttext</h4>
+                    </slot>
+                    <p>hier kommt content</p>
+                    <slot slot="sl-back">
+                        <h4>Mein backtext</h4>
                         <p>hier kommt content</p>
-                        <slot slot="sl-back">
-                            <h4>Mein backtext</h4>
-                            <p>hier kommt content</p>
-                        </slot>
-                    </sl-flip-card>
-                </div>
-                <div class="column">
-                    <sl-flip-card>
-                        <slot slot="sl-front">
-                            <h4>Mein Fronttext</h4>
-                        </slot>
+                    </slot>
+                </sl-flip-card>
+            </div>
+            <div class="column">
+                <sl-flip-card>
+                    <slot slot="sl-front">
+                        <h4>Mein Fronttext</h4>
+                    </slot>
+                    <p>hier kommt content</p>
+                    <slot slot="sl-back">
+                        <h4>Mein backtext</h4>
                         <p>hier kommt content</p>
-                        <slot slot="sl-back">
-                            <h4>Mein backtext</h4>
-                            <p>hier kommt content</p>
-                        </slot>
-                    </sl-flip-card>
-                </div>
-                <div class="column">
-                    <sl-flip-card>
-                        <slot slot="sl-front">
-                            <h4>Mein Fronttext</h4>
-                        </slot>
+                    </slot>
+                </sl-flip-card>
+            </div>
+            <div class="column">
+                <sl-flip-card>
+                    <slot slot="sl-front">
+                        <h4>Mein Fronttext</h4>
+                    </slot>
+                    <p>hier kommt content</p>
+                    <slot slot="sl-back">
+                        <h4>Mein backtext</h4>
                         <p>hier kommt content</p>
-                        <slot slot="sl-back">
-                            <h4>Mein backtext</h4>
-                            <p>hier kommt content</p>
-                        </slot>
-                    </sl-flip-card>
-                </div>
-                <div class="column">
-                    <sl-flip-card>
-                        <slot slot="sl-front">
-                            <h4>Mein Fronttext</h4>
-                        </slot>
+                    </slot>
+                </sl-flip-card>
+            </div>
+            <div class="column">
+                <sl-flip-card>
+                    <slot slot="sl-front">
+                        <h4>Mein Fronttext</h4>
+                    </slot>
+                    <p>hier kommt content</p>
+                    <slot slot="sl-back">
+                        <h4>Mein backtext</h4>
                         <p>hier kommt content</p>
-                        <slot slot="sl-back">
-                            <h4>Mein backtext</h4>
-                            <p>hier kommt content</p>
-                        </slot>
-                    </sl-flip-card>
-                </div>
+                    </slot>
+                </sl-flip-card>
             </div>
         </div>
+    </div>
 
-        <div class="container">
-            <sl-img-gallery> Unsere Impressionen </sl-img-gallery>
+    <div class="container">
+        <sl-img-gallery> Unsere Impressionen </sl-img-gallery>
 
+    </div>
+    <sl-plant-footer id="footerbar" footer-links-json="[{'name':'Über uns','href':'https://docs.google.com/document/d/1Agp5_kJokmiP4ucfFMRTUyiobUhXR0L8PWeUV3JxknU/edit'},{'name':'Mission','href':'https://docs.google.com/document/d/1Agp5_kJokmiP4ucfFMRTUyiobUhXR0L8PWeUV3JxknU/edit'},{'name':'Nachhaltigkeit','href':'https://docs.google.com/document/d/1Agp5_kJokmiP4ucfFMRTUyiobUhXR0L8PWeUV3JxknU/edit'}]">
+        <div slot="sl-column1">
+            <img src="../src/logo_jPLANTS.png" width="50%" />
         </div>
-        <sl-plant-footer>
-            <div slot="sl-column1">
-                <img src="../src/logo_jPLANTS.png" width="50%"/>
-            </div>
-            <div slot="sl-column2">
-                <p>Über uns</p>
-                <p>Mission</p>
-                <p>Nachhaltigkeit</p>
-            </div>
-            <div slot="sl-column3">
-                <p>Versand</p>
-                <p>Rückgabe</p>
-                <p>AGB</p>
-            </div>
-            <div slot="sl-column4">
-                <p>FAQ</p>
-                <p>Impressum</p>
-                <p>Community</p>
-            </div>
-            <div slot="sl-column5">
-                <p>ⓒ JPlants, Inc. All rights reserved.</p>
-            </div>
-        </sl-plant-footer>
-         <!-- <sl-footer sl-dark-mode>
+        <div slot="sl-column5">
+            <p>ⓒ JPlants, Inc. All rights reserved.</p>
+            <p>Besuche und auch gerne hier</p>
+        </div>
+    </sl-plant-footer>
+    <!-- <sl-footer sl-dark-mode>
             <div slot="sl-column1">
                 <h3>visit us!</h3>
                 <p>66666 Beispielstadt</p>
@@ -149,4 +139,5 @@
             </div>
         </sl-footer> -->
 </body>
+
 </html>
