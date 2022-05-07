@@ -27,7 +27,7 @@ export class JplantsToast {
     return (
       <Host>
         <div>
-          <button onClick={() => this.displayToast()}>Show toast</button>
+          <jplants-button button-name='Show toast!' button-href='#' button-color='default' buttonIconClass='bi bi-box' onClick={() => this.displayToast()}></jplants-button>
         </div>
         <div class={this.toastClass}>
           <div class="headline">  

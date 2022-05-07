@@ -10,9 +10,6 @@ export namespace Components {
         "exampleProp": string;
         "exampleToUpperCase": () => Promise<void>;
     }
-    interface JplantsToast {
-        "toastMessage": string;
-        "toastTitle": string;}
     interface JplantsButton {
         "buttonColor": string;
         "buttonHref": string;
@@ -27,6 +24,10 @@ export namespace Components {
     interface JplantsMenubar {
         "navItemsLinks": string;
     }
+    interface JplantsToast {
+        "toastMessage": string;
+        "toastTitle": string;
+    }
 }
 declare global {
     interface HTMLExampleComponentElement extends Components.ExampleComponent, HTMLStencilElement {
@@ -35,15 +36,6 @@ declare global {
         prototype: HTMLExampleComponentElement;
         new (): HTMLExampleComponentElement;
     };
-    interface HTMLJplantsToastElement extends Components.JplantsToast, HTMLStencilElement {
-    }
-    var HTMLJplantsToastElement: {
-        prototype: HTMLJplantsToastElement;
-        new (): HTMLJplantsToastElement;
-    };
-    interface HTMLElementTagNameMap {
-        "example-component": HTMLExampleComponentElement;
-        "jplants-toast": HTMLJplantsToastElement;}
     interface HTMLJplantsButtonElement extends Components.JplantsButton, HTMLStencilElement {
     }
     var HTMLJplantsButtonElement: {
@@ -62,11 +54,18 @@ declare global {
         prototype: HTMLJplantsMenubarElement;
         new (): HTMLJplantsMenubarElement;
     };
+    interface HTMLJplantsToastElement extends Components.JplantsToast, HTMLStencilElement {
+    }
+    var HTMLJplantsToastElement: {
+        prototype: HTMLJplantsToastElement;
+        new (): HTMLJplantsToastElement;
+    };
     interface HTMLElementTagNameMap {
         "example-component": HTMLExampleComponentElement;
         "jplants-button": HTMLJplantsButtonElement;
         "jplants-header": HTMLJplantsHeaderElement;
         "jplants-menubar": HTMLJplantsMenubarElement;
+        "jplants-toast": HTMLJplantsToastElement;
     }
 }
 declare namespace LocalJSX {
@@ -74,14 +73,6 @@ declare namespace LocalJSX {
         "exampleProp"?: string;
         "onExampleEvent"?: (event: CustomEvent<string>) => void;
     }
-    interface JplantsToast {
-        "onShow"?: (event: CustomEvent<any>) => void;
-        "toastMessage"?: string;
-        "toastTitle"?: string;
-    }
-    interface IntrinsicElements {
-        "example-component": ExampleComponent;
-        "jplants-toast": JplantsToast;}
     interface JplantsButton {
         "buttonColor"?: string;
         "buttonHref"?: string;
@@ -97,11 +88,17 @@ declare namespace LocalJSX {
         "navItemsLinks"?: string;
         "onOnShow"?: (event: CustomEvent<any>) => void;
     }
+    interface JplantsToast {
+        "onShow"?: (event: CustomEvent<any>) => void;
+        "toastMessage"?: string;
+        "toastTitle"?: string;
+    }
     interface IntrinsicElements {
         "example-component": ExampleComponent;
         "jplants-button": JplantsButton;
         "jplants-header": JplantsHeader;
         "jplants-menubar": JplantsMenubar;
+        "jplants-toast": JplantsToast;
     }
 }
 export { LocalJSX as JSX };
@@ -109,10 +106,10 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "example-component": LocalJSX.ExampleComponent & JSXBase.HTMLAttributes<HTMLExampleComponentElement>;
-            "jplants-toast": LocalJSX.JplantsToast & JSXBase.HTMLAttributes<HTMLJplantsToastElement>;
             "jplants-button": LocalJSX.JplantsButton & JSXBase.HTMLAttributes<HTMLJplantsButtonElement>;
             "jplants-header": LocalJSX.JplantsHeader & JSXBase.HTMLAttributes<HTMLJplantsHeaderElement>;
             "jplants-menubar": LocalJSX.JplantsMenubar & JSXBase.HTMLAttributes<HTMLJplantsMenubarElement>;
+            "jplants-toast": LocalJSX.JplantsToast & JSXBase.HTMLAttributes<HTMLJplantsToastElement>;
         }
     }
 }
