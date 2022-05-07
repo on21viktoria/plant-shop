@@ -6,6 +6,11 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface CardComponent {
+        "image": string;
+        "name": string;
+        "price": string;
+    }
     interface ExampleComponent {
         "exampleProp": string;
         "exampleToUpperCase": () => Promise<void>;
@@ -46,6 +51,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLCardComponentElement extends Components.CardComponent, HTMLStencilElement {
+    }
+    var HTMLCardComponentElement: {
+        prototype: HTMLCardComponentElement;
+        new (): HTMLCardComponentElement;
+    };
     interface HTMLExampleComponentElement extends Components.ExampleComponent, HTMLStencilElement {
     }
     var HTMLExampleComponentElement: {
@@ -95,6 +106,7 @@ declare global {
         new (): HTMLSlServiceCardElement;
     };
     interface HTMLElementTagNameMap {
+        "card-component": HTMLCardComponentElement;
         "example-component": HTMLExampleComponentElement;
         "my-component": HTMLMyComponentElement;
         "sl-flip-card": HTMLSlFlipCardElement;
@@ -106,6 +118,11 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface CardComponent {
+        "image"?: string;
+        "name"?: string;
+        "price"?: string;
+    }
     interface ExampleComponent {
         "exampleProp"?: string;
         "onExampleEvent"?: (event: CustomEvent<string>) => void;
@@ -145,6 +162,7 @@ declare namespace LocalJSX {
         "slLink"?: string;
     }
     interface IntrinsicElements {
+        "card-component": CardComponent;
         "example-component": ExampleComponent;
         "my-component": MyComponent;
         "sl-flip-card": SlFlipCard;
@@ -159,6 +177,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "card-component": LocalJSX.CardComponent & JSXBase.HTMLAttributes<HTMLCardComponentElement>;
             "example-component": LocalJSX.ExampleComponent & JSXBase.HTMLAttributes<HTMLExampleComponentElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "sl-flip-card": LocalJSX.SlFlipCard & JSXBase.HTMLAttributes<HTMLSlFlipCardElement>;
