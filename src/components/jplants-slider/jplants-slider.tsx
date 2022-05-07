@@ -71,7 +71,9 @@ export class JplantsSlider {
             &#10095;
           </a>
           <div class="ul">
-            <slot></slot>
+            <slot name='slider-one'></slot>
+            <slot name='slider-two'></slot>
+            <slot name='slider-three'></slot>
           </div>
           <div class="dot-container">
             <span class="dot"></span>
