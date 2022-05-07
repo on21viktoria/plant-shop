@@ -13,40 +13,6 @@ export namespace Components {
     interface JplantsMenubar {
         "navItemsLinks": string;
     }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
-    }
-    interface SlFlipCard {
-    }
-    interface SlFooter {
-        "slDarkMode": boolean;
-        "slDatenschutz": string;
-        "slImpressum": string;
-    }
-    interface SlHeader {
-        "slDarkMode": boolean;
-    }
-    interface SlHeroSection {
-        "slHeroHeadline": string;
-    }
-    interface SlImgGallery {
-    }
-    interface SlServiceCard {
-        "slDarkMode": boolean;
-        "slImgSrc": string;
-        "slLink": string;
-    }
 }
 declare global {
     interface HTMLExampleComponentElement extends Components.ExampleComponent, HTMLStencilElement {
@@ -61,58 +27,9 @@ declare global {
         prototype: HTMLJplantsMenubarElement;
         new (): HTMLJplantsMenubarElement;
     };
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
-    }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
-    };
-    interface HTMLSlFlipCardElement extends Components.SlFlipCard, HTMLStencilElement {
-    }
-    var HTMLSlFlipCardElement: {
-        prototype: HTMLSlFlipCardElement;
-        new (): HTMLSlFlipCardElement;
-    };
-    interface HTMLSlFooterElement extends Components.SlFooter, HTMLStencilElement {
-    }
-    var HTMLSlFooterElement: {
-        prototype: HTMLSlFooterElement;
-        new (): HTMLSlFooterElement;
-    };
-    interface HTMLSlHeaderElement extends Components.SlHeader, HTMLStencilElement {
-    }
-    var HTMLSlHeaderElement: {
-        prototype: HTMLSlHeaderElement;
-        new (): HTMLSlHeaderElement;
-    };
-    interface HTMLSlHeroSectionElement extends Components.SlHeroSection, HTMLStencilElement {
-    }
-    var HTMLSlHeroSectionElement: {
-        prototype: HTMLSlHeroSectionElement;
-        new (): HTMLSlHeroSectionElement;
-    };
-    interface HTMLSlImgGalleryElement extends Components.SlImgGallery, HTMLStencilElement {
-    }
-    var HTMLSlImgGalleryElement: {
-        prototype: HTMLSlImgGalleryElement;
-        new (): HTMLSlImgGalleryElement;
-    };
-    interface HTMLSlServiceCardElement extends Components.SlServiceCard, HTMLStencilElement {
-    }
-    var HTMLSlServiceCardElement: {
-        prototype: HTMLSlServiceCardElement;
-        new (): HTMLSlServiceCardElement;
-    };
     interface HTMLElementTagNameMap {
         "example-component": HTMLExampleComponentElement;
         "jplants-menubar": HTMLJplantsMenubarElement;
-        "my-component": HTMLMyComponentElement;
-        "sl-flip-card": HTMLSlFlipCardElement;
-        "sl-footer": HTMLSlFooterElement;
-        "sl-header": HTMLSlHeaderElement;
-        "sl-hero-section": HTMLSlHeroSectionElement;
-        "sl-img-gallery": HTMLSlImgGalleryElement;
-        "sl-service-card": HTMLSlServiceCardElement;
     }
 }
 declare namespace LocalJSX {
@@ -124,50 +41,9 @@ declare namespace LocalJSX {
         "navItemsLinks"?: string;
         "onOnShow"?: (event: CustomEvent<any>) => void;
     }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
-    }
-    interface SlFlipCard {
-    }
-    interface SlFooter {
-        "slDarkMode"?: boolean;
-        "slDatenschutz"?: string;
-        "slImpressum"?: string;
-    }
-    interface SlHeader {
-        "slDarkMode"?: boolean;
-    }
-    interface SlHeroSection {
-        "slHeroHeadline"?: string;
-    }
-    interface SlImgGallery {
-    }
-    interface SlServiceCard {
-        "slDarkMode"?: boolean;
-        "slImgSrc"?: string;
-        "slLink"?: string;
-    }
     interface IntrinsicElements {
         "example-component": ExampleComponent;
         "jplants-menubar": JplantsMenubar;
-        "my-component": MyComponent;
-        "sl-flip-card": SlFlipCard;
-        "sl-footer": SlFooter;
-        "sl-header": SlHeader;
-        "sl-hero-section": SlHeroSection;
-        "sl-img-gallery": SlImgGallery;
-        "sl-service-card": SlServiceCard;
     }
 }
 export { LocalJSX as JSX };
@@ -176,13 +52,6 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "example-component": LocalJSX.ExampleComponent & JSXBase.HTMLAttributes<HTMLExampleComponentElement>;
             "jplants-menubar": LocalJSX.JplantsMenubar & JSXBase.HTMLAttributes<HTMLJplantsMenubarElement>;
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
-            "sl-flip-card": LocalJSX.SlFlipCard & JSXBase.HTMLAttributes<HTMLSlFlipCardElement>;
-            "sl-footer": LocalJSX.SlFooter & JSXBase.HTMLAttributes<HTMLSlFooterElement>;
-            "sl-header": LocalJSX.SlHeader & JSXBase.HTMLAttributes<HTMLSlHeaderElement>;
-            "sl-hero-section": LocalJSX.SlHeroSection & JSXBase.HTMLAttributes<HTMLSlHeroSectionElement>;
-            "sl-img-gallery": LocalJSX.SlImgGallery & JSXBase.HTMLAttributes<HTMLSlImgGalleryElement>;
-            "sl-service-card": LocalJSX.SlServiceCard & JSXBase.HTMLAttributes<HTMLSlServiceCardElement>;
         }
     }
 }
