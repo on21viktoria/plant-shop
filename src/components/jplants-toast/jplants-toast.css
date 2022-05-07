@@ -1,5 +1,5 @@
 :host {
-  display: flex;
+  display: block;
 }
 
 * {
@@ -15,10 +15,14 @@ p {
   font-size: 15px;
 }
 
-.toast {
-  width: fit-content;
-  height: fit-content;
-  display: inline;
-  padding: 10px 20px 10px 20px;
-  background-color: #EDF2ED;
+.toast-show {
+  display: inline-block;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 10px 20px 10px 20px !important;
+  background-color: #EDF2ED !important;
+}
+
+.toast-hide {
+  display: none;
 }

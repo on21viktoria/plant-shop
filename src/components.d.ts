@@ -39,6 +39,7 @@ declare namespace LocalJSX {
         "onExampleEvent"?: (event: CustomEvent<string>) => void;
     }
     interface JplantsToast {
+        "onShow"?: (event: CustomEvent<any>) => void;
         "toastMessage"?: string;
         "toastTitle"?: string;
     }
