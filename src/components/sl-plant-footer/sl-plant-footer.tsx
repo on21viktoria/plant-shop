@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop, State, Watch } from '@stencil/core';
+import { Component, Host, h, Prop, State, Watch, getAssetPath } from '@stencil/core';
 
 @Component({
   tag: 'sl-plant-footer',
@@ -9,7 +9,7 @@ import { Component, Host, h, Prop, State, Watch } from '@stencil/core';
 export class SlPlantFooter {
 
   @Prop() footerLinksJson: string;
-  @Prop() logo="logo_jPLANTS.png";
+  @Prop() logo = "jplants-logo.png";
   
   @Watch('footerLinksJson')
   handleFooterLinksJasonChanged(){
@@ -27,12 +27,12 @@ export class SlPlantFooter {
   }
 
   render() {
-    /*const imageSrc = getAssetPath(`/dist/stencil-starter-on/dist/components/assets/${this.logo}`);*/
+    const imageSrc = getAssetPath(`/dist/stencil-starter-on/dist/components/assets/${this.logo}`);
     return (
       <Host>
         <footer>
           <ul class ="footer_links">
-          <img src="src/logo_jPLANTS.png"/>
+          <img src={imageSrc}/>
             {this.footerlinks.map(footerlink=> (
               <li>
               <a href={footerlink.href3}>{footerlink.zeile1}</a>
