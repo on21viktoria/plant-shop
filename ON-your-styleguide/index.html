@@ -1,47 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
     <script src="/dist/stencil-starter-on/stencil-starter-on.esm.js" type="module"></script>
     <link rel="stylesheet" href="/dist/stencil-starter-on/stencil-starter-on.css" />
-    <title>your design guide</title>
+    <!-- Bootstrap Import -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <title>Josef's Pflanzenshop</title>
     <script type="text/javascript" src="/ON-your-styleguide/script.js" defer></script>
+    <link rel="stylesheet" href="/ON-your-styleguide/style.css" />
 </head>
 
 <body>
-    <div class="container">
-        <sl-header>
-            <div slot="sl-header-links">
-                <a href="#">zum Blog</a>
-                <a href="#">zum Shop</a>
-                <a href="https://www.slezak-it.de/impressum">Impressum</a>
-            </div>
-        </sl-header>
-        <div>
-            <card-component name="Aloe Vera" price="7,99" image="https://plantaddiction.de/media/image/b1/5d/23/aloe-vera-t11L6GAmLWcLe7fe_1920x1920.jpg" tags="Beginner,Anfänger"></card-component>
-            <card-component name="Grünlilie" price="4,99" image="https://plantaddiction.de/media/image/4e/a5/1c/chlorophytum-comosum-ocean-zimmerpflanze-t15_1920x1920.jpg" tags="Beginner,Anfänger"></card-component>
-            <card-component name="Efeu" price="5,99" image="https://plantaddiction.de/media/image/98/55/9e/epipremnum-aureum-zimmerpflanze-t12_1920x1920.jpg" tags="Beginner,Anfänger"></card-component>
+    <jplants-header
+    nav-links-json='[{"iconClass":"bi bi-question-circle","name":"Hilfe","href":"#"},{"iconClass":"bi bi-cart","name":"Warenkorb","href":"#"},{"iconClass":"bi bi-person","name":"Anmelden","href":"#"}]'>
+    </jplants-header>
+    <jplants-button button-name="Mehr erfahren" button-href="#" button-color="default"></jplants-button>
+<div class="container">
+    <sl-header>
+        <div slot="sl-header-links">
+            <a href="#">zum Blog</a>
+            <a href="#">zum Shop</a>
+            <a href="https://www.slezak-it.de/impressum">Impressum</a>
         </div>
-
-        <div class="container">
-            <sl-img-gallery> Unsere Impressionen </sl-img-gallery>
-
-        </div>
-        <sl-footer sl-dark-mode>
-            <div slot="sl-column1">
-                <h3>visit us!</h3>
-                <p>66666 Beispielstadt</p>
-            </div>
-            <div slot="sl-column2">
-                <h3>Kontakt!</h3>
-                <p>Tel. 123456</p>
-            </div>
-        </sl-footer>
+    </sl-header>
+    <div>
+        <card-component name="Aloe Vera" price="7,99" image="https://plantaddiction.de/media/image/b1/5d/23/aloe-vera-t11L6GAmLWcLe7fe_1920x1920.jpg" tags="Beginner,Anfänger"></card-component>
+        <card-component name="Grünlilie" price="4,99" image="https://plantaddiction.de/media/image/4e/a5/1c/chlorophytum-comosum-ocean-zimmerpflanze-t15_1920x1920.jpg" tags="Beginner,Anfänger"></card-component>
+        <card-component name="Efeu" price="5,99" image="https://plantaddiction.de/media/image/98/55/9e/epipremnum-aureum-zimmerpflanze-t12_1920x1920.jpg" tags="Beginner,Anfänger"></card-component>
+    </div>
+    <div class="artikelcontainer">
+        <jplant-article article-image="https://plantaddiction.de/media/image/14/af/12/Blogeintrag_Zimmerpflanzen_Umtopfen12_700x700.jpg" article-title="Zimmerpflanzen Umtopfen" article-text="Um auch wirklich der beste Freund oder die beste Freundin deiner Zimmerpflanze zu werden, musst du sie regelmäßig umtopfen – nur so können unsere grünen Lieblinge munter weiterwachsen. Damit dein Pflanzen-Buddy beim Umtopfen nicht beerdigt wird oder gar zwecks Nährstoffmangel verhungert, bekommst du hier eine kleine Anleitung und dann heißt es – ran ans Umtopfen!"></jplant-article>
+        <jplant-article article-image="https://plantaddiction.de/media/image/9d/22/12/zimmerpflanzen-sessel_500x500.jpg" article-title="Zimmerpflanzen Düngen" article-text="Deine Zimmerpflanze lässt seit ein paar Tagen den Kopf ganz schön hängen und du erkennst deine Happy-Plant nicht mehr wieder? Daran könnte ein Nährstoffmangel schuld sein! Schön, dass du bei uns gelandet bist! Hier findest du alles rund ums Thema Düngen. Bevor dein Pflanzen-Buddy noch verhungert oder gar überfüttert wird, gibt es nun einen planty Speiseplan."></jplant-article>
+        <jplant-article article-image="https://plantaddiction.de/media/image/dd/92/d2/Mood-SHot-classic-chic_1920x1080_700x700.jpg" article-title="Zimmerpflanzen Gießen" article-text="Deine Pflanzen gießt du nach dem Motto: Mal so, mal so? Das kann für deine grünen Lieblinge leider ganz schnell tödlich enden! Lies weiter, damit deine Pflanze bei dir ein langes glückliches Leben führen kann."></jplant-article>
+        <jplant-article article-image="https://plantaddiction.de/media/image/74/06/45/2022_04_22_Inspiration-Melinda-am-lesen_1920x1080_700x700.jpg" article-title="Zimmerpflanzen schneiden" article-text="Deine freche Monstera wächst dir mal wieder über den Kopf? Dann ist Zeit für eine neue Frisur! Keine Sorge - für den Rückschnitt benötigst du nicht gleich den Meisterbrief als Stylist! Du musst aber wissen, was du beachten solltest, damit dein Pflanzen-Buddy keinen Bad Hair Day einführen muss und du deine Finger behältst."></jplant-article>
     </div>
 </body>
-
 </html>
