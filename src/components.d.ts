@@ -16,6 +16,10 @@ export namespace Components {
         "buttonIconClass": string;
         "buttonName": string;
     }
+    interface JplantsFooter {
+        "footerLinksJson": string;
+        "logo": string;
+    }
     interface JplantsHeader {
         "logo": string;
         "logoHref": string;
@@ -23,10 +27,6 @@ export namespace Components {
     }
     interface JplantsMenubar {
         "navItemsLinks": string;
-    }
-    interface SlPlantFooter {
-        "footerLinksJson": string;
-        "logo": string;
     }
 }
 declare global {
@@ -42,6 +42,12 @@ declare global {
         prototype: HTMLJplantsButtonElement;
         new (): HTMLJplantsButtonElement;
     };
+    interface HTMLJplantsFooterElement extends Components.JplantsFooter, HTMLStencilElement {
+    }
+    var HTMLJplantsFooterElement: {
+        prototype: HTMLJplantsFooterElement;
+        new (): HTMLJplantsFooterElement;
+    };
     interface HTMLJplantsHeaderElement extends Components.JplantsHeader, HTMLStencilElement {
     }
     var HTMLJplantsHeaderElement: {
@@ -54,18 +60,12 @@ declare global {
         prototype: HTMLJplantsMenubarElement;
         new (): HTMLJplantsMenubarElement;
     };
-    interface HTMLSlPlantFooterElement extends Components.SlPlantFooter, HTMLStencilElement {
-    }
-    var HTMLSlPlantFooterElement: {
-        prototype: HTMLSlPlantFooterElement;
-        new (): HTMLSlPlantFooterElement;
-    };
     interface HTMLElementTagNameMap {
         "example-component": HTMLExampleComponentElement;
         "jplants-button": HTMLJplantsButtonElement;
+        "jplants-footer": HTMLJplantsFooterElement;
         "jplants-header": HTMLJplantsHeaderElement;
         "jplants-menubar": HTMLJplantsMenubarElement;
-        "sl-plant-footer": HTMLSlPlantFooterElement;
     }
 }
 declare namespace LocalJSX {
@@ -79,6 +79,10 @@ declare namespace LocalJSX {
         "buttonIconClass"?: string;
         "buttonName"?: string;
     }
+    interface JplantsFooter {
+        "footerLinksJson"?: string;
+        "logo"?: string;
+    }
     interface JplantsHeader {
         "logo"?: string;
         "logoHref"?: string;
@@ -88,16 +92,12 @@ declare namespace LocalJSX {
         "navItemsLinks"?: string;
         "onOnShow"?: (event: CustomEvent<any>) => void;
     }
-    interface SlPlantFooter {
-        "footerLinksJson"?: string;
-        "logo"?: string;
-    }
     interface IntrinsicElements {
         "example-component": ExampleComponent;
         "jplants-button": JplantsButton;
+        "jplants-footer": JplantsFooter;
         "jplants-header": JplantsHeader;
         "jplants-menubar": JplantsMenubar;
-        "sl-plant-footer": SlPlantFooter;
     }
 }
 export { LocalJSX as JSX };
@@ -106,9 +106,9 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "example-component": LocalJSX.ExampleComponent & JSXBase.HTMLAttributes<HTMLExampleComponentElement>;
             "jplants-button": LocalJSX.JplantsButton & JSXBase.HTMLAttributes<HTMLJplantsButtonElement>;
+            "jplants-footer": LocalJSX.JplantsFooter & JSXBase.HTMLAttributes<HTMLJplantsFooterElement>;
             "jplants-header": LocalJSX.JplantsHeader & JSXBase.HTMLAttributes<HTMLJplantsHeaderElement>;
             "jplants-menubar": LocalJSX.JplantsMenubar & JSXBase.HTMLAttributes<HTMLJplantsMenubarElement>;
-            "sl-plant-footer": LocalJSX.SlPlantFooter & JSXBase.HTMLAttributes<HTMLSlPlantFooterElement>;
         }
     }
 }

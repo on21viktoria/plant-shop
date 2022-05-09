@@ -1,8 +1,8 @@
 import { Component, Host, h, Prop, State, Watch, getAssetPath } from '@stencil/core';
 
 @Component({
-  tag: 'sl-plant-footer',
-  styleUrl: 'sl-plant-footer.css',
+  tag: 'jplants-footer',
+  styleUrl: 'jplants-footer.css',
   shadow: true,
   assetsDirs: ['assets']
 })
