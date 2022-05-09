@@ -6,10 +6,6 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface ExampleComponent {
-        "exampleProp": string;
-        "exampleToUpperCase": () => Promise<void>;
-    }
     interface JplantArticle {
         "articleImage": string;
         "articleText": string;
@@ -21,6 +17,12 @@ export namespace Components {
         "buttonIconClass": string;
         "buttonName": string;
     }
+    interface JplantsCustomergallery {
+    }
+    interface JplantsFooter {
+        "footerLinksJson": string;
+        "logo": string;
+    }
     interface JplantsHeader {
         "logo": string;
         "logoHref": string;
@@ -31,15 +33,17 @@ export namespace Components {
     }
     interface JplantsRatingStars {
         "filledStars": number;
+    interface JplantsSearchbar {
+        "searchBarName": string;
+    }
+    interface JplantsToast {
+        "toastButtonTitle": string;
+        "toastMessage": string;
+        "toastPosition": string;
+        "toastTitle": string;
     }
 }
 declare global {
-    interface HTMLExampleComponentElement extends Components.ExampleComponent, HTMLStencilElement {
-    }
-    var HTMLExampleComponentElement: {
-        prototype: HTMLExampleComponentElement;
-        new (): HTMLExampleComponentElement;
-    };
     interface HTMLJplantArticleElement extends Components.JplantArticle, HTMLStencilElement {
     }
     var HTMLJplantArticleElement: {
@@ -51,6 +55,18 @@ declare global {
     var HTMLJplantsButtonElement: {
         prototype: HTMLJplantsButtonElement;
         new (): HTMLJplantsButtonElement;
+    };
+    interface HTMLJplantsCustomergalleryElement extends Components.JplantsCustomergallery, HTMLStencilElement {
+    }
+    var HTMLJplantsCustomergalleryElement: {
+        prototype: HTMLJplantsCustomergalleryElement;
+        new (): HTMLJplantsCustomergalleryElement;
+    };
+    interface HTMLJplantsFooterElement extends Components.JplantsFooter, HTMLStencilElement {
+    }
+    var HTMLJplantsFooterElement: {
+        prototype: HTMLJplantsFooterElement;
+        new (): HTMLJplantsFooterElement;
     };
     interface HTMLJplantsHeaderElement extends Components.JplantsHeader, HTMLStencilElement {
     }
@@ -69,21 +85,31 @@ declare global {
     var HTMLJplantsRatingStarsElement: {
         prototype: HTMLJplantsRatingStarsElement;
         new (): HTMLJplantsRatingStarsElement;
+    interface HTMLJplantsSearchbarElement extends Components.JplantsSearchbar, HTMLStencilElement {
+    }
+    var HTMLJplantsSearchbarElement: {
+        prototype: HTMLJplantsSearchbarElement;
+        new (): HTMLJplantsSearchbarElement;
+    };
+    interface HTMLJplantsToastElement extends Components.JplantsToast, HTMLStencilElement {
+    }
+    var HTMLJplantsToastElement: {
+        prototype: HTMLJplantsToastElement;
+        new (): HTMLJplantsToastElement;
     };
     interface HTMLElementTagNameMap {
-        "example-component": HTMLExampleComponentElement;
         "jplant-article": HTMLJplantArticleElement;
         "jplants-button": HTMLJplantsButtonElement;
+        "jplants-customergallery": HTMLJplantsCustomergalleryElement;
+        "jplants-footer": HTMLJplantsFooterElement;
         "jplants-header": HTMLJplantsHeaderElement;
         "jplants-menubar": HTMLJplantsMenubarElement;
         "jplants-rating-stars": HTMLJplantsRatingStarsElement;
+        "jplants-searchbar": HTMLJplantsSearchbarElement;
+        "jplants-toast": HTMLJplantsToastElement;
     }
 }
 declare namespace LocalJSX {
-    interface ExampleComponent {
-        "exampleProp"?: string;
-        "onExampleEvent"?: (event: CustomEvent<string>) => void;
-    }
     interface JplantArticle {
         "articleImage"?: string;
         "articleText"?: string;
@@ -94,6 +120,12 @@ declare namespace LocalJSX {
         "buttonHref"?: string;
         "buttonIconClass"?: string;
         "buttonName"?: string;
+    }
+    interface JplantsCustomergallery {
+    }
+    interface JplantsFooter {
+        "footerLinksJson"?: string;
+        "logo"?: string;
     }
     interface JplantsHeader {
         "logo"?: string;
@@ -106,26 +138,41 @@ declare namespace LocalJSX {
     }
     interface JplantsRatingStars {
         "filledStars"?: number;
+    interface JplantsSearchbar {
+        "searchBarName"?: string;
+    }
+    interface JplantsToast {
+        "onShow"?: (event: CustomEvent<any>) => void;
+        "toastButtonTitle"?: string;
+        "toastMessage"?: string;
+        "toastPosition"?: string;
+        "toastTitle"?: string;
     }
     interface IntrinsicElements {
-        "example-component": ExampleComponent;
         "jplant-article": JplantArticle;
         "jplants-button": JplantsButton;
+        "jplants-customergallery": JplantsCustomergallery;
+        "jplants-footer": JplantsFooter;
         "jplants-header": JplantsHeader;
         "jplants-menubar": JplantsMenubar;
         "jplants-rating-stars": JplantsRatingStars;
+        "jplants-searchbar": JplantsSearchbar;
+        "jplants-toast": JplantsToast;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "example-component": LocalJSX.ExampleComponent & JSXBase.HTMLAttributes<HTMLExampleComponentElement>;
             "jplant-article": LocalJSX.JplantArticle & JSXBase.HTMLAttributes<HTMLJplantArticleElement>;
             "jplants-button": LocalJSX.JplantsButton & JSXBase.HTMLAttributes<HTMLJplantsButtonElement>;
+            "jplants-customergallery": LocalJSX.JplantsCustomergallery & JSXBase.HTMLAttributes<HTMLJplantsCustomergalleryElement>;
+            "jplants-footer": LocalJSX.JplantsFooter & JSXBase.HTMLAttributes<HTMLJplantsFooterElement>;
             "jplants-header": LocalJSX.JplantsHeader & JSXBase.HTMLAttributes<HTMLJplantsHeaderElement>;
             "jplants-menubar": LocalJSX.JplantsMenubar & JSXBase.HTMLAttributes<HTMLJplantsMenubarElement>;
             "jplants-rating-stars": LocalJSX.JplantsRatingStars & JSXBase.HTMLAttributes<HTMLJplantsRatingStarsElement>;
+            "jplants-searchbar": LocalJSX.JplantsSearchbar & JSXBase.HTMLAttributes<HTMLJplantsSearchbarElement>;
+            "jplants-toast": LocalJSX.JplantsToast & JSXBase.HTMLAttributes<HTMLJplantsToastElement>;
         }
     }
 }
