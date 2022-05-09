@@ -29,6 +29,10 @@ export namespace Components {
     interface JplantsMenubar {
         "navItemsLinks": string;
     }
+    interface JplantsRatingStars {
+        "starArray": string[];
+        "starNumber": number;
+    }
 }
 declare global {
     interface HTMLExampleComponentElement extends Components.ExampleComponent, HTMLStencilElement {
@@ -61,12 +65,19 @@ declare global {
         prototype: HTMLJplantsMenubarElement;
         new (): HTMLJplantsMenubarElement;
     };
+    interface HTMLJplantsRatingStarsElement extends Components.JplantsRatingStars, HTMLStencilElement {
+    }
+    var HTMLJplantsRatingStarsElement: {
+        prototype: HTMLJplantsRatingStarsElement;
+        new (): HTMLJplantsRatingStarsElement;
+    };
     interface HTMLElementTagNameMap {
         "example-component": HTMLExampleComponentElement;
         "jplant-article": HTMLJplantArticleElement;
         "jplants-button": HTMLJplantsButtonElement;
         "jplants-header": HTMLJplantsHeaderElement;
         "jplants-menubar": HTMLJplantsMenubarElement;
+        "jplants-rating-stars": HTMLJplantsRatingStarsElement;
     }
 }
 declare namespace LocalJSX {
@@ -94,12 +105,18 @@ declare namespace LocalJSX {
         "navItemsLinks"?: string;
         "onOnShow"?: (event: CustomEvent<any>) => void;
     }
+    interface JplantsRatingStars {
+        "onOnShow"?: (event: CustomEvent<any>) => void;
+        "starArray"?: string[];
+        "starNumber"?: number;
+    }
     interface IntrinsicElements {
         "example-component": ExampleComponent;
         "jplant-article": JplantArticle;
         "jplants-button": JplantsButton;
         "jplants-header": JplantsHeader;
         "jplants-menubar": JplantsMenubar;
+        "jplants-rating-stars": JplantsRatingStars;
     }
 }
 export { LocalJSX as JSX };
@@ -111,6 +128,7 @@ declare module "@stencil/core" {
             "jplants-button": LocalJSX.JplantsButton & JSXBase.HTMLAttributes<HTMLJplantsButtonElement>;
             "jplants-header": LocalJSX.JplantsHeader & JSXBase.HTMLAttributes<HTMLJplantsHeaderElement>;
             "jplants-menubar": LocalJSX.JplantsMenubar & JSXBase.HTMLAttributes<HTMLJplantsMenubarElement>;
+            "jplants-rating-stars": LocalJSX.JplantsRatingStars & JSXBase.HTMLAttributes<HTMLJplantsRatingStarsElement>;
         }
     }
 }
