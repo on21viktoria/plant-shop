@@ -33,6 +33,7 @@ export namespace Components {
     }
     interface JplantsRatingStars {
         "filledStars": number;
+    }
     interface JplantsSearchbar {
         "searchBarName": string;
     }
@@ -85,6 +86,7 @@ declare global {
     var HTMLJplantsRatingStarsElement: {
         prototype: HTMLJplantsRatingStarsElement;
         new (): HTMLJplantsRatingStarsElement;
+    };
     interface HTMLJplantsSearchbarElement extends Components.JplantsSearchbar, HTMLStencilElement {
     }
     var HTMLJplantsSearchbarElement: {
@@ -138,6 +140,7 @@ declare namespace LocalJSX {
     }
     interface JplantsRatingStars {
         "filledStars"?: number;
+    }
     interface JplantsSearchbar {
         "searchBarName"?: string;
     }
