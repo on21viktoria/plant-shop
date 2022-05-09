@@ -1,8 +1,8 @@
 import { Component, Host, h, Prop, Listen } from '@stencil/core';
 
 @Component({
-  tag: 'card-component',
-  styleUrl: 'card-component.css',
+  tag: 'jplants-card',
+  styleUrl: 'jplants-card',
   shadow: true,
 })
 export class CardComponent {
@@ -21,7 +21,7 @@ export class CardComponent {
       <Host>
         <div id="container">
           <div class="card">
-            <img src="https://images.unsplash.com/photo-1536323760109-ca8c07450053" alt="Lago di Braies" />
+            <img src={this.image} />
             <div class="card__details">
               <div> {this.getTags().map(tag => {
                 return <span class="tag">{tag}</span>

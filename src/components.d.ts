@@ -16,6 +16,12 @@ export namespace Components {
         "exampleProp": string;
         "exampleToUpperCase": () => Promise<void>;
     }
+    interface JplantsCard {
+        "image": string;
+        "name": string;
+        "price": string;
+        "tags"?: string;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -64,6 +70,12 @@ declare global {
         prototype: HTMLExampleComponentElement;
         new (): HTMLExampleComponentElement;
     };
+    interface HTMLJplantsCardElement extends Components.JplantsCard, HTMLStencilElement {
+    }
+    var HTMLJplantsCardElement: {
+        prototype: HTMLJplantsCardElement;
+        new (): HTMLJplantsCardElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -109,6 +121,7 @@ declare global {
     interface HTMLElementTagNameMap {
         "card-component": HTMLCardComponentElement;
         "example-component": HTMLExampleComponentElement;
+        "jplants-card": HTMLJplantsCardElement;
         "my-component": HTMLMyComponentElement;
         "sl-flip-card": HTMLSlFlipCardElement;
         "sl-footer": HTMLSlFooterElement;
@@ -128,6 +141,12 @@ declare namespace LocalJSX {
     interface ExampleComponent {
         "exampleProp"?: string;
         "onExampleEvent"?: (event: CustomEvent<string>) => void;
+    }
+    interface JplantsCard {
+        "image"?: string;
+        "name"?: string;
+        "price"?: string;
+        "tags"?: string;
     }
     interface MyComponent {
         /**
@@ -166,6 +185,7 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "card-component": CardComponent;
         "example-component": ExampleComponent;
+        "jplants-card": JplantsCard;
         "my-component": MyComponent;
         "sl-flip-card": SlFlipCard;
         "sl-footer": SlFooter;
@@ -181,6 +201,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "card-component": LocalJSX.CardComponent & JSXBase.HTMLAttributes<HTMLCardComponentElement>;
             "example-component": LocalJSX.ExampleComponent & JSXBase.HTMLAttributes<HTMLExampleComponentElement>;
+            "jplants-card": LocalJSX.JplantsCard & JSXBase.HTMLAttributes<HTMLJplantsCardElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "sl-flip-card": LocalJSX.SlFlipCard & JSXBase.HTMLAttributes<HTMLSlFlipCardElement>;
             "sl-footer": LocalJSX.SlFooter & JSXBase.HTMLAttributes<HTMLSlFooterElement>;
