@@ -1,0 +1,31 @@
+:host {
+  display: block;
+}
+
+* {
+  font-family: Montserrat, sans-serif;
+}
+
+.column1 {
+  display:inline-block;
+  width: 40%;
+}
+
+.column2 {
+  display:inline-block;
+  width: 40%;
+}
+
+p {
+  text-align: justify;
+  font-size: 14px;
+  margin: 20px;
+}
+
+h1 {
+  margin: 30px;
+}
+
+.welcomeText {
+  margin: 0px 30px 0px 30px;
+}
