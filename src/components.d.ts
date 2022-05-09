@@ -27,16 +27,14 @@ export namespace Components {
     interface JplantsMenubar {
         "navItemsLinks": string;
     }
-
+    interface JplantsSearchbar {
+        "searchBarName": string;
+    }
     interface JplantsToast {
         "toastButtonTitle": string;
         "toastMessage": string;
         "toastPosition": string;
         "toastTitle": string;
-
-    interface JplantsSearchbar {
-        "searchBarName": string;
-
     }
 }
 declare global {
@@ -70,19 +68,17 @@ declare global {
         prototype: HTMLJplantsMenubarElement;
         new (): HTMLJplantsMenubarElement;
     };
-
-    interface HTMLJplantsToastElement extends Components.JplantsToast, HTMLStencilElement {
-    }
-    var HTMLJplantsToastElement: {
-        prototype: HTMLJplantsToastElement;
-        new (): HTMLJplantsToastElement;
-
     interface HTMLJplantsSearchbarElement extends Components.JplantsSearchbar, HTMLStencilElement {
     }
     var HTMLJplantsSearchbarElement: {
         prototype: HTMLJplantsSearchbarElement;
         new (): HTMLJplantsSearchbarElement;
-
+    };
+    interface HTMLJplantsToastElement extends Components.JplantsToast, HTMLStencilElement {
+    }
+    var HTMLJplantsToastElement: {
+        prototype: HTMLJplantsToastElement;
+        new (): HTMLJplantsToastElement;
     };
     interface HTMLElementTagNameMap {
         "jplant-article": HTMLJplantArticleElement;
@@ -90,8 +86,8 @@ declare global {
         "jplants-customergallery": HTMLJplantsCustomergalleryElement;
         "jplants-header": HTMLJplantsHeaderElement;
         "jplants-menubar": HTMLJplantsMenubarElement;
-        "jplants-toast": HTMLJplantsToastElement;
         "jplants-searchbar": HTMLJplantsSearchbarElement;
+        "jplants-toast": HTMLJplantsToastElement;
     }
 }
 declare namespace LocalJSX {
@@ -117,16 +113,15 @@ declare namespace LocalJSX {
         "navItemsLinks"?: string;
         "onOnShow"?: (event: CustomEvent<any>) => void;
     }
-
+    interface JplantsSearchbar {
+        "searchBarName"?: string;
+    }
     interface JplantsToast {
         "onShow"?: (event: CustomEvent<any>) => void;
         "toastButtonTitle"?: string;
         "toastMessage"?: string;
         "toastPosition"?: string;
         "toastTitle"?: string;
-
-    interface JplantsSearchbar {
-        "searchBarName"?: string;
     }
     interface IntrinsicElements {
         "jplant-article": JplantArticle;
@@ -134,8 +129,8 @@ declare namespace LocalJSX {
         "jplants-customergallery": JplantsCustomergallery;
         "jplants-header": JplantsHeader;
         "jplants-menubar": JplantsMenubar;
-        "jplants-toast": JplantsToast;
         "jplants-searchbar": JplantsSearchbar;
+        "jplants-toast": JplantsToast;
     }
 }
 export { LocalJSX as JSX };
@@ -147,9 +142,8 @@ declare module "@stencil/core" {
             "jplants-customergallery": LocalJSX.JplantsCustomergallery & JSXBase.HTMLAttributes<HTMLJplantsCustomergalleryElement>;
             "jplants-header": LocalJSX.JplantsHeader & JSXBase.HTMLAttributes<HTMLJplantsHeaderElement>;
             "jplants-menubar": LocalJSX.JplantsMenubar & JSXBase.HTMLAttributes<HTMLJplantsMenubarElement>;
-            "jplants-toast": LocalJSX.JplantsToast & JSXBase.HTMLAttributes<HTMLJplantsToastElement>;
             "jplants-searchbar": LocalJSX.JplantsSearchbar & JSXBase.HTMLAttributes<HTMLJplantsSearchbarElement>;
-
+            "jplants-toast": LocalJSX.JplantsToast & JSXBase.HTMLAttributes<HTMLJplantsToastElement>;
         }
     }
 }
