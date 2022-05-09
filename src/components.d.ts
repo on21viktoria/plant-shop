@@ -6,99 +6,32 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface ExampleComponent {
-        "exampleProp": string;
-        "exampleToUpperCase": () => Promise<void>;
-    }
     interface JplantsCustomergallery {
-    }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
-    }
-    interface SlFlipCard {
     }
 }
 declare global {
-    interface HTMLExampleComponentElement extends Components.ExampleComponent, HTMLStencilElement {
-    }
-    var HTMLExampleComponentElement: {
-        prototype: HTMLExampleComponentElement;
-        new (): HTMLExampleComponentElement;
-    };
     interface HTMLJplantsCustomergalleryElement extends Components.JplantsCustomergallery, HTMLStencilElement {
     }
     var HTMLJplantsCustomergalleryElement: {
         prototype: HTMLJplantsCustomergalleryElement;
         new (): HTMLJplantsCustomergalleryElement;
     };
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
-    }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
-    };
-    interface HTMLSlFlipCardElement extends Components.SlFlipCard, HTMLStencilElement {
-    }
-    var HTMLSlFlipCardElement: {
-        prototype: HTMLSlFlipCardElement;
-        new (): HTMLSlFlipCardElement;
-    };
     interface HTMLElementTagNameMap {
-        "example-component": HTMLExampleComponentElement;
         "jplants-customergallery": HTMLJplantsCustomergalleryElement;
-        "my-component": HTMLMyComponentElement;
-        "sl-flip-card": HTMLSlFlipCardElement;
     }
 }
 declare namespace LocalJSX {
-    interface ExampleComponent {
-        "exampleProp"?: string;
-        "onExampleEvent"?: (event: CustomEvent<string>) => void;
-    }
     interface JplantsCustomergallery {
     }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
-    }
-    interface SlFlipCard {
-    }
     interface IntrinsicElements {
-        "example-component": ExampleComponent;
         "jplants-customergallery": JplantsCustomergallery;
-        "my-component": MyComponent;
-        "sl-flip-card": SlFlipCard;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "example-component": LocalJSX.ExampleComponent & JSXBase.HTMLAttributes<HTMLExampleComponentElement>;
             "jplants-customergallery": LocalJSX.JplantsCustomergallery & JSXBase.HTMLAttributes<HTMLJplantsCustomergalleryElement>;
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
-            "sl-flip-card": LocalJSX.SlFlipCard & JSXBase.HTMLAttributes<HTMLSlFlipCardElement>;
         }
     }
 }
