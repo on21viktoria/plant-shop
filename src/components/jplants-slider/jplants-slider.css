@@ -1,100 +1,127 @@
 :host {
   display: block;
 }
-/*
-h1 {
+
+/* h1 {
   font-size: 30px !important;
   text-align: center !important;
   font-family: 'Montserat', sans-serif !important;
   color: #707070 !important;
+  padding-right: 50px;
 } */
 
 .slider-container {
-	position: relative;
-	width: 100%;
-	margin: 20px auto 0px auto;
-	overflow: hidden;
-  border-bottom: 1px solid #BEBEBE;
+  position: relative;
+  width: 100%;
+  margin: 20px auto 0px auto;
+  overflow: hidden;
+  border-bottom: 1px solid #bebebe;
 }
 
 .slides-wrapper {
-  position: relative;
-	display: flex;
-  width: 100%;
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	transition: transform .5s ease-in-out;
+  display: flex;
+  /* width: 100%; */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  transition: transform 0.5s ease-in-out;
 }
 
-::slotted(div) {
-  position: relative;
-  padding: 30px;
-  display: flex;
-	/* flex: 1 0 auto; */
-	width: 100%;
-	margin: auto;
-	/* height: 400px; */
-	background-color: #EDF2ED;
-  flex-direction: row-reverse;
-  justify-content: space-between
+.slide-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  flex-wrap: wrap;
 }
+
+.slide-image {
+  width: calc(40% - 6px);
+  margin: 5px 10px;
+  border: 3px solid white;
+  vertical-align: middle;
+  grid-column: 1/2;
+}
+
+.slide-title {
+  display: block !important;
+  grid-column: 2/3;
+}
+
+::slotted(li) {
+  flex: 1 0 auto;
+  width: calc(100% - 70px);
+  margin: auto;
+  height: 400px;
+  background-color: #edf2ed;
+  padding: 0 35px !important;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+/* ::slotted(div){
+  display: flex;
+  width: 100vw;
+}
+
+::slotted(img) {
+  width: 50%;
+} */
 
 /* ::slotted(:nth-child(even)) {
-	background-color: lightblue;
-	height: 400px;
+    background-color: lightblue;
+    height: 400px;
   width: 100vw;
 } */
 
 .control {
-	position: absolute;
-	z-index: 1;
-	top: calc(50% - 32px);
-	padding: 20px;
-	font-size: 20px;
-	line-height: 20px;
-	opacity: .5;
+  position: absolute;
+  z-index: 1;
+  top: calc(50% - 32px);
+  padding: 20px;
+  font-size: 20px;
+  line-height: 20px;
+  opacity: 0.5;
 }
 
-	.control:hover {
-		opacity: 1;
-		transition: opacity .5s ease-in-out;
-	}
+.control:hover {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
 
-	.control[disabled], [disabled]:hover {
-		opacity: .25;
-	}
+.control[disabled],
+[disabled]:hover {
+  opacity: 0.25;
+}
 
-	.control.forward {
-		right: 0;
-	}
+.control.forward {
+  right: 0;
+}
 
-  .slide-title {
-    margin: 0;
-    font-size: 18px;
-    text-align: center;
-  }
+.slide-title {
+  margin: 0;
+  font-size: 18px;
+  text-align: center;
+}
 
-  .slide-content {
-    margin: 50px auto;
-  }
+.slide-content {
+  margin: 50px auto;
+}
 
-  .dot-container {
-    display: flex;
-    justify-content: center;
-  }
+.dot-container {
+  display: flex;
+  justify-content: center;
+}
 
-  .dot {
-    cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #999999;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-  }
-  .active,
-  .dot:hover {
-    background-color: #111111;
-  }
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #999999;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.active,
+.dot:hover {
+  background-color: #111111;
+}

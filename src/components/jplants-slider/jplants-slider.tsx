@@ -1,5 +1,6 @@
 import { Component, Element, Prop, State, h, Host } from '@stencil/core';
 
+
 @Component({
   tag: 'jplants-slider',
   styleUrl: 'jplants-slider.css',
@@ -9,7 +10,7 @@ export class JplantsSlider {
   @Element() el: HTMLElement;
 
   @Prop() showStatus: boolean;
-  @Prop() numberOfSlides?: number = 1;
+  @Prop() numberOfSlides?: number;
 
   @State() currentSlideNumber: number = 0;
   @State() slotNames: string[] = [];
@@ -24,16 +25,16 @@ export class JplantsSlider {
   };
 
   componentWillLoad() {
-    this.slides = this.el.querySelectorAll('div');
+    this.slides = this.el.querySelectorAll('li');
     this.slidesCount = this.slides.length;
   }
 
   componentDidLoad() {
     this.sliderList = this.el.shadowRoot.querySelector('.slides-wrapper');
     this.slideWidth = (this.slides[0] as HTMLElement).offsetWidth;
-    // for (let type in this.controls) {this.controls[type] = this.el.shadowRoot.querySelector(type)
-    // console.log("componentDidLoad", this.slideWidth, this.controls[type], type)
-    // };
+    for (let type in this.controls) {this.controls[type] = this.el.shadowRoot.querySelector(type)
+  console.log("componentDidLoad", this.slideWidth, this.controls[type], type)
+  };
     this.updateControls();
   }
 
@@ -57,18 +58,22 @@ export class JplantsSlider {
     if (this.controls[type]) this.controls[type].disabled = !enabled;
   }
 
-  setSlotNames() {
-    for (let i = 0; i <= this.numberOfSlides - 1; i++) {
-      this.slotNames.push('slide' + i.toString());
-    }
-    console.log('setSlotNames', this.slotNames);
-  }
+  // setSlotNames(){
+  //   for(let i=0; i<=(this.numberOfSlides-1); i++) {
+  //     this.slotNames.push("slide"+i.toString());
+  //   }
+  //   console.log("setSlotNames",this.slotNames)
+  // }
 
-  getSlotNames(): string[] {
-    const names = this.slotNames;
-    console.log('getSlotNames', names);
-    return names;
-  }
+  // getSlotNames(): string[]{
+  //   const names = this.slotNames;
+  //   console.log("getSlotNames", names)
+  //   return names;
+  // }
+
+  runCallback = (cb) => {
+    return cb();
+    };
 
   render() {
     return (
@@ -87,20 +92,16 @@ export class JplantsSlider {
           <a class="control forward" onClick={this.slide.bind(this, 1)}>
             &#10095;
           </a>
-          <div class="slides-wrapper">
-            {this.setSlotNames()}
-            {this.getSlotNames().map(name => {
-              return (
-                <div>
-                  <slot name={name}></slot>
-                </div>
-              );
-            })}
-          </div>
-          <div class="dot-container">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
+          <ul class="slides-wrapper">
+              <slot name='li-element'><slot name='div-element'></slot></slot>
+          </ul>
+          <div class="dot-container"> {this.runCallback(() => {
+            const row = [];
+            for(let i = 0; i< this.numberOfSlides; i++) {
+              row.push(<span class="dot"></span>);
+              }
+              return row
+              })}
           </div>
         </div>
       </Host>
