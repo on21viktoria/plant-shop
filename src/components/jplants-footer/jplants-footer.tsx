@@ -6,7 +6,7 @@ import { Component, Host, h, Prop, State, Watch, getAssetPath } from '@stencil/c
   shadow: true,
   assetsDirs: ['assets']
 })
-export class SlPlantFooter {
+export class jplantsFooter {
 
   @Prop() footerLinksJson: string;
   @Prop() logo = "jplants-logo.png";
