@@ -89,3 +89,13 @@ p {
   right: 0;
   z-index: 1;
 }
+
+#toast-icon {
+  width: auto;
+  height: 50px;
+  margin-top: 30px;
+}
+
+.toast-body {
+  display: flex;
+}

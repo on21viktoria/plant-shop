@@ -38,6 +38,7 @@ export namespace Components {
         "searchBarName": string;
     }
     interface JplantsToast {
+        "toast": string;
         "toastButtonTitle": string;
         "toastMessage": string;
         "toastPosition": string;
@@ -146,6 +147,7 @@ declare namespace LocalJSX {
     }
     interface JplantsToast {
         "onShow"?: (event: CustomEvent<any>) => void;
+        "toast"?: string;
         "toastButtonTitle"?: string;
         "toastMessage"?: string;
         "toastPosition"?: string;
