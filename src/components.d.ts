@@ -10,6 +10,11 @@ export namespace Components {
         "exampleProp": string;
         "exampleToUpperCase": () => Promise<void>;
     }
+    interface JplantArticle {
+        "articleImage": string;
+        "articleText": string;
+        "articleTitle": string;
+    }
     interface JplantsButton {
         "buttonColor": string;
         "buttonHref": string;
@@ -32,6 +37,12 @@ declare global {
         prototype: HTMLExampleComponentElement;
         new (): HTMLExampleComponentElement;
     };
+    interface HTMLJplantArticleElement extends Components.JplantArticle, HTMLStencilElement {
+    }
+    var HTMLJplantArticleElement: {
+        prototype: HTMLJplantArticleElement;
+        new (): HTMLJplantArticleElement;
+    };
     interface HTMLJplantsButtonElement extends Components.JplantsButton, HTMLStencilElement {
     }
     var HTMLJplantsButtonElement: {
@@ -52,6 +63,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "example-component": HTMLExampleComponentElement;
+        "jplant-article": HTMLJplantArticleElement;
         "jplants-button": HTMLJplantsButtonElement;
         "jplants-header": HTMLJplantsHeaderElement;
         "jplants-menubar": HTMLJplantsMenubarElement;
@@ -61,6 +73,11 @@ declare namespace LocalJSX {
     interface ExampleComponent {
         "exampleProp"?: string;
         "onExampleEvent"?: (event: CustomEvent<string>) => void;
+    }
+    interface JplantArticle {
+        "articleImage"?: string;
+        "articleText"?: string;
+        "articleTitle"?: string;
     }
     interface JplantsButton {
         "buttonColor"?: string;
@@ -79,6 +96,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "example-component": ExampleComponent;
+        "jplant-article": JplantArticle;
         "jplants-button": JplantsButton;
         "jplants-header": JplantsHeader;
         "jplants-menubar": JplantsMenubar;
@@ -89,6 +107,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "example-component": LocalJSX.ExampleComponent & JSXBase.HTMLAttributes<HTMLExampleComponentElement>;
+            "jplant-article": LocalJSX.JplantArticle & JSXBase.HTMLAttributes<HTMLJplantArticleElement>;
             "jplants-button": LocalJSX.JplantsButton & JSXBase.HTMLAttributes<HTMLJplantsButtonElement>;
             "jplants-header": LocalJSX.JplantsHeader & JSXBase.HTMLAttributes<HTMLJplantsHeaderElement>;
             "jplants-menubar": LocalJSX.JplantsMenubar & JSXBase.HTMLAttributes<HTMLJplantsMenubarElement>;
