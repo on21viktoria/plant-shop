@@ -1,0 +1,39 @@
+:host {
+  display: flex;
+  justify-content: end;
+}
+
+* {
+  font-family: Montserrat, sans-serif;
+}
+
+button {
+  background-color: #EDF2ED;
+  border: 0.5px solid #707070;
+  color: #505050;
+  border-radius: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 3px 15px 3px 15px;
+}
+
+input {
+  border: none;
+  width: 300px;
+  margin-right: 10px;
+}
+
+input:focus {
+  outline-color: #EDF2ED;
+}
+
+.searchbar-unit {
+  display: flex;
+ justify-content: flex-end;
+  border: 1px solid #707070;
+  min-width: 400px;
+  height: 30px;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+}

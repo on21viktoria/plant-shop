@@ -29,6 +29,9 @@ export namespace Components {
     interface JplantsMenubar {
         "navItemsLinks": string;
     }
+    interface JplantsSearchbar {
+        "searchBarName": string;
+    }
 }
 declare global {
     interface HTMLExampleComponentElement extends Components.ExampleComponent, HTMLStencilElement {
@@ -61,12 +64,19 @@ declare global {
         prototype: HTMLJplantsMenubarElement;
         new (): HTMLJplantsMenubarElement;
     };
+    interface HTMLJplantsSearchbarElement extends Components.JplantsSearchbar, HTMLStencilElement {
+    }
+    var HTMLJplantsSearchbarElement: {
+        prototype: HTMLJplantsSearchbarElement;
+        new (): HTMLJplantsSearchbarElement;
+    };
     interface HTMLElementTagNameMap {
         "example-component": HTMLExampleComponentElement;
         "jplant-article": HTMLJplantArticleElement;
         "jplants-button": HTMLJplantsButtonElement;
         "jplants-header": HTMLJplantsHeaderElement;
         "jplants-menubar": HTMLJplantsMenubarElement;
+        "jplants-searchbar": HTMLJplantsSearchbarElement;
     }
 }
 declare namespace LocalJSX {
@@ -94,12 +104,16 @@ declare namespace LocalJSX {
         "navItemsLinks"?: string;
         "onOnShow"?: (event: CustomEvent<any>) => void;
     }
+    interface JplantsSearchbar {
+        "searchBarName"?: string;
+    }
     interface IntrinsicElements {
         "example-component": ExampleComponent;
         "jplant-article": JplantArticle;
         "jplants-button": JplantsButton;
         "jplants-header": JplantsHeader;
         "jplants-menubar": JplantsMenubar;
+        "jplants-searchbar": JplantsSearchbar;
     }
 }
 export { LocalJSX as JSX };
@@ -111,6 +125,7 @@ declare module "@stencil/core" {
             "jplants-button": LocalJSX.JplantsButton & JSXBase.HTMLAttributes<HTMLJplantsButtonElement>;
             "jplants-header": LocalJSX.JplantsHeader & JSXBase.HTMLAttributes<HTMLJplantsHeaderElement>;
             "jplants-menubar": LocalJSX.JplantsMenubar & JSXBase.HTMLAttributes<HTMLJplantsMenubarElement>;
+            "jplants-searchbar": LocalJSX.JplantsSearchbar & JSXBase.HTMLAttributes<HTMLJplantsSearchbarElement>;
         }
     }
 }
