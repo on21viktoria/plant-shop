@@ -19,11 +19,13 @@
 
 ### Used by
 
+ - [jplant-article](../jplant-article)
  - [jplants-header](../jplants-header)
 
 ### Graph
 ```mermaid
 graph TD;
+  jplant-article --> jplants-button
   jplants-header --> jplants-button
   style jplants-button fill:#f9f,stroke:#333,stroke-width:4px
 ```

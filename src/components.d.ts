@@ -6,9 +6,10 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface ExampleComponent {
-        "exampleProp": string;
-        "exampleToUpperCase": () => Promise<void>;
+    interface JplantArticle {
+        "articleImage": string;
+        "articleText": string;
+        "articleTitle": string;
     }
     interface JplantsButton {
         "buttonColor": string;
@@ -19,6 +20,7 @@ export namespace Components {
     interface JplantsFooter {
         "footerLinksJson": string;
         "logo": string;
+    interface JplantsCustomergallery {
     }
     interface JplantsHeader {
         "logo": string;
@@ -28,13 +30,22 @@ export namespace Components {
     interface JplantsMenubar {
         "navItemsLinks": string;
     }
+    interface JplantsSearchbar {
+        "searchBarName": string;
+    }
+    interface JplantsToast {
+        "toastButtonTitle": string;
+        "toastMessage": string;
+        "toastPosition": string;
+        "toastTitle": string;
+    }
 }
 declare global {
-    interface HTMLExampleComponentElement extends Components.ExampleComponent, HTMLStencilElement {
+    interface HTMLJplantArticleElement extends Components.JplantArticle, HTMLStencilElement {
     }
-    var HTMLExampleComponentElement: {
-        prototype: HTMLExampleComponentElement;
-        new (): HTMLExampleComponentElement;
+    var HTMLJplantArticleElement: {
+        prototype: HTMLJplantArticleElement;
+        new (): HTMLJplantArticleElement;
     };
     interface HTMLJplantsButtonElement extends Components.JplantsButton, HTMLStencilElement {
     }
@@ -47,6 +58,11 @@ declare global {
     var HTMLJplantsFooterElement: {
         prototype: HTMLJplantsFooterElement;
         new (): HTMLJplantsFooterElement;
+    interface HTMLJplantsCustomergalleryElement extends Components.JplantsCustomergallery, HTMLStencilElement {
+    }
+    var HTMLJplantsCustomergalleryElement: {
+        prototype: HTMLJplantsCustomergalleryElement;
+        new (): HTMLJplantsCustomergalleryElement;
     };
     interface HTMLJplantsHeaderElement extends Components.JplantsHeader, HTMLStencilElement {
     }
@@ -60,18 +76,34 @@ declare global {
         prototype: HTMLJplantsMenubarElement;
         new (): HTMLJplantsMenubarElement;
     };
+    interface HTMLJplantsSearchbarElement extends Components.JplantsSearchbar, HTMLStencilElement {
+    }
+    var HTMLJplantsSearchbarElement: {
+        prototype: HTMLJplantsSearchbarElement;
+        new (): HTMLJplantsSearchbarElement;
+    };
+    interface HTMLJplantsToastElement extends Components.JplantsToast, HTMLStencilElement {
+    }
+    var HTMLJplantsToastElement: {
+        prototype: HTMLJplantsToastElement;
+        new (): HTMLJplantsToastElement;
+    };
     interface HTMLElementTagNameMap {
-        "example-component": HTMLExampleComponentElement;
+        "jplant-article": HTMLJplantArticleElement;
         "jplants-button": HTMLJplantsButtonElement;
         "jplants-footer": HTMLJplantsFooterElement;
+        "jplants-customergallery": HTMLJplantsCustomergalleryElement;
         "jplants-header": HTMLJplantsHeaderElement;
         "jplants-menubar": HTMLJplantsMenubarElement;
+        "jplants-searchbar": HTMLJplantsSearchbarElement;
+        "jplants-toast": HTMLJplantsToastElement;
     }
 }
 declare namespace LocalJSX {
-    interface ExampleComponent {
-        "exampleProp"?: string;
-        "onExampleEvent"?: (event: CustomEvent<string>) => void;
+    interface JplantArticle {
+        "articleImage"?: string;
+        "articleText"?: string;
+        "articleTitle"?: string;
     }
     interface JplantsButton {
         "buttonColor"?: string;
@@ -79,9 +111,11 @@ declare namespace LocalJSX {
         "buttonIconClass"?: string;
         "buttonName"?: string;
     }
+
     interface JplantsFooter {
         "footerLinksJson"?: string;
         "logo"?: string;
+    interface JplantsCustomergallery {
     }
     interface JplantsHeader {
         "logo"?: string;
@@ -92,23 +126,39 @@ declare namespace LocalJSX {
         "navItemsLinks"?: string;
         "onOnShow"?: (event: CustomEvent<any>) => void;
     }
+    interface JplantsSearchbar {
+        "searchBarName"?: string;
+    }
+    interface JplantsToast {
+        "onShow"?: (event: CustomEvent<any>) => void;
+        "toastButtonTitle"?: string;
+        "toastMessage"?: string;
+        "toastPosition"?: string;
+        "toastTitle"?: string;
+    }
     interface IntrinsicElements {
-        "example-component": ExampleComponent;
+        "jplant-article": JplantArticle;
         "jplants-button": JplantsButton;
         "jplants-footer": JplantsFooter;
+        "jplants-customergallery": JplantsCustomergallery;
         "jplants-header": JplantsHeader;
         "jplants-menubar": JplantsMenubar;
+        "jplants-searchbar": JplantsSearchbar;
+        "jplants-toast": JplantsToast;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "example-component": LocalJSX.ExampleComponent & JSXBase.HTMLAttributes<HTMLExampleComponentElement>;
+            "jplant-article": LocalJSX.JplantArticle & JSXBase.HTMLAttributes<HTMLJplantArticleElement>;
             "jplants-button": LocalJSX.JplantsButton & JSXBase.HTMLAttributes<HTMLJplantsButtonElement>;
             "jplants-footer": LocalJSX.JplantsFooter & JSXBase.HTMLAttributes<HTMLJplantsFooterElement>;
+            "jplants-customergallery": LocalJSX.JplantsCustomergallery & JSXBase.HTMLAttributes<HTMLJplantsCustomergalleryElement>;
             "jplants-header": LocalJSX.JplantsHeader & JSXBase.HTMLAttributes<HTMLJplantsHeaderElement>;
             "jplants-menubar": LocalJSX.JplantsMenubar & JSXBase.HTMLAttributes<HTMLJplantsMenubarElement>;
+            "jplants-searchbar": LocalJSX.JplantsSearchbar & JSXBase.HTMLAttributes<HTMLJplantsSearchbarElement>;
+            "jplants-toast": LocalJSX.JplantsToast & JSXBase.HTMLAttributes<HTMLJplantsToastElement>;
         }
     }
 }
