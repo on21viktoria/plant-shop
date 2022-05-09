@@ -1,4 +1,4 @@
-import { Component, Host, h, EventEmitter, State, Event, Prop } from '@stencil/core';
+import { Component, Host, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'jplants-rating-stars',
@@ -7,48 +7,46 @@ import { Component, Host, h, EventEmitter, State, Event, Prop } from '@stencil/c
 })
 export class JplantsRatingStars {
 
-  @Prop() starNumber: number;
-  @Prop() starArray: string[] = ['test'];
+  @Prop() filledStars: string;
+  @Prop() emptyStars: string;
+  @Prop() filledStarArray: string[] = [];
+  @Prop() emptyStarArray: string[] = [];
+  @Prop() filledStarsAsString: string;
+  @Prop() emptyStarsAsString: string;
 
-  @State() fiveStars = false;
-  @State() starClass = "no-stars";
-
-  @Event() onShow: EventEmitter;
-
-  componentWillLoad(currentNumber: number) {
-    currentNumber = this.starNumber
-    for (let i = 0; i < currentNumber; i++) {
-      this.starArray.push('★');
-    } return this.starArray;
+  componentWillLoad() {
+    this.displayFilledStars;
+    this.displayEmptyStars;
   } 
 
+  async displayFilledStars(currentFilled: number) {
+    currentFilled = parseInt(this.filledStars);
+    for (let i = 0; i < currentFilled; i++) {
+      this.filledStarArray.push('★');
+    } this.filledStarsAsString = this.filledStarArray.join('');
+    return this.filledStarsAsString
+  }
+
+ async displayEmptyStars(currentEmpty: number) {
+    currentEmpty = parseInt(this.emptyStars);
+
+    for (let i = 0; i < currentEmpty; i++) {
+      this.emptyStarArray.push('★');
+    } this.emptyStarsAsString = this.emptyStarArray.join('');
+    this.emptyStarsAsString;
+  }
+
   componentDidUpdate(){
-    this.starArray = [];
+    this.filledStarArray = [];
+    this.emptyStarArray = [];
   }
 
-  removeFiveStars() {
-    this.starClass = "no-stars"
-  }
-
-  /* @Watch('starArrayJson')
-  handleNavLinksJsonChanged(){
-  this.convertNavJson();
-}
-
-componentWillLoad(){
-  this.convertNavJson();
-}
-
-convertNavJson(){
-  this.navLinks = JSON.parse(this.navLinksJson);
-}
- */
   render() {
     return (
       <Host>
-        <label class={this.starClass}>★</label>
-        {/* <button type="button" onClick={() => this.addStars(5)}>Click me</button> */}
-        <p>{this.starArray.toString()}</p>
+        <div class="rating-stars">
+        <p id="rating-stars-filled">{this.filledStarsAsString}</p><p id="rating-stars-empty">{this.emptyStarsAsString}</p>
+        </div>
       </Host>
     );
   }

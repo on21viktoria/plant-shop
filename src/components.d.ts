@@ -30,8 +30,12 @@ export namespace Components {
         "navItemsLinks": string;
     }
     interface JplantsRatingStars {
-        "starArray": string[];
-        "starNumber": number;
+        "emptyStarArray": string[];
+        "emptyStars": string;
+        "emptyStarsAsString": string;
+        "filledStarArray": string[];
+        "filledStars": string;
+        "filledStarsAsString": string;
     }
 }
 declare global {
@@ -106,9 +110,12 @@ declare namespace LocalJSX {
         "onOnShow"?: (event: CustomEvent<any>) => void;
     }
     interface JplantsRatingStars {
-        "onOnShow"?: (event: CustomEvent<any>) => void;
-        "starArray"?: string[];
-        "starNumber"?: number;
+        "emptyStarArray"?: string[];
+        "emptyStars"?: string;
+        "emptyStarsAsString"?: string;
+        "filledStarArray"?: string[];
+        "filledStars"?: string;
+        "filledStarsAsString"?: string;
     }
     interface IntrinsicElements {
         "example-component": ExampleComponent;

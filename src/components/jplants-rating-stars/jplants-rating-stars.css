@@ -2,6 +2,19 @@
   display: block;
 }
 
-.no-stars {
-  display: none;
+.rating-stars {
+  display:flex;
+  flex-direction: row-reverse;
+  font-size: 1.5em;
+  justify-content:space-around;
+  text-align:center;
+  width: 5em;
+  }
+
+#rating-stars-filled {
+  color: #468F06 !important;
+}
+
+#rating-stars-empty {
+  color: rgb(211, 208, 208) !important;
 }
