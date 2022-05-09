@@ -3,16 +3,16 @@
 }
 
 .rating-stars {
-  display:flex;
+  display: flex;
   flex-direction: row;
   font-size: 1.5em;
-  justify-content:space-around;
-  text-align:center;
+  justify-content: space-around;
+  text-align: center;
   width: 5em;
-  }
+}
 
 #rating-stars-filled {
-  color: #468F06 !important;
+  color: #468f06 !important;
 }
 
 #rating-stars-empty {
