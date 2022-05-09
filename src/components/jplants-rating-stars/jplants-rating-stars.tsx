@@ -8,26 +8,32 @@ import { Component, Host, h, Prop } from '@stencil/core';
 export class JplantsRatingStars {
 
   @Prop() filledStars: number;
-  @Prop() emptyStars: number;
-  @Prop() filledStarArray: string[] = [];
-  @Prop() emptyStarArray: string[] = [];
-  @Prop() filledStarsAsString: string;
-  @Prop() emptyStarsAsString: string;
+  // @Prop() emptyStars: number;
+  filledStarArray: string[] = [];
+  emptyStarArray: string[] = [];
+  filledStarsAsString: string;
+  emptyStarsAsString: string;
 
-  componentWillLoad(currentFilled: number, currentEmpty: number) {
+  componentWillLoad(currentFilled: number) {
     currentFilled = this.filledStars;
+    
+    if(currentFilled <= 5) {
     for (let i = 0; i < currentFilled; i++) {
       this.filledStarArray.push('★');
     } this.filledStarsAsString = this.filledStarArray.join('');
   
-    currentEmpty = this.emptyStars;
-
-    for (let i = 0; i < currentEmpty; i++) {
+    for (let i = 0; i < (5-currentFilled); i++) {
       this.emptyStarArray.push('★');
     } this.emptyStarsAsString = this.emptyStarArray.join('');
 
     return this.emptyStarsAsString, this.filledStarsAsString;
-  } 
+  } else {
+    for (let i = 0; i < 5; i++) {
+      this.filledStarArray.push('★');
+    } this.filledStarsAsString = this.filledStarArray.join('');
+    console.log('The number of stars exceeded the maximum of 5.')
+} 
+  }
 
   connectedCallback(){
     this.filledStarArray = [];
