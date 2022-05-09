@@ -31,10 +31,10 @@ export namespace Components {
     }
     interface JplantsRatingStars {
         "emptyStarArray": string[];
-        "emptyStars": string;
+        "emptyStars": number;
         "emptyStarsAsString": string;
         "filledStarArray": string[];
-        "filledStars": string;
+        "filledStars": number;
         "filledStarsAsString": string;
     }
 }
@@ -111,10 +111,10 @@ declare namespace LocalJSX {
     }
     interface JplantsRatingStars {
         "emptyStarArray"?: string[];
-        "emptyStars"?: string;
+        "emptyStars"?: number;
         "emptyStarsAsString"?: string;
         "filledStarArray"?: string[];
-        "filledStars"?: string;
+        "filledStars"?: number;
         "filledStarsAsString"?: string;
     }
     interface IntrinsicElements {
