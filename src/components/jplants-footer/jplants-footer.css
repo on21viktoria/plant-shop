@@ -1,5 +1,5 @@
 .footer_links {
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   align-items: center;
