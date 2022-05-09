@@ -31,6 +31,9 @@ export namespace Components {
         "listTitle"?: string;
     }
     interface JplantsListitem {
+        "icon"?: string;
+        "listText": string;
+        "listTitle"?: string;
     }
     interface JplantsMenubar {
         "navItemsLinks": string;
@@ -108,6 +111,9 @@ declare namespace LocalJSX {
         "listTitle"?: string;
     }
     interface JplantsListitem {
+        "icon"?: string;
+        "listText"?: string;
+        "listTitle"?: string;
     }
     interface JplantsMenubar {
         "navItemsLinks"?: string;

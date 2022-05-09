@@ -7,15 +7,15 @@ import { Component, h, Prop, Element } from '@stencil/core';
 })
 export class JplantsListItem {
   @Prop() icon?: string;
-  @Prop() listtitle?: string;
-  @Prop() listtext: string;
+  @Prop() listTitle?: string;
+  @Prop() listText: string;
 
   render() {
     return (
       <div class="container">
         <div class="context">
-          <h4>{this.listtitle}</h4>
-          <p>{this.listtext}</p>
+          <h4>{this.listTitle}</h4>
+          <p>{this.listText}</p>
         </div>
       </div>
     );
