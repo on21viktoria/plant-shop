@@ -28,22 +28,6 @@ export namespace Components {
     }
     interface SlFlipCard {
     }
-    interface SlFooter {
-        "slDarkMode": boolean;
-        "slDatenschutz": string;
-        "slImpressum": string;
-    }
-    interface SlHeader {
-        "slDarkMode": boolean;
-    }
-    interface SlHeroSection {
-        "slHeroHeadline": string;
-    }
-    interface SlServiceCard {
-        "slDarkMode": boolean;
-        "slImgSrc": string;
-        "slLink": string;
-    }
 }
 declare global {
     interface HTMLExampleComponentElement extends Components.ExampleComponent, HTMLStencilElement {
@@ -70,39 +54,11 @@ declare global {
         prototype: HTMLSlFlipCardElement;
         new (): HTMLSlFlipCardElement;
     };
-    interface HTMLSlFooterElement extends Components.SlFooter, HTMLStencilElement {
-    }
-    var HTMLSlFooterElement: {
-        prototype: HTMLSlFooterElement;
-        new (): HTMLSlFooterElement;
-    };
-    interface HTMLSlHeaderElement extends Components.SlHeader, HTMLStencilElement {
-    }
-    var HTMLSlHeaderElement: {
-        prototype: HTMLSlHeaderElement;
-        new (): HTMLSlHeaderElement;
-    };
-    interface HTMLSlHeroSectionElement extends Components.SlHeroSection, HTMLStencilElement {
-    }
-    var HTMLSlHeroSectionElement: {
-        prototype: HTMLSlHeroSectionElement;
-        new (): HTMLSlHeroSectionElement;
-    };
-    interface HTMLSlServiceCardElement extends Components.SlServiceCard, HTMLStencilElement {
-    }
-    var HTMLSlServiceCardElement: {
-        prototype: HTMLSlServiceCardElement;
-        new (): HTMLSlServiceCardElement;
-    };
     interface HTMLElementTagNameMap {
         "example-component": HTMLExampleComponentElement;
         "jplants-customergallery": HTMLJplantsCustomergalleryElement;
         "my-component": HTMLMyComponentElement;
         "sl-flip-card": HTMLSlFlipCardElement;
-        "sl-footer": HTMLSlFooterElement;
-        "sl-header": HTMLSlHeaderElement;
-        "sl-hero-section": HTMLSlHeroSectionElement;
-        "sl-service-card": HTMLSlServiceCardElement;
     }
 }
 declare namespace LocalJSX {
@@ -128,31 +84,11 @@ declare namespace LocalJSX {
     }
     interface SlFlipCard {
     }
-    interface SlFooter {
-        "slDarkMode"?: boolean;
-        "slDatenschutz"?: string;
-        "slImpressum"?: string;
-    }
-    interface SlHeader {
-        "slDarkMode"?: boolean;
-    }
-    interface SlHeroSection {
-        "slHeroHeadline"?: string;
-    }
-    interface SlServiceCard {
-        "slDarkMode"?: boolean;
-        "slImgSrc"?: string;
-        "slLink"?: string;
-    }
     interface IntrinsicElements {
         "example-component": ExampleComponent;
         "jplants-customergallery": JplantsCustomergallery;
         "my-component": MyComponent;
         "sl-flip-card": SlFlipCard;
-        "sl-footer": SlFooter;
-        "sl-header": SlHeader;
-        "sl-hero-section": SlHeroSection;
-        "sl-service-card": SlServiceCard;
     }
 }
 export { LocalJSX as JSX };
@@ -163,10 +99,6 @@ declare module "@stencil/core" {
             "jplants-customergallery": LocalJSX.JplantsCustomergallery & JSXBase.HTMLAttributes<HTMLJplantsCustomergalleryElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "sl-flip-card": LocalJSX.SlFlipCard & JSXBase.HTMLAttributes<HTMLSlFlipCardElement>;
-            "sl-footer": LocalJSX.SlFooter & JSXBase.HTMLAttributes<HTMLSlFooterElement>;
-            "sl-header": LocalJSX.SlHeader & JSXBase.HTMLAttributes<HTMLSlHeaderElement>;
-            "sl-hero-section": LocalJSX.SlHeroSection & JSXBase.HTMLAttributes<HTMLSlHeroSectionElement>;
-            "sl-service-card": LocalJSX.SlServiceCard & JSXBase.HTMLAttributes<HTMLSlServiceCardElement>;
         }
     }
 }
