@@ -6,10 +6,6 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface ExampleComponent {
-        "exampleProp": string;
-        "exampleToUpperCase": () => Promise<void>;
-    }
     interface JplantArticle {
         "articleImage": string;
         "articleText": string;
@@ -26,17 +22,21 @@ export namespace Components {
         "logoHref": string;
         "navLinksJson": string;
     }
+    interface JplantsList {
+        "alignment"?: string;
+        "icon"?: string;
+        "iconPosition"?: string;
+        "listItem": string;
+        "listText": string;
+        "listTitle"?: string;
+    }
+    interface JplantsListitem {
+    }
     interface JplantsMenubar {
         "navItemsLinks": string;
     }
 }
 declare global {
-    interface HTMLExampleComponentElement extends Components.ExampleComponent, HTMLStencilElement {
-    }
-    var HTMLExampleComponentElement: {
-        prototype: HTMLExampleComponentElement;
-        new (): HTMLExampleComponentElement;
-    };
     interface HTMLJplantArticleElement extends Components.JplantArticle, HTMLStencilElement {
     }
     var HTMLJplantArticleElement: {
@@ -55,6 +55,18 @@ declare global {
         prototype: HTMLJplantsHeaderElement;
         new (): HTMLJplantsHeaderElement;
     };
+    interface HTMLJplantsListElement extends Components.JplantsList, HTMLStencilElement {
+    }
+    var HTMLJplantsListElement: {
+        prototype: HTMLJplantsListElement;
+        new (): HTMLJplantsListElement;
+    };
+    interface HTMLJplantsListitemElement extends Components.JplantsListitem, HTMLStencilElement {
+    }
+    var HTMLJplantsListitemElement: {
+        prototype: HTMLJplantsListitemElement;
+        new (): HTMLJplantsListitemElement;
+    };
     interface HTMLJplantsMenubarElement extends Components.JplantsMenubar, HTMLStencilElement {
     }
     var HTMLJplantsMenubarElement: {
@@ -62,18 +74,15 @@ declare global {
         new (): HTMLJplantsMenubarElement;
     };
     interface HTMLElementTagNameMap {
-        "example-component": HTMLExampleComponentElement;
         "jplant-article": HTMLJplantArticleElement;
         "jplants-button": HTMLJplantsButtonElement;
         "jplants-header": HTMLJplantsHeaderElement;
+        "jplants-list": HTMLJplantsListElement;
+        "jplants-listitem": HTMLJplantsListitemElement;
         "jplants-menubar": HTMLJplantsMenubarElement;
     }
 }
 declare namespace LocalJSX {
-    interface ExampleComponent {
-        "exampleProp"?: string;
-        "onExampleEvent"?: (event: CustomEvent<string>) => void;
-    }
     interface JplantArticle {
         "articleImage"?: string;
         "articleText"?: string;
@@ -90,15 +99,26 @@ declare namespace LocalJSX {
         "logoHref"?: string;
         "navLinksJson"?: string;
     }
+    interface JplantsList {
+        "alignment"?: string;
+        "icon"?: string;
+        "iconPosition"?: string;
+        "listItem"?: string;
+        "listText"?: string;
+        "listTitle"?: string;
+    }
+    interface JplantsListitem {
+    }
     interface JplantsMenubar {
         "navItemsLinks"?: string;
         "onOnShow"?: (event: CustomEvent<any>) => void;
     }
     interface IntrinsicElements {
-        "example-component": ExampleComponent;
         "jplant-article": JplantArticle;
         "jplants-button": JplantsButton;
         "jplants-header": JplantsHeader;
+        "jplants-list": JplantsList;
+        "jplants-listitem": JplantsListitem;
         "jplants-menubar": JplantsMenubar;
     }
 }
@@ -106,10 +126,11 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "example-component": LocalJSX.ExampleComponent & JSXBase.HTMLAttributes<HTMLExampleComponentElement>;
             "jplant-article": LocalJSX.JplantArticle & JSXBase.HTMLAttributes<HTMLJplantArticleElement>;
             "jplants-button": LocalJSX.JplantsButton & JSXBase.HTMLAttributes<HTMLJplantsButtonElement>;
             "jplants-header": LocalJSX.JplantsHeader & JSXBase.HTMLAttributes<HTMLJplantsHeaderElement>;
+            "jplants-list": LocalJSX.JplantsList & JSXBase.HTMLAttributes<HTMLJplantsListElement>;
+            "jplants-listitem": LocalJSX.JplantsListitem & JSXBase.HTMLAttributes<HTMLJplantsListitemElement>;
             "jplants-menubar": LocalJSX.JplantsMenubar & JSXBase.HTMLAttributes<HTMLJplantsMenubarElement>;
         }
     }
