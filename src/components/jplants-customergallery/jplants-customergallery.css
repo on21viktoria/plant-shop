@@ -1,0 +1,37 @@
+:host {
+    display: block;
+}
+
+img {
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+    object-position: top center;
+    opacity: 60%;
+}
+
+h3 {
+    text-align: center;
+}
+
+.sl-img-grid {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: 1fr 1fr;
+}
+
+@media(min-width: 600px) {
+    .sl-img-grid {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+.grow {
+    transition: all 0.5s ease;
+}
+
+.grow:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+    opacity: 100%;
+}
