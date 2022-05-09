@@ -24,27 +24,8 @@ export namespace Components {
          */
         "middle": string;
     }
-    interface SlFlipCard {
-    }
-    interface SlFooter {
-        "slDarkMode": boolean;
-        "slDatenschutz": string;
-        "slImpressum": string;
-    }
-    interface SlHeader {
-        "slDarkMode": boolean;
-    }
-    interface SlHeroSection {
-        "slHeroHeadline": string;
-    }
-    interface SlImgGallery {
-    }
     interface SlRatingStars {
-    }
-    interface SlServiceCard {
-        "slDarkMode": boolean;
-        "slImgSrc": string;
-        "slLink": string;
+        "starelement": HTMLParagraphElement;
     }
 }
 declare global {
@@ -60,58 +41,16 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
-    interface HTMLSlFlipCardElement extends Components.SlFlipCard, HTMLStencilElement {
-    }
-    var HTMLSlFlipCardElement: {
-        prototype: HTMLSlFlipCardElement;
-        new (): HTMLSlFlipCardElement;
-    };
-    interface HTMLSlFooterElement extends Components.SlFooter, HTMLStencilElement {
-    }
-    var HTMLSlFooterElement: {
-        prototype: HTMLSlFooterElement;
-        new (): HTMLSlFooterElement;
-    };
-    interface HTMLSlHeaderElement extends Components.SlHeader, HTMLStencilElement {
-    }
-    var HTMLSlHeaderElement: {
-        prototype: HTMLSlHeaderElement;
-        new (): HTMLSlHeaderElement;
-    };
-    interface HTMLSlHeroSectionElement extends Components.SlHeroSection, HTMLStencilElement {
-    }
-    var HTMLSlHeroSectionElement: {
-        prototype: HTMLSlHeroSectionElement;
-        new (): HTMLSlHeroSectionElement;
-    };
-    interface HTMLSlImgGalleryElement extends Components.SlImgGallery, HTMLStencilElement {
-    }
-    var HTMLSlImgGalleryElement: {
-        prototype: HTMLSlImgGalleryElement;
-        new (): HTMLSlImgGalleryElement;
-    };
     interface HTMLSlRatingStarsElement extends Components.SlRatingStars, HTMLStencilElement {
     }
     var HTMLSlRatingStarsElement: {
         prototype: HTMLSlRatingStarsElement;
         new (): HTMLSlRatingStarsElement;
     };
-    interface HTMLSlServiceCardElement extends Components.SlServiceCard, HTMLStencilElement {
-    }
-    var HTMLSlServiceCardElement: {
-        prototype: HTMLSlServiceCardElement;
-        new (): HTMLSlServiceCardElement;
-    };
     interface HTMLElementTagNameMap {
         "example-component": HTMLExampleComponentElement;
         "my-component": HTMLMyComponentElement;
-        "sl-flip-card": HTMLSlFlipCardElement;
-        "sl-footer": HTMLSlFooterElement;
-        "sl-header": HTMLSlHeaderElement;
-        "sl-hero-section": HTMLSlHeroSectionElement;
-        "sl-img-gallery": HTMLSlImgGalleryElement;
         "sl-rating-stars": HTMLSlRatingStarsElement;
-        "sl-service-card": HTMLSlServiceCardElement;
     }
 }
 declare namespace LocalJSX {
@@ -133,38 +72,14 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
-    interface SlFlipCard {
-    }
-    interface SlFooter {
-        "slDarkMode"?: boolean;
-        "slDatenschutz"?: string;
-        "slImpressum"?: string;
-    }
-    interface SlHeader {
-        "slDarkMode"?: boolean;
-    }
-    interface SlHeroSection {
-        "slHeroHeadline"?: string;
-    }
-    interface SlImgGallery {
-    }
     interface SlRatingStars {
-    }
-    interface SlServiceCard {
-        "slDarkMode"?: boolean;
-        "slImgSrc"?: string;
-        "slLink"?: string;
+        "onShow"?: (event: CustomEvent<any>) => void;
+        "starelement"?: HTMLParagraphElement;
     }
     interface IntrinsicElements {
         "example-component": ExampleComponent;
         "my-component": MyComponent;
-        "sl-flip-card": SlFlipCard;
-        "sl-footer": SlFooter;
-        "sl-header": SlHeader;
-        "sl-hero-section": SlHeroSection;
-        "sl-img-gallery": SlImgGallery;
         "sl-rating-stars": SlRatingStars;
-        "sl-service-card": SlServiceCard;
     }
 }
 export { LocalJSX as JSX };
@@ -173,13 +88,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "example-component": LocalJSX.ExampleComponent & JSXBase.HTMLAttributes<HTMLExampleComponentElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
-            "sl-flip-card": LocalJSX.SlFlipCard & JSXBase.HTMLAttributes<HTMLSlFlipCardElement>;
-            "sl-footer": LocalJSX.SlFooter & JSXBase.HTMLAttributes<HTMLSlFooterElement>;
-            "sl-header": LocalJSX.SlHeader & JSXBase.HTMLAttributes<HTMLSlHeaderElement>;
-            "sl-hero-section": LocalJSX.SlHeroSection & JSXBase.HTMLAttributes<HTMLSlHeroSectionElement>;
-            "sl-img-gallery": LocalJSX.SlImgGallery & JSXBase.HTMLAttributes<HTMLSlImgGalleryElement>;
             "sl-rating-stars": LocalJSX.SlRatingStars & JSXBase.HTMLAttributes<HTMLSlRatingStarsElement>;
-            "sl-service-card": LocalJSX.SlServiceCard & JSXBase.HTMLAttributes<HTMLSlServiceCardElement>;
         }
     }
 }
