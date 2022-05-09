@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" /> -->
     <script src="/dist/stencil-starter-on/stencil-starter-on.esm.js" type="module"></script>
     <link rel="stylesheet" href="/dist/stencil-starter-on/stencil-starter-on.css" />
     <title>your design guide</title>
@@ -12,7 +12,23 @@
   </head>
 
   <body>
-    <jplants-slider number-of-slides="5">
+    <h1 style="text-align: center">Hier entsteht eine Slideshow</h1>
+
+    <jplants-slider></jplants-slider>
+
+    <!-- <jplants-slide slide-title="Unsere Beliebtesten Zimmerpflanzen" img-src="../src/components/assets/PlantSlider1.jpg" img-descr="Unsere beliebtesten Zimmerpflanzen">
+      <p slot="slide-text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+      <img slot="further-elements" src="../src/components/assets/PlantSlider1.jpg" style="width: calc((100% /3) - 6px); margin: 3px;">
+      <img slot="further-elements" src="../src/components/assets/PlantSlider1.jpg" style="width: calc((100% /3) - 6px); margin: 3px;">
+      <img slot="further-elements" src="../src/components/assets/PlantSlider1.jpg" style="width: calc((100% /3) - 6px); margin: 3px;">
+      <h2 slot="further-elements">Jetzt im Angebot!</h2>
+    </jplants-slide> -->
+
+    <!-- <jplants-slider number-of-slides="5">
       <li slot="li-element">
         <div slot="div-element" class="slide-container">
           <img src="../src/components/assets/PlantSlider1.jpg" alt="Unsere beliebtesten Zimmerpflanzen" class="slider-image" />
@@ -46,6 +62,6 @@
           </p>
         </div>
       </li>
-    </jplants-slider>
+    </jplants-slider> -->
   </body>
 </html>

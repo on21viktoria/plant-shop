@@ -1,5 +1,4 @@
-import { Component, Element, Prop, State, h, Host } from '@stencil/core';
-
+import { Component, h, Host, Prop, State, Element } from '@stencil/core';
 
 @Component({
   tag: 'jplants-slider',
@@ -7,101 +6,91 @@ import { Component, Element, Prop, State, h, Host } from '@stencil/core';
   shadow: true,
 })
 export class JplantsSlider {
-  @Element() el: HTMLElement;
+  @Element() sliderEl: HTMLElement;
 
-  @Prop() showStatus: boolean;
-  @Prop() numberOfSlides?: number;
+  @Prop() numberOfSlides: number = 0;
 
-  @State() currentSlideNumber: number = 0;
-  @State() slotNames: string[] = [];
+  @State() currentSlide: number = 0;
+  @State() slideAmount: number = this.numberOfSlides;
 
-  private slidesCount: number = 0;
-  private slides: NodeList;
-  private sliderList: HTMLElement;
-  private slideWidth: number = 0;
-  private controls: object = {
-    back: null,
-    forward: null,
-  };
-
-  componentWillLoad() {
-    this.slides = this.el.querySelectorAll('li');
-    this.slidesCount = this.slides.length;
-  }
+  prevButton: HTMLButtonElement;
+  nextButton: HTMLButtonElement;
+  slideWrapper: HTMLDivElement;
+  sliderContainer: HTMLDivElement;
 
   componentDidLoad() {
-    this.sliderList = this.el.shadowRoot.querySelector('.slides-wrapper');
-    this.slideWidth = (this.slides[0] as HTMLElement).offsetWidth;
-    for (let type in this.controls) {this.controls[type] = this.el.shadowRoot.querySelector(type)
-  console.log("componentDidLoad", this.slideWidth, this.controls[type], type)
-  };
-    this.updateControls();
+    const prevButton = this.sliderEl.querySelector('.button.previous') as HTMLButtonElement;
+    const nextButton = this.sliderEl.querySelector('.button.next') as HTMLButtonElement;
+    const slideWrapper = this.sliderEl.querySelector('.slide-wrapper') as HTMLDivElement;
+    const sliderContainer = this.sliderEl.querySelector('.slider-container') as HTMLDivElement;
+    this.prevButton = prevButton;
+    this.nextButton = nextButton;
+    this.slideWrapper = slideWrapper
+    this.sliderContainer = sliderContainer
+}
+
+  handlemodulo(number, mod) {
+    let result = number % mod;
+    if (result < 0) {
+      result += mod;
+    }
+    return result;
   }
 
-  componentDidUpdate() {
-    this.sliderList.style.transform = `translateX(${this.currentSlideNumber * this.slideWidth * -1}px)`;
-    this.updateControls();
-  }
-
-  slide(amount: number = 1) {
-    let slideTo = this.currentSlideNumber + amount;
-    if (slideTo < 0 || slideTo >= this.slidesCount) return;
-    this.currentSlideNumber = slideTo;
-  }
-
-  updateControls() {
-    this.switchControl('back', this.currentSlideNumber === 0 ? false : true);
-    this.switchControl('forward', this.currentSlideNumber === this.slidesCount - 1 ? false : true);
-  }
-
-  switchControl(type: string, enabled: boolean) {
-    if (this.controls[type]) this.controls[type].disabled = !enabled;
-  }
-
-  // setSlotNames(){
-  //   for(let i=0; i<=(this.numberOfSlides-1); i++) {
-  //     this.slotNames.push("slide"+i.toString());
-  //   }
-  //   console.log("setSlotNames",this.slotNames)
-  // }
-
-  // getSlotNames(): string[]{
-  //   const names = this.slotNames;
-  //   console.log("getSlotNames", names)
-  //   return names;
-  // }
-
-  runCallback = (cb) => {
-    return cb();
+  handleNext() {
+    console.log("in handleNext Methode", this.sliderContainer, this.slideWrapper)
+    this.currentSlide += 1;
+    console.log(this.currentSlide)
+    if(this.sliderContainer){
+    console.log(this.sliderContainer, "im SliderContainer")
+    this.sliderContainer.style.setProperty('--current-slide', `${this.currentSlide}`)
+    console.log(this.currentSlide)
     };
+  }
+
+  // handlePrevious() {
+  //   console.log("in handlePrev Methode")
+  //   this.currentSlide = this.handlemodulo(this.currentSlide - 1, this.slideAmount);
+  //   if(this.sliderContainer)
+  //   this.sliderContainer.style.setProperty('--current-slide', `${this.currentSlide}`);
+  // }
 
   render() {
     return (
       <Host>
         <div class="slider-container">
-          <div>
-            {!this.showStatus && (
-              <p class="slide-title">
-                Slide {this.currentSlideNumber + 1}/{this.slidesCount}
-              </p>
-            )}
+          <div class="slider-buttons">
+            <button class="button previous">
+              &#10094;
+            </button>
+            <button class="button next" onClick={() => {this.handleNext()}}>
+              &#10095;
+            </button>
           </div>
-          <a class="control back" onClick={this.slide.bind(this, -1)}>
-            &#10094;
-          </a>
-          <a class="control forward" onClick={this.slide.bind(this, 1)}>
-            &#10095;
-          </a>
-          <ul class="slides-wrapper">
-              <slot name='li-element'><slot name='div-element'></slot></slot>
-          </ul>
-          <div class="dot-container"> {this.runCallback(() => {
-            const row = [];
-            for(let i = 0; i< this.numberOfSlides; i++) {
-              row.push(<span class="dot"></span>);
-              }
-              return row
-              })}
+          <div class="slide-wrapper">
+            <div class="slide-content">
+              <jplants-slide slide-title="Unsere Beliebtesten Zimmerpflanzen" img-src="../src/components/assets/PlantSlider1.jpg" img-descr="Unsere beliebtesten Zimmerpflanzen">
+                <p slot="slide-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                  pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+                <img slot="further-elements" src="../src/components/assets/PlantSlider1.jpg" style={{ width: 'calc((100% /3) - 6px)', margin: '3px' }} />
+                <img slot="further-elements" src="../src/components/assets/PlantSlider1.jpg" style={{ width: 'calc((100% /3) - 6px)', margin: '3px' }} />
+                <img slot="further-elements" src="../src/components/assets/PlantSlider1.jpg" style={{ width: 'calc((100% /3) - 6px)', margin: '3px' }} />
+                <h2 slot="further-elements">Jetzt im Angebot!</h2>
+              </jplants-slide>
+            </div>
+            <div class="slide-content">
+              <jplants-slide slide-title="Get ready for Balkonien" img-src="../src/components/assets/PlantSlider1.jpg" img-descr="Get ready for Balkonien">
+                <p slot="slide-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                  pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+                <h2 slot="further-elements">Lass dich INSPIRIEREN</h2>
+              </jplants-slide>
+            </div>
           </div>
         </div>
       </Host>

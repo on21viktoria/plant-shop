@@ -10,7 +10,15 @@ export namespace Components {
         "exampleProp": string;
         "exampleToUpperCase": () => Promise<void>;
     }
+    interface JplantsSlide {
+        "imgDescr"?: string;
+        "imgSrc"?: string | null;
+        "slideTitle": string;
+    }
     interface JplantsSlider {
+        "numberOfSlides": number;
+    }
+    interface JplantsSliderOld {
         "numberOfSlides"?: number;
         "showStatus": boolean;
     }
@@ -22,15 +30,29 @@ declare global {
         prototype: HTMLExampleComponentElement;
         new (): HTMLExampleComponentElement;
     };
+    interface HTMLJplantsSlideElement extends Components.JplantsSlide, HTMLStencilElement {
+    }
+    var HTMLJplantsSlideElement: {
+        prototype: HTMLJplantsSlideElement;
+        new (): HTMLJplantsSlideElement;
+    };
     interface HTMLJplantsSliderElement extends Components.JplantsSlider, HTMLStencilElement {
     }
     var HTMLJplantsSliderElement: {
         prototype: HTMLJplantsSliderElement;
         new (): HTMLJplantsSliderElement;
     };
+    interface HTMLJplantsSliderOldElement extends Components.JplantsSliderOld, HTMLStencilElement {
+    }
+    var HTMLJplantsSliderOldElement: {
+        prototype: HTMLJplantsSliderOldElement;
+        new (): HTMLJplantsSliderOldElement;
+    };
     interface HTMLElementTagNameMap {
         "example-component": HTMLExampleComponentElement;
+        "jplants-slide": HTMLJplantsSlideElement;
         "jplants-slider": HTMLJplantsSliderElement;
+        "jplants-slider-old": HTMLJplantsSliderOldElement;
     }
 }
 declare namespace LocalJSX {
@@ -38,13 +60,23 @@ declare namespace LocalJSX {
         "exampleProp"?: string;
         "onExampleEvent"?: (event: CustomEvent<string>) => void;
     }
+    interface JplantsSlide {
+        "imgDescr"?: string;
+        "imgSrc"?: string | null;
+        "slideTitle"?: string;
+    }
     interface JplantsSlider {
+        "numberOfSlides"?: number;
+    }
+    interface JplantsSliderOld {
         "numberOfSlides"?: number;
         "showStatus"?: boolean;
     }
     interface IntrinsicElements {
         "example-component": ExampleComponent;
+        "jplants-slide": JplantsSlide;
         "jplants-slider": JplantsSlider;
+        "jplants-slider-old": JplantsSliderOld;
     }
 }
 export { LocalJSX as JSX };
@@ -52,7 +84,9 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "example-component": LocalJSX.ExampleComponent & JSXBase.HTMLAttributes<HTMLExampleComponentElement>;
+            "jplants-slide": LocalJSX.JplantsSlide & JSXBase.HTMLAttributes<HTMLJplantsSlideElement>;
             "jplants-slider": LocalJSX.JplantsSlider & JSXBase.HTMLAttributes<HTMLJplantsSliderElement>;
+            "jplants-slider-old": LocalJSX.JplantsSliderOld & JSXBase.HTMLAttributes<HTMLJplantsSliderOldElement>;
         }
     }
 }
