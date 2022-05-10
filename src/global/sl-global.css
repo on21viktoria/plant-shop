@@ -2,6 +2,7 @@
     --app-dark-mode-bg: indigo;
     --app-dark-mode-color: white;
     --app-light-mode-bg: ghostwhite;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .flexbox {
