@@ -3,6 +3,7 @@
 }
 
 .slider-container {
+  margin-top: 40px;
   --current-slide: 0;
   position: relative;
   overflow: hidden;
@@ -32,6 +33,7 @@
 }
 
 .slide-wrapper {
+  margin-bottom: 5px;
   display: flex;
   transition: transform 0.5s;
   transform: translateX(calc(-100% * var(--current-slide)));
