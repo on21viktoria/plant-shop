@@ -14,10 +14,10 @@ export class JplantsWelcome {
     return (
       <div class="welcomeText">
         <h1>{this.welcomeHeadline}</h1>
-        <div class="column1" >
+        <div class="column1">
           <p>{this.welcomeText1}</p>
         </div>
-        <div class="column2" >
+        <div class="column2">
           <p>{this.welcomeText2}</p>
         </div>
       </div>
