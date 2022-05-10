@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
+    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" /> -->
     <script src="/dist/stencil-starter-on/stencil-starter-on.esm.js" type="module"></script>
     <link rel="stylesheet" href="/dist/stencil-starter-on/stencil-starter-on.css" />
     <title>your design guide</title>
@@ -13,9 +13,36 @@
 
   <body>
     <div class="flexbox">
-      <Jplants-qualitystatement text="Mit Liebe verschickt" imgsrc="src/images/sendWithLove.png" link="https://www.google.de/"></Jplants-qualitystatement>
-      <Jplants-qualitystatement text="Blitzschneller Versand" imgsrc="src/images/fastDelivery.png" link="https://trvl-card.herokuapp.com/?#/"></Jplants-qualitystatement>
-      <Jplants-qualitystatement text="Sorgsam ausgewählt" imgsrc="src/images/carefullySelected.png" link="https://trvl-card.herokuapp.com/?#/"></Jplants-qualitystatement>
+      <Jplants-qualitystatement text="Mit Liebe verschickt >>" imgsrc="src/images/sendWithLove.png" link="https://www.google.de/">
+        <div slot="back">
+          <h2 slot="back-title">Mit Liebe verschickt</h2>
+          <p slot="back-text">
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos
+            et accusam et.
+          </p>
+          <button>Mehr erfahren</button>
+        </div>
+      </Jplants-qualitystatement>
+      <Jplants-qualitystatement text="Blitzschneller Versand >>" imgsrc="src/images/fastDelivery.png" link="https://trvl-card.herokuapp.com/?#/">
+        <div slot="back">
+          <h2 slot="back-title">Blitzschneller Versand</h2>
+          <p slot="back-text">
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos
+            et accusam et.
+          </p>
+          <button>Mehr erfahren</button>
+        </div>
+      </Jplants-qualitystatement>
+      <Jplants-qualitystatement text="Sorgsam ausgewählt >>" imgsrc="src/images/carefullySelected.png" link="https://trvl-card.herokuapp.com/?#/">
+        <div slot="back">
+          <h2 slot="back-title">Sorgsam ausgewählt</h2>
+          <p slot="back-text">
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos
+            et accusam et.
+          </p>
+          <button>Mehr erfahren</button>
+        </div>
+      </Jplants-qualitystatement>
     </div>
 
     <!-- <div class="container">
