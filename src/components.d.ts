@@ -6,56 +6,86 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface ExampleComponent {
-        "exampleProp": string;
-        "exampleToUpperCase": () => Promise<void>;
+    interface JplantArticle {
+        "articleImage": string;
+        "articleText": string;
+        "articleTitle": string;
+    }
+    interface JplantsButton {
+        "buttonColor": string;
+        "buttonHref": string;
+        "buttonIconClass": string;
+        "buttonName": string;
+    }
+    interface JplantsCustomergallery {
+    }
+    interface JplantsFooter {
+        "footerLinksJson": string;
+        "logo": string;
+    }
+    interface JplantsHeader {
+        "logo": string;
+        "logoHref": string;
+        "navLinksJson": string;
+    }
+    interface JplantsMenubar {
+        "navItemsLinks": string;
     }
     interface JplantsQualitystatement {
         "imgsrc": string;
         "link": string;
         "text": string;
     }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+    interface JplantsRatingStars {
+        "filledStars": number;
     }
-    interface SlFlipCard {
+    interface JplantsSearchbar {
+        "searchBarName": string;
     }
-    interface SlFooter {
-        "slDarkMode": boolean;
-        "slDatenschutz": string;
-        "slImpressum": string;
-    }
-    interface SlHeader {
-        "slDarkMode": boolean;
-    }
-    interface SlHeroSection {
-        "slHeroHeadline": string;
-    }
-    interface SlImgGallery {
-    }
-    interface SlServiceCard {
-        "slDarkMode": boolean;
-        "slImgSrc": string;
-        "slLink": string;
+    interface JplantsToast {
+        "toast": string;
+        "toastButtonTitle": string;
+        "toastMessage": string;
+        "toastPosition": string;
+        "toastTitle": string;
     }
 }
 declare global {
-    interface HTMLExampleComponentElement extends Components.ExampleComponent, HTMLStencilElement {
+    interface HTMLJplantArticleElement extends Components.JplantArticle, HTMLStencilElement {
     }
-    var HTMLExampleComponentElement: {
-        prototype: HTMLExampleComponentElement;
-        new (): HTMLExampleComponentElement;
+    var HTMLJplantArticleElement: {
+        prototype: HTMLJplantArticleElement;
+        new (): HTMLJplantArticleElement;
+    };
+    interface HTMLJplantsButtonElement extends Components.JplantsButton, HTMLStencilElement {
+    }
+    var HTMLJplantsButtonElement: {
+        prototype: HTMLJplantsButtonElement;
+        new (): HTMLJplantsButtonElement;
+    };
+    interface HTMLJplantsCustomergalleryElement extends Components.JplantsCustomergallery, HTMLStencilElement {
+    }
+    var HTMLJplantsCustomergalleryElement: {
+        prototype: HTMLJplantsCustomergalleryElement;
+        new (): HTMLJplantsCustomergalleryElement;
+    };
+    interface HTMLJplantsFooterElement extends Components.JplantsFooter, HTMLStencilElement {
+    }
+    var HTMLJplantsFooterElement: {
+        prototype: HTMLJplantsFooterElement;
+        new (): HTMLJplantsFooterElement;
+    };
+    interface HTMLJplantsHeaderElement extends Components.JplantsHeader, HTMLStencilElement {
+    }
+    var HTMLJplantsHeaderElement: {
+        prototype: HTMLJplantsHeaderElement;
+        new (): HTMLJplantsHeaderElement;
+    };
+    interface HTMLJplantsMenubarElement extends Components.JplantsMenubar, HTMLStencilElement {
+    }
+    var HTMLJplantsMenubarElement: {
+        prototype: HTMLJplantsMenubarElement;
+        new (): HTMLJplantsMenubarElement;
     };
     interface HTMLJplantsQualitystatementElement extends Components.JplantsQualitystatement, HTMLStencilElement {
     }
@@ -63,129 +93,110 @@ declare global {
         prototype: HTMLJplantsQualitystatementElement;
         new (): HTMLJplantsQualitystatementElement;
     };
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLJplantsRatingStarsElement extends Components.JplantsRatingStars, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLJplantsRatingStarsElement: {
+        prototype: HTMLJplantsRatingStarsElement;
+        new (): HTMLJplantsRatingStarsElement;
     };
-    interface HTMLSlFlipCardElement extends Components.SlFlipCard, HTMLStencilElement {
+    interface HTMLJplantsSearchbarElement extends Components.JplantsSearchbar, HTMLStencilElement {
     }
-    var HTMLSlFlipCardElement: {
-        prototype: HTMLSlFlipCardElement;
-        new (): HTMLSlFlipCardElement;
+    var HTMLJplantsSearchbarElement: {
+        prototype: HTMLJplantsSearchbarElement;
+        new (): HTMLJplantsSearchbarElement;
     };
-    interface HTMLSlFooterElement extends Components.SlFooter, HTMLStencilElement {
+    interface HTMLJplantsToastElement extends Components.JplantsToast, HTMLStencilElement {
     }
-    var HTMLSlFooterElement: {
-        prototype: HTMLSlFooterElement;
-        new (): HTMLSlFooterElement;
-    };
-    interface HTMLSlHeaderElement extends Components.SlHeader, HTMLStencilElement {
-    }
-    var HTMLSlHeaderElement: {
-        prototype: HTMLSlHeaderElement;
-        new (): HTMLSlHeaderElement;
-    };
-    interface HTMLSlHeroSectionElement extends Components.SlHeroSection, HTMLStencilElement {
-    }
-    var HTMLSlHeroSectionElement: {
-        prototype: HTMLSlHeroSectionElement;
-        new (): HTMLSlHeroSectionElement;
-    };
-    interface HTMLSlImgGalleryElement extends Components.SlImgGallery, HTMLStencilElement {
-    }
-    var HTMLSlImgGalleryElement: {
-        prototype: HTMLSlImgGalleryElement;
-        new (): HTMLSlImgGalleryElement;
-    };
-    interface HTMLSlServiceCardElement extends Components.SlServiceCard, HTMLStencilElement {
-    }
-    var HTMLSlServiceCardElement: {
-        prototype: HTMLSlServiceCardElement;
-        new (): HTMLSlServiceCardElement;
+    var HTMLJplantsToastElement: {
+        prototype: HTMLJplantsToastElement;
+        new (): HTMLJplantsToastElement;
     };
     interface HTMLElementTagNameMap {
-        "example-component": HTMLExampleComponentElement;
+        "jplant-article": HTMLJplantArticleElement;
+        "jplants-button": HTMLJplantsButtonElement;
+        "jplants-customergallery": HTMLJplantsCustomergalleryElement;
+        "jplants-footer": HTMLJplantsFooterElement;
+        "jplants-header": HTMLJplantsHeaderElement;
+        "jplants-menubar": HTMLJplantsMenubarElement;
         "jplants-qualitystatement": HTMLJplantsQualitystatementElement;
-        "my-component": HTMLMyComponentElement;
-        "sl-flip-card": HTMLSlFlipCardElement;
-        "sl-footer": HTMLSlFooterElement;
-        "sl-header": HTMLSlHeaderElement;
-        "sl-hero-section": HTMLSlHeroSectionElement;
-        "sl-img-gallery": HTMLSlImgGalleryElement;
-        "sl-service-card": HTMLSlServiceCardElement;
+        "jplants-rating-stars": HTMLJplantsRatingStarsElement;
+        "jplants-searchbar": HTMLJplantsSearchbarElement;
+        "jplants-toast": HTMLJplantsToastElement;
     }
 }
 declare namespace LocalJSX {
-    interface ExampleComponent {
-        "exampleProp"?: string;
-        "onExampleEvent"?: (event: CustomEvent<string>) => void;
+    interface JplantArticle {
+        "articleImage"?: string;
+        "articleText"?: string;
+        "articleTitle"?: string;
+    }
+    interface JplantsButton {
+        "buttonColor"?: string;
+        "buttonHref"?: string;
+        "buttonIconClass"?: string;
+        "buttonName"?: string;
+    }
+    interface JplantsCustomergallery {
+    }
+    interface JplantsFooter {
+        "footerLinksJson"?: string;
+        "logo"?: string;
+    }
+    interface JplantsHeader {
+        "logo"?: string;
+        "logoHref"?: string;
+        "navLinksJson"?: string;
+    }
+    interface JplantsMenubar {
+        "navItemsLinks"?: string;
+        "onOnShow"?: (event: CustomEvent<any>) => void;
     }
     interface JplantsQualitystatement {
         "imgsrc"?: string;
         "link"?: string;
         "text"?: string;
     }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+    interface JplantsRatingStars {
+        "filledStars"?: number;
     }
-    interface SlFlipCard {
+    interface JplantsSearchbar {
+        "searchBarName"?: string;
     }
-    interface SlFooter {
-        "slDarkMode"?: boolean;
-        "slDatenschutz"?: string;
-        "slImpressum"?: string;
-    }
-    interface SlHeader {
-        "slDarkMode"?: boolean;
-    }
-    interface SlHeroSection {
-        "slHeroHeadline"?: string;
-    }
-    interface SlImgGallery {
-    }
-    interface SlServiceCard {
-        "slDarkMode"?: boolean;
-        "slImgSrc"?: string;
-        "slLink"?: string;
+    interface JplantsToast {
+        "onShow"?: (event: CustomEvent<any>) => void;
+        "toast"?: string;
+        "toastButtonTitle"?: string;
+        "toastMessage"?: string;
+        "toastPosition"?: string;
+        "toastTitle"?: string;
     }
     interface IntrinsicElements {
-        "example-component": ExampleComponent;
+        "jplant-article": JplantArticle;
+        "jplants-button": JplantsButton;
+        "jplants-customergallery": JplantsCustomergallery;
+        "jplants-footer": JplantsFooter;
+        "jplants-header": JplantsHeader;
+        "jplants-menubar": JplantsMenubar;
         "jplants-qualitystatement": JplantsQualitystatement;
-        "my-component": MyComponent;
-        "sl-flip-card": SlFlipCard;
-        "sl-footer": SlFooter;
-        "sl-header": SlHeader;
-        "sl-hero-section": SlHeroSection;
-        "sl-img-gallery": SlImgGallery;
-        "sl-service-card": SlServiceCard;
+        "jplants-rating-stars": JplantsRatingStars;
+        "jplants-searchbar": JplantsSearchbar;
+        "jplants-toast": JplantsToast;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "example-component": LocalJSX.ExampleComponent & JSXBase.HTMLAttributes<HTMLExampleComponentElement>;
+            "jplant-article": LocalJSX.JplantArticle & JSXBase.HTMLAttributes<HTMLJplantArticleElement>;
+            "jplants-button": LocalJSX.JplantsButton & JSXBase.HTMLAttributes<HTMLJplantsButtonElement>;
+            "jplants-customergallery": LocalJSX.JplantsCustomergallery & JSXBase.HTMLAttributes<HTMLJplantsCustomergalleryElement>;
+            "jplants-footer": LocalJSX.JplantsFooter & JSXBase.HTMLAttributes<HTMLJplantsFooterElement>;
+            "jplants-header": LocalJSX.JplantsHeader & JSXBase.HTMLAttributes<HTMLJplantsHeaderElement>;
+            "jplants-menubar": LocalJSX.JplantsMenubar & JSXBase.HTMLAttributes<HTMLJplantsMenubarElement>;
             "jplants-qualitystatement": LocalJSX.JplantsQualitystatement & JSXBase.HTMLAttributes<HTMLJplantsQualitystatementElement>;
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
-            "sl-flip-card": LocalJSX.SlFlipCard & JSXBase.HTMLAttributes<HTMLSlFlipCardElement>;
-            "sl-footer": LocalJSX.SlFooter & JSXBase.HTMLAttributes<HTMLSlFooterElement>;
-            "sl-header": LocalJSX.SlHeader & JSXBase.HTMLAttributes<HTMLSlHeaderElement>;
-            "sl-hero-section": LocalJSX.SlHeroSection & JSXBase.HTMLAttributes<HTMLSlHeroSectionElement>;
-            "sl-img-gallery": LocalJSX.SlImgGallery & JSXBase.HTMLAttributes<HTMLSlImgGalleryElement>;
-            "sl-service-card": LocalJSX.SlServiceCard & JSXBase.HTMLAttributes<HTMLSlServiceCardElement>;
+            "jplants-rating-stars": LocalJSX.JplantsRatingStars & JSXBase.HTMLAttributes<HTMLJplantsRatingStarsElement>;
+            "jplants-searchbar": LocalJSX.JplantsSearchbar & JSXBase.HTMLAttributes<HTMLJplantsSearchbarElement>;
+            "jplants-toast": LocalJSX.JplantsToast & JSXBase.HTMLAttributes<HTMLJplantsToastElement>;
         }
     }
 }

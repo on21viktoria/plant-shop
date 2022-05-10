@@ -1,0 +1,20 @@
+:host {
+  display: block;
+}
+
+.rating-stars {
+  display: flex;
+  flex-direction: row;
+  font-size: 1.5em;
+  justify-content: space-around;
+  text-align: center;
+  width: 5em;
+}
+
+#rating-stars-filled {
+  color: #468f06 !important;
+}
+
+#rating-stars-empty {
+  color: rgb(211, 208, 208) !important;
+}
