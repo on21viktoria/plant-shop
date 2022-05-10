@@ -143,9 +143,9 @@ export class JplantsSlider {
             </div>
           </div>
           <div class="dot-container">
-            <span class={this.dotArray[0].class} onClick={() => this.showSelectedSlide(0)}></span>
-            <span class={this.dotArray[1].class} onClick={() => this.showSelectedSlide(1)}></span>
-            <span class={this.dotArray[2].class} onClick={() => this.showSelectedSlide(2)}></span>
+            {this.dotArray.map(dot => (
+              <span class={dot.class} onClick={() => this.showSelectedSlide(dot.id)}></span>
+            ))}
           </div>
         </div>
       </Host>
