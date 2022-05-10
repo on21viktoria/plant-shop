@@ -78,9 +78,10 @@ export class JplantsSlider {
     return this.dotArray = newDotArray;
   }
 
-  // showSelectedSlide(slideId: number) {
-
-  // }
+  showSelectedSlide(slideId: number) {
+    this.updateDotArray(slideId);
+    if (this.sliderContainer) this.sliderContainer.style.setProperty('--current-slide', `${slideId}`);
+  }
 
   render() {
     return (
@@ -142,9 +143,9 @@ export class JplantsSlider {
             </div>
           </div>
           <div class="dot-container">
-            <span class={this.dotArray[0].class}></span>
-            <span class={this.dotArray[1].class} ></span>
-            <span class={this.dotArray[2].class} ></span>
+            <span class={this.dotArray[0].class} onClick={() => this.showSelectedSlide(0)}></span>
+            <span class={this.dotArray[1].class} onClick={() => this.showSelectedSlide(1)}></span>
+            <span class={this.dotArray[2].class} onClick={() => this.showSelectedSlide(2)}></span>
           </div>
         </div>
       </Host>
