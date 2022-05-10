@@ -1,5 +1,4 @@
 import { Component, h, Host, Prop, State, Element } from '@stencil/core';
-import { ComponentWillLoad } from '../../../dist/types/stencil-public-runtime';
 
 @Component({
   tag: 'jplants-slider',
