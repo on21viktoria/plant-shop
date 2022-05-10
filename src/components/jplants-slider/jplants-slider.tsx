@@ -8,10 +8,10 @@ import { Component, h, Host, Prop, State, Element } from '@stencil/core';
 export class JplantsSlider {
   @Element() sliderEl: HTMLElement;
 
-  @Prop() numberOfSlides: number = 0;
+  @Prop() numberOfSlides: number;
 
   @State() currentSlide: number = 0;
-  @State() slideAmount: number = this.numberOfSlides;
+  @State() slideAmount: number;
 
   prevButton: HTMLButtonElement;
   nextButton: HTMLButtonElement;
@@ -19,51 +19,53 @@ export class JplantsSlider {
   sliderContainer: HTMLDivElement;
 
   componentDidLoad() {
-    const prevButton = this.sliderEl.querySelector('.button.previous') as HTMLButtonElement;
-    const nextButton = this.sliderEl.querySelector('.button.next') as HTMLButtonElement;
-    const slideWrapper = this.sliderEl.querySelector('.slide-wrapper') as HTMLDivElement;
-    const sliderContainer = this.sliderEl.querySelector('.slider-container') as HTMLDivElement;
-    this.prevButton = prevButton;
-    this.nextButton = nextButton;
-    this.slideWrapper = slideWrapper
-    this.sliderContainer = sliderContainer
-}
-
-  handlemodulo(number, mod) {
-    let result = number % mod;
-    if (result < 0) {
-      result += mod;
-    }
-    return result;
+    this.prevButton = this.sliderEl.shadowRoot.querySelector('.button.previous') as HTMLButtonElement;
+    this.nextButton = this.sliderEl.shadowRoot.querySelector('.button.next') as HTMLButtonElement;
+    this.slideWrapper = this.sliderEl.shadowRoot.querySelector('.slide-wrapper') as HTMLDivElement;
+    this.sliderContainer = this.sliderEl.shadowRoot.querySelector('.slider-container') as HTMLDivElement;
+    this.slideAmount = this.numberOfSlides;
   }
+
+  // handlemodulo(number, mod) {
+  //   let result = number % mod;
+  //   if (result < 0) {
+  //     result += mod;
+  //   }
+  //   return result;
+  // }
 
   handleNext() {
-    console.log("in handleNext Methode", this.sliderContainer, this.slideWrapper)
+    if(this.currentSlide < (this.slideAmount-1)){
     this.currentSlide += 1;
-    console.log(this.currentSlide)
-    if(this.sliderContainer){
-    console.log(this.sliderContainer, "im SliderContainer")
+    } else {
+      this.currentSlide;
+    }
     this.sliderContainer.style.setProperty('--current-slide', `${this.currentSlide}`)
-    console.log(this.currentSlide)
-    };
   }
 
-  // handlePrevious() {
-  //   console.log("in handlePrev Methode")
-  //   this.currentSlide = this.handlemodulo(this.currentSlide - 1, this.slideAmount);
-  //   if(this.sliderContainer)
-  //   this.sliderContainer.style.setProperty('--current-slide', `${this.currentSlide}`);
-  // }
+  handlePrevious() {
+    if (this.currentSlide > 0) {
+      this.currentSlide -= 1;
+    } else {
+      this.currentSlide;
+    }
+    if (this.sliderContainer) this.sliderContainer.style.setProperty('--current-slide', `${this.currentSlide}`);
+  }
 
   render() {
     return (
       <Host>
         <div class="slider-container">
           <div class="slider-buttons">
-            <button class="button previous">
-              &#10094;
-            </button>
-            <button class="button next" onClick={() => {this.handleNext()}}>
+            <button class="button previous" onClick={() => {
+                this.handlePrevious();
+              }}>&#10094;</button>
+            <button
+              class="button next"
+              onClick={() => {
+                this.handleNext();
+              }}
+            >
               &#10095;
             </button>
           </div>
