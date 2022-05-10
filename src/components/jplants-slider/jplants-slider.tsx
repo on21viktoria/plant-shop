@@ -1,10 +1,12 @@
 import { Component, h, Host, Prop, State, Element } from '@stencil/core';
+import { ComponentWillLoad } from '../../../dist/types/stencil-public-runtime';
 
 @Component({
   tag: 'jplants-slider',
   styleUrl: 'jplants-slider.css',
   shadow: true,
 })
+
 export class JplantsSlider {
   @Element() sliderEl: HTMLElement;
 
@@ -12,11 +14,24 @@ export class JplantsSlider {
 
   @State() currentSlide: number = 0;
   @State() slideAmount: number;
+  @State() activeDot: string = "slide1";
+
+
+
 
   prevButton: HTMLButtonElement;
   nextButton: HTMLButtonElement;
   slideWrapper: HTMLDivElement;
   sliderContainer: HTMLDivElement;
+  currentDot: HTMLElement;
+  activatedDot: HTMLElement;
+
+  dotArray: Dot[] = [];
+
+  componentWillLoad(){
+    this.createDotArray(this.numberOfSlides);
+    this.dotArray[0].class = "dot active"
+  }
 
   componentDidLoad() {
     this.prevButton = this.sliderEl.shadowRoot.querySelector('.button.previous') as HTMLButtonElement;
@@ -24,23 +39,16 @@ export class JplantsSlider {
     this.slideWrapper = this.sliderEl.shadowRoot.querySelector('.slide-wrapper') as HTMLDivElement;
     this.sliderContainer = this.sliderEl.shadowRoot.querySelector('.slider-container') as HTMLDivElement;
     this.slideAmount = this.numberOfSlides;
+
   }
 
-  // handlemodulo(number, mod) {
-  //   let result = number % mod;
-  //   if (result < 0) {
-  //     result += mod;
-  //   }
-  //   return result;
-  // }
-
   handleNext() {
-    if(this.currentSlide < (this.slideAmount-1)){
-    this.currentSlide += 1;
+    if (this.currentSlide < this.slideAmount - 1) {
+      this.currentSlide += 1;
     } else {
       this.currentSlide;
     }
-    this.sliderContainer.style.setProperty('--current-slide', `${this.currentSlide}`)
+    this.sliderContainer.style.setProperty('--current-slide', `${this.currentSlide}`);
   }
 
   handlePrevious() {
@@ -52,14 +60,40 @@ export class JplantsSlider {
     if (this.sliderContainer) this.sliderContainer.style.setProperty('--current-slide', `${this.currentSlide}`);
   }
 
+  createDotArray(amount: number) {
+    for (let i = 0; i < amount; i++) this.dotArray.push({id:i, class: "dot"});
+    return this.dotArray;
+  }
+
+  // updateDotArray(currentSlide: number) {
+  //   const newDotArray = this.dotArray.map(() => {
+
+  //   })
+
+  //   for(let dot of this.dotArray){
+  //     if(dot.id === currentSlide) {
+  //       return dot.class = "dot active"
+  //     } else return dot.class = "dot"
+  //   }
+  // }
+
+  // showSelectedSlide(slideId: number) {
+
+  // }
+
   render() {
     return (
       <Host>
         <div class="slider-container">
           <div class="slider-buttons">
-            <button class="button previous" onClick={() => {
+            <button
+              class="button previous"
+              onClick={() => {
                 this.handlePrevious();
-              }}>&#10094;</button>
+              }}
+            >
+              &#10094;
+            </button>
             <button
               class="button next"
               onClick={() => {
@@ -93,9 +127,31 @@ export class JplantsSlider {
                 <h2 slot="further-elements">Lass dich INSPIRIEREN</h2>
               </jplants-slide>
             </div>
+            <div class="slide-content">
+              <jplants-slide slide-title="How to be a Plant-Mommy" img-src="../src/components/assets/PlantSlider1.jpg" img-descr="How to be a Plant-Mommy">
+                <p slot="slide-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                  pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+                <h2 slot="further-elements" style={{ float: 'right' }}>
+                  Zu unserem Ratgeber
+                </h2>
+              </jplants-slide>
+            </div>
+          </div>
+          <div class="dot-container">
+            <span class={this.dotArray[0].class}></span>
+            <span class={this.dotArray[1].class} ></span>
+            <span class={this.dotArray[2].class} ></span>
           </div>
         </div>
       </Host>
     );
   }
+}
+
+interface Dot {
+  id: number,
+  class: string
 }

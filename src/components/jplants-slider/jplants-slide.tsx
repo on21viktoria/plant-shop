@@ -11,10 +11,6 @@ export class JplantsSlide {
   @Prop() slideTitle: string = "Default Title of Slide";
 
   render() {
-    // let img = null;
-    // if(!this.imgSrc === null) {
-    //   img = (<img src={this.imgSrc} alt={this.imgDescr} class="slide-image"><slot name='slide-image'></slot></img>)
-    // }
     return (
       <Host>
         <div class="slide-wrapper">
