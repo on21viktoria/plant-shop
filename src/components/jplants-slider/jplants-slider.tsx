@@ -26,7 +26,7 @@ export class JplantsSlider {
   currentDot: HTMLElement;
   activatedDot: HTMLElement;
 
-  dotArray: Dot[] = [];
+  @State() dotArray: Dot[] = [];
 
   componentWillLoad(){
     this.createDotArray(this.numberOfSlides);
@@ -48,6 +48,7 @@ export class JplantsSlider {
     } else {
       this.currentSlide;
     }
+    this.updateDotArray(this.currentSlide);
     this.sliderContainer.style.setProperty('--current-slide', `${this.currentSlide}`);
   }
 
@@ -57,6 +58,7 @@ export class JplantsSlider {
     } else {
       this.currentSlide;
     }
+    this.updateDotArray(this.currentSlide);
     if (this.sliderContainer) this.sliderContainer.style.setProperty('--current-slide', `${this.currentSlide}`);
   }
 
@@ -65,17 +67,16 @@ export class JplantsSlider {
     return this.dotArray;
   }
 
-  // updateDotArray(currentSlide: number) {
-  //   const newDotArray = this.dotArray.map(() => {
-
-  //   })
-
-  //   for(let dot of this.dotArray){
-  //     if(dot.id === currentSlide) {
-  //       return dot.class = "dot active"
-  //     } else return dot.class = "dot"
-  //   }
-  // }
+  updateDotArray(currentSlide: number) {
+    const newDotArray = this.dotArray.map(dot => {
+      if(dot.id === currentSlide){
+        return {...dot, class: "dot active"};
+      } else {
+      return {...dot, class: "dot"};
+      }
+    })
+    return this.dotArray = newDotArray;
+  }
 
   // showSelectedSlide(slideId: number) {
 
