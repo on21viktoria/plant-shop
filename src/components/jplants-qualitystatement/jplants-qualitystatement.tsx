@@ -22,11 +22,6 @@ export class JplantsQualitystatement {
     this.innerContainer.classList.toggle('is-flipped');
   }
 
-  // flipToFront() {
-  //   this.front.style.display = 'block';
-  //   this.back.style.display = 'none';
-  // }
-
   render() {
     return (
       <Host>
