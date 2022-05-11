@@ -10,9 +10,3 @@
     justify-content: space-between;
     padding: 70px;
 }
-
-.welcome {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
