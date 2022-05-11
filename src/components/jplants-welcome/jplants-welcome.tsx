@@ -13,8 +13,8 @@ export class JplantsWelcome {
   render() {
     return (
       <div class="welcomeText">
-        <h1>{this.welcomeHeadline}</h1>
         <div class="column1">
+          <h1>{this.welcomeHeadline}</h1>
           <p>{this.welcomeText1}</p>
         </div>
         <div class="column2">
