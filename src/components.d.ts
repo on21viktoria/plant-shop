@@ -49,6 +49,18 @@ export namespace Components {
     }
     interface JplantsSearchbar {
     }
+    interface JplantsSlide {
+        "imgDescr"?: string;
+        "imgSrc"?: string | null;
+        "slideTitle": string;
+    }
+    interface JplantsSlider {
+        "numberOfSlides": number;
+    }
+    interface JplantsSliderOld {
+        "numberOfSlides"?: number;
+        "showStatus": boolean;
+    }
     interface JplantsToast {
         "toast": string;
         "toastButtonTitle": string;
@@ -123,6 +135,24 @@ declare global {
         prototype: HTMLJplantsSearchbarElement;
         new (): HTMLJplantsSearchbarElement;
     };
+    interface HTMLJplantsSlideElement extends Components.JplantsSlide, HTMLStencilElement {
+    }
+    var HTMLJplantsSlideElement: {
+        prototype: HTMLJplantsSlideElement;
+        new (): HTMLJplantsSlideElement;
+    };
+    interface HTMLJplantsSliderElement extends Components.JplantsSlider, HTMLStencilElement {
+    }
+    var HTMLJplantsSliderElement: {
+        prototype: HTMLJplantsSliderElement;
+        new (): HTMLJplantsSliderElement;
+    };
+    interface HTMLJplantsSliderOldElement extends Components.JplantsSliderOld, HTMLStencilElement {
+    }
+    var HTMLJplantsSliderOldElement: {
+        prototype: HTMLJplantsSliderOldElement;
+        new (): HTMLJplantsSliderOldElement;
+    };
     interface HTMLJplantsToastElement extends Components.JplantsToast, HTMLStencilElement {
     }
     var HTMLJplantsToastElement: {
@@ -146,6 +176,9 @@ declare global {
         "jplants-modal": HTMLJplantsModalElement;
         "jplants-rating-stars": HTMLJplantsRatingStarsElement;
         "jplants-searchbar": HTMLJplantsSearchbarElement;
+        "jplants-slide": HTMLJplantsSlideElement;
+        "jplants-slider": HTMLJplantsSliderElement;
+        "jplants-slider-old": HTMLJplantsSliderOldElement;
         "jplants-toast": HTMLJplantsToastElement;
         "jplants-welcome": HTMLJplantsWelcomeElement;
     }
@@ -195,6 +228,18 @@ declare namespace LocalJSX {
     }
     interface JplantsSearchbar {
     }
+    interface JplantsSlide {
+        "imgDescr"?: string;
+        "imgSrc"?: string | null;
+        "slideTitle"?: string;
+    }
+    interface JplantsSlider {
+        "numberOfSlides"?: number;
+    }
+    interface JplantsSliderOld {
+        "numberOfSlides"?: number;
+        "showStatus"?: boolean;
+    }
     interface JplantsToast {
         "onShow"?: (event: CustomEvent<any>) => void;
         "toast"?: string;
@@ -219,6 +264,9 @@ declare namespace LocalJSX {
         "jplants-modal": JplantsModal;
         "jplants-rating-stars": JplantsRatingStars;
         "jplants-searchbar": JplantsSearchbar;
+        "jplants-slide": JplantsSlide;
+        "jplants-slider": JplantsSlider;
+        "jplants-slider-old": JplantsSliderOld;
         "jplants-toast": JplantsToast;
         "jplants-welcome": JplantsWelcome;
     }
@@ -237,6 +285,9 @@ declare module "@stencil/core" {
             "jplants-modal": LocalJSX.JplantsModal & JSXBase.HTMLAttributes<HTMLJplantsModalElement>;
             "jplants-rating-stars": LocalJSX.JplantsRatingStars & JSXBase.HTMLAttributes<HTMLJplantsRatingStarsElement>;
             "jplants-searchbar": LocalJSX.JplantsSearchbar & JSXBase.HTMLAttributes<HTMLJplantsSearchbarElement>;
+            "jplants-slide": LocalJSX.JplantsSlide & JSXBase.HTMLAttributes<HTMLJplantsSlideElement>;
+            "jplants-slider": LocalJSX.JplantsSlider & JSXBase.HTMLAttributes<HTMLJplantsSliderElement>;
+            "jplants-slider-old": LocalJSX.JplantsSliderOld & JSXBase.HTMLAttributes<HTMLJplantsSliderOldElement>;
             "jplants-toast": LocalJSX.JplantsToast & JSXBase.HTMLAttributes<HTMLJplantsToastElement>;
             "jplants-welcome": LocalJSX.JplantsWelcome & JSXBase.HTMLAttributes<HTMLJplantsWelcomeElement>;
         }

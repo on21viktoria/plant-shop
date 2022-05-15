@@ -58,7 +58,9 @@ images: ApiImg[] =  [
         <h3>
           <slot></slot>
         </h3>
-        <div class="sl-img-grid">{this.imgPosts && this.imgPosts.map(imgPost => <img src={imgPost.url} alt={imgPost.title} class="grow" />)}</div>
+        <div class="grid-container">
+        <div class="img-grid">{this.imgPosts && this.imgPosts.map(imgPost => <img src={imgPost.url} alt={imgPost.title} class="grow" />)}</div>
+        </div>
       </Host>
     );
   }
