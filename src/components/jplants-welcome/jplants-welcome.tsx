@@ -1,4 +1,4 @@
-import { Component, h, Prop } from '@stencil/core';
+import { Component, h, Prop, Host } from '@stencil/core';
 
 @Component({
   tag: 'jplants-welcome',
@@ -12,15 +12,16 @@ export class JplantsWelcome {
 
   render() {
     return (
+      <Host>
       <div class="welcomeText">
-        <div class="column1">
-          <h1>{this.welcomeHeadline}</h1>
-          <p>{this.welcomeText1}</p>
-        </div>
-        <div class="column2">
-          <p>{this.welcomeText2}</p>
-        </div>
+        <h1>{this.welcomeHeadline}</h1>
+          <p id="welcome-text-1">{this.welcomeText1}</p>
+          <p id="welcome-text-2">{this.welcomeText2}</p>
       </div>
+      <div class="slot-div">
+      <slot name="button"></slot>
+      </div>
+      </Host>
     );
   }
 }
