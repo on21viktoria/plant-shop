@@ -6,7 +6,6 @@ export const config: Config = {
   outputTargets: [
     {
       type: 'dist',
-      // Muss am Ende noch im Gesamtprojekt implementiert werden!!
       copy: [
         {
           src: '**/*.{jpg,png,svg}',

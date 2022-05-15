@@ -17,7 +17,7 @@ export class JplantsToast {
   
   @State() toastClass = "toast-hide";
 
-  @Event() show: EventEmitter;
+  @Event() showToast: EventEmitter;
 
   displayToast() {
     this.toastClass = "toast-show"

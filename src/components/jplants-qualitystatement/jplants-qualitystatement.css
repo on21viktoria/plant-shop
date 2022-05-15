@@ -35,23 +35,24 @@
   height: calc(100% - 20px);
   text-align: center;
   backface-visibility: hidden;
+  border-radius: 10px;
 }
 
 .front {
   padding: 10px;
-  background-color: #edf2ed;
-  border: 1px solid black;
+  background-color: #fff;
+  box-shadow: 3px 5px 5px #888888;
 }
 
 .back {
   transform: rotateY(180deg);
   padding: 10px;
-  background-color: #EDF2ED;
-  border: 1px solid black;
+  background-color: #fff;
+  box-shadow: 3px 5px 5px #888888;
 }
 
 .img-container {
-  background-color: white;
+  background-color: #edf2ed;
   position: relative;
   margin: 50px auto 40px auto;
   width: 100px;
