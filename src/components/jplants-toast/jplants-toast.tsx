@@ -32,7 +32,7 @@ export class JplantsToast {
     return (
       <Host>
         <div>
-          <jplants-button button-name={this.toastButtonTitle} button-href='#' button-color='default' onClick={() => this.displayToast()}></jplants-button>
+          <jplants-button button-name={this.toastButtonTitle} button-href='#toaster' button-color='default' onClick={() => this.displayToast()}></jplants-button>
         </div>
         <div class={this.toastPosition}>
         <div class={this.toastClass}>
