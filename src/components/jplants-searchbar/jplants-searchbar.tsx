@@ -18,7 +18,7 @@ this.f = this.searchbarEl.shadowRoot.getElementById('searchbar-unit');
 this.q = this.searchbarEl.shadowRoot.getElementById('search-field') as HTMLInputElement;
 }
 
-// Source for the Google-Search-Logic: https://pagedart.com/blog/how-to-add-a-search-bar-in-html/ 
+// Source for the basic Google-Search-Logic: https://pagedart.com/blog/how-to-add-a-search-bar-in-html/ 
 enterSearch() {
   const url = this.google + this.q.value;
   const win = window.open(url, '_blank');
@@ -35,5 +35,4 @@ enterSearch() {
       </Host>
     );
   }
-
 }
