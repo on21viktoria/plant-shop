@@ -1,3 +1,9 @@
 :root {
     --app-example-var: black;
 }
+
+.welcome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

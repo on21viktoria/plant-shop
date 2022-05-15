@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
-    <script src="/dist/stencil-starter-on/stencil-starter-on.esm.js" type="module"></script>
-     <!-- Bootstrap Import -->
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="/dist/stencil-starter-on/stencil-starter-on.css" />
 
-    <title>Josef's Pflanzenshop</title>
-    <script type="text/javascript" src="/ON-your-styleguide/script.js" defer></script>
-    <link rel="stylesheet" href="/ON-your-styleguide/style.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
+  <script src="/dist/stencil-starter-on/stencil-starter-on.esm.js" type="module"></script>
+  <!-- Bootstrap Import -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/dist/stencil-starter-on/stencil-starter-on.css" />
+
+  <title>Josef's Pflanzenshop</title>
+  <script type="text/javascript" src="/ON-your-styleguide/script.js" defer></script>
+  <link rel="stylesheet" href="/ON-your-styleguide/style.css" />
 </head>
+
 <body>
   <div class="wrapper">
     <jplants-header
-      nav-links-json='[{"iconClass":"bi bi-question-circle","name":"Hilfe","href":"#"},{"iconClass":"bi bi-cart","name":"Warenkorb","href":"#"},{"iconClass":"bi bi-person","name":"Anmelden","href":"#"}]'
-    >
+      nav-links-json='[{"iconClass":"bi bi-question-circle","name":"Hilfe","href":"#"},{"iconClass":"bi bi-cart","name":"Warenkorb","href":"#"},{"iconClass":"bi bi-person","name":"Anmelden","href":"#"}]'>
     </jplants-header>
-
+    <div class="welcome">
+      <jplants-welcome welcome-headline="Herzlich Willkommen Josef!"
+        welcome-text-1="Auf deinem ganz persönlichen Pflanzenshop. Denn diese Webseite haben wir Dir gewidmet. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi."
+        welcome-text-2="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.">
+      </jplants-welcome>
+    </div>
     <jplants-searchbar></jplants-searchbar>
     <jplants-button button-name="Mehr erfahren" button-href="#" button-color="default"></jplants-button>
 
@@ -28,43 +34,53 @@
       <jplant-article
         article-image="https://plantaddiction.de/media/image/14/af/12/Blogeintrag_Zimmerpflanzen_Umtopfen12_700x700.jpg"
         article-title="Zimmerpflanzen Umtopfen"
-        article-text="Um auch wirklich der beste Freund oder die beste Freundin deiner Zimmerpflanze zu werden, musst du sie regelmäßig umtopfen – nur so können unsere grünen Lieblinge munter weiterwachsen. Damit dein Pflanzen-Buddy beim Umtopfen nicht beerdigt wird oder gar zwecks Nährstoffmangel verhungert, bekommst du hier eine kleine Anleitung und dann heißt es – ran ans Umtopfen!"
-      ></jplant-article>
-      <jplant-article
-        article-image="https://plantaddiction.de/media/image/9d/22/12/zimmerpflanzen-sessel_500x500.jpg"
+        article-text="Um auch wirklich der beste Freund oder die beste Freundin deiner Zimmerpflanze zu werden, musst du sie regelmäßig umtopfen – nur so können unsere grünen Lieblinge munter weiterwachsen. Damit dein Pflanzen-Buddy beim Umtopfen nicht beerdigt wird oder gar zwecks Nährstoffmangel verhungert, bekommst du hier eine kleine Anleitung und dann heißt es – ran ans Umtopfen!">
+      </jplant-article>
+      <jplant-article article-image="https://plantaddiction.de/media/image/9d/22/12/zimmerpflanzen-sessel_500x500.jpg"
         article-title="Zimmerpflanzen Düngen"
-        article-text="Deine Zimmerpflanze lässt seit ein paar Tagen den Kopf ganz schön hängen und du erkennst deine Happy-Plant nicht mehr wieder? Daran könnte ein Nährstoffmangel schuld sein! Schön, dass du bei uns gelandet bist! Hier findest du alles rund ums Thema Düngen. Bevor dein Pflanzen-Buddy noch verhungert oder gar überfüttert wird, gibt es nun einen planty Speiseplan."
-      ></jplant-article>
+        article-text="Deine Zimmerpflanze lässt seit ein paar Tagen den Kopf ganz schön hängen und du erkennst deine Happy-Plant nicht mehr wieder? Daran könnte ein Nährstoffmangel schuld sein! Schön, dass du bei uns gelandet bist! Hier findest du alles rund ums Thema Düngen. Bevor dein Pflanzen-Buddy noch verhungert oder gar überfüttert wird, gibt es nun einen planty Speiseplan.">
+      </jplant-article>
       <jplant-article
         article-image="https://plantaddiction.de/media/image/dd/92/d2/Mood-SHot-classic-chic_1920x1080_700x700.jpg"
         article-title="Zimmerpflanzen Gießen"
-        article-text="Deine Pflanzen gießt du nach dem Motto: Mal so, mal so? Das kann für deine grünen Lieblinge leider ganz schnell tödlich enden! Lies weiter, damit deine Pflanze bei dir ein langes glückliches Leben führen kann."
-      ></jplant-article>
+        article-text="Deine Pflanzen gießt du nach dem Motto: Mal so, mal so? Das kann für deine grünen Lieblinge leider ganz schnell tödlich enden! Lies weiter, damit deine Pflanze bei dir ein langes glückliches Leben führen kann.">
+      </jplant-article>
       <jplant-article
         article-image="https://plantaddiction.de/media/image/74/06/45/2022_04_22_Inspiration-Melinda-am-lesen_1920x1080_700x700.jpg"
         article-title="Zimmerpflanzen schneiden"
-        article-text="Deine freche Monstera wächst dir mal wieder über den Kopf? Dann ist Zeit für eine neue Frisur! Keine Sorge - für den Rückschnitt benötigst du nicht gleich den Meisterbrief als Stylist! Du musst aber wissen, was du beachten solltest, damit dein Pflanzen-Buddy keinen Bad Hair Day einführen muss und du deine Finger behältst."
-      ></jplant-article>
+        article-text="Deine freche Monstera wächst dir mal wieder über den Kopf? Dann ist Zeit für eine neue Frisur! Keine Sorge - für den Rückschnitt benötigst du nicht gleich den Meisterbrief als Stylist! Du musst aber wissen, was du beachten solltest, damit dein Pflanzen-Buddy keinen Bad Hair Day einführen muss und du deine Finger behältst.">
+      </jplant-article>
     </div>
     <h3>Toast Previews</h3>
     <div class="container">
       <div class="toaster">
-      <jplants-toast toast-button-title="Show a toast to the top left!" toast-position="position-top-left" toast-title="Hier entsteht ein neues Feature" toast-message="Bitte habe noch ein bisschen Geduld. Wir entwickeln gerade ein neues Feature für dich und werden es dir schon bald präsentieren können."></jplants-toast>
-      <jplants-toast toast-button-title="Show a toast to the top right!" toast-position="position-top-right" toast-title="Hier entsteht ein neues Feature" toast-message="Bitte habe noch ein bisschen Geduld. Wir entwickeln gerade ein neues Feature für dich und werden es dir schon bald präsentieren können."></jplants-toast>
-      <jplants-toast toast-button-title="Show a toast to the bottom left!" toast-position="position-bottom-left" toast-title="Hier entsteht ein neues Feature" toast-message="Bitte habe noch ein bisschen Geduld. Wir entwickeln gerade ein neues Feature für dich und werden es dir schon bald präsentieren können."></jplants-toast>
-      <jplants-toast toast-button-title="Show a toast to the bottom right!" toast-position="position-bottom-right" toast-title="Hier entsteht ein neues Feature" toast-message="Bitte habe noch ein bisschen Geduld. Wir entwickeln gerade ein neues Feature für dich und werden es dir schon bald präsentieren können."></jplants-toast>  
-  </div>
-    <jplants-customergallery> Bilder unserer Kunden </jplants-customergallery>
+        <jplants-toast toast-button-title="Show a toast to the top left!" toast-position="position-top-left"
+          toast-title="Hier entsteht ein neues Feature"
+          toast-message="Bitte habe noch ein bisschen Geduld. Wir entwickeln gerade ein neues Feature für dich und werden es dir schon bald präsentieren können.">
+        </jplants-toast>
+        <jplants-toast toast-button-title="Show a toast to the top right!" toast-position="position-top-right"
+          toast-title="Hier entsteht ein neues Feature"
+          toast-message="Bitte habe noch ein bisschen Geduld. Wir entwickeln gerade ein neues Feature für dich und werden es dir schon bald präsentieren können.">
+        </jplants-toast>
+        <jplants-toast toast-button-title="Show a toast to the bottom left!" toast-position="position-bottom-left"
+          toast-title="Hier entsteht ein neues Feature"
+          toast-message="Bitte habe noch ein bisschen Geduld. Wir entwickeln gerade ein neues Feature für dich und werden es dir schon bald präsentieren können.">
+        </jplants-toast>
+        <jplants-toast toast-button-title="Show a toast to the bottom right!" toast-position="position-bottom-right"
+          toast-title="Hier entsteht ein neues Feature"
+          toast-message="Bitte habe noch ein bisschen Geduld. Wir entwickeln gerade ein neues Feature für dich und werden es dir schon bald präsentieren können.">
+        </jplants-toast>
       </div>
+      <jplants-customergallery> Bilder unserer Kunden </jplants-customergallery>
     </div>
-    <jplants-rating-stars filled-stars="3"></jplants-rating-stars>
+  </div>
+  <jplants-rating-stars filled-stars="3"></jplants-rating-stars>
 </body>
-  <jplants-footer
-      id="footerbar"
-      footer-links-json='[{"zeile1":"Über uns","href1":"https://docs.google.com/document/d/1Agp5_kJokmiP4ucfFMRTUyiobUhXR0L8PWeUV3JxknU/edit","zeile2":"Mission","href2":"https://docs.google.com/document/d/1Agp5_kJokmiP4ucfFMRTUyiobUhXR0L8PWeUV3JxknU/edit","zeile3":"Nachhaltigkeit","href3":"https://docs.google.com/document/d/1Agp5_kJokmiP4ucfFMRTUyiobUhXR0L8PWeUV3JxknU/edit"},
+<jplants-footer id="footerbar"
+  footer-links-json='[{"zeile1":"Über uns","href1":"https://docs.google.com/document/d/1Agp5_kJokmiP4ucfFMRTUyiobUhXR0L8PWeUV3JxknU/edit","zeile2":"Mission","href2":"https://docs.google.com/document/d/1Agp5_kJokmiP4ucfFMRTUyiobUhXR0L8PWeUV3JxknU/edit","zeile3":"Nachhaltigkeit","href3":"https://docs.google.com/document/d/1Agp5_kJokmiP4ucfFMRTUyiobUhXR0L8PWeUV3JxknU/edit"},
                           {"zeile1":"Versand","href1":"https://docs.google.com/document/d/1Agp5_kJokmiP4ucfFMRTUyiobUhXR0L8PWeUV3JxknU/edit","zeile2":"Rückgabe","href2":"https://docs.google.com/document/d/1Agp5_kJokmiP4ucfFMRTUyiobUhXR0L8PWeUV3JxknU/edit","zeile3":"AGB","href3":"https://docs.google.com/document/d/1Agp5_kJokmiP4ucfFMRTUyiobUhXR0L8PWeUV3JxknU/edit"},
-                          {"zeile1":"FAQ","href1":"https://docs.google.com/document/d/1Agp5_kJokmiP4ucfFMRTUyiobUhXR0L8PWeUV3JxknU/edit","zeile2":"Impressum","href2":"https://docs.google.com/document/d/1Agp5_kJokmiP4ucfFMRTUyiobUhXR0L8PWeUV3JxknU/edit","zeile3":"Community","href3":"https://docs.google.com/document/d/1Agp5_kJokmiP4ucfFMRTUyiobUhXR0L8PWeUV3JxknU/edit"}]'
-    >
-    </jplants-footer>
-  </body>
+                          {"zeile1":"FAQ","href1":"https://docs.google.com/document/d/1Agp5_kJokmiP4ucfFMRTUyiobUhXR0L8PWeUV3JxknU/edit","zeile2":"Impressum","href2":"https://docs.google.com/document/d/1Agp5_kJokmiP4ucfFMRTUyiobUhXR0L8PWeUV3JxknU/edit","zeile3":"Community","href3":"https://docs.google.com/document/d/1Agp5_kJokmiP4ucfFMRTUyiobUhXR0L8PWeUV3JxknU/edit"}]'>
+</jplants-footer>
+</body>
+
 </html>
