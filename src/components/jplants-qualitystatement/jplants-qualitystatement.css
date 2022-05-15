@@ -84,7 +84,7 @@
   transition: ease-in 0.5s;
 }
 
-.header-quality > a {
+/* .header-quality > a {
   color: #707070;
   text-decoration: none;
 }
@@ -93,6 +93,6 @@
   cursor: pointer;
   opacity: 0.6;
   text-decoration: underline 0.5px;
-}
+} */
 
 

@@ -10,7 +10,7 @@ export class JplantsQualitystatement {
 
   @Prop() text: string;
   @Prop() imgsrc: string;
-  @Prop() link: string;
+  @Prop() link?: string;
 
   innerContainer: HTMLElement;
 

@@ -16,6 +16,14 @@ export namespace Components {
         "buttonHref": string;
         "buttonIconClass": string;
         "buttonName": string;
+        "buttonTarget": string;
+    }
+    interface JplantsCard {
+        "filledStars": number;
+        "image": string;
+        "name": string;
+        "price": string;
+        "tags"?: string;
     }
     interface JplantsCustomergallery {
     }
@@ -31,16 +39,33 @@ export namespace Components {
     interface JplantsMenubar {
         "navItemsLinks": string;
     }
+    interface JplantsModal {
+        "image": string;
+        "price": string;
+        "tags"?: string;
+        "title": string;
+    }
     interface JplantsQualitystatement {
         "imgsrc": string;
-        "link": string;
+        "link"?: string;
         "text": string;
     }
     interface JplantsRatingStars {
         "filledStars": number;
     }
     interface JplantsSearchbar {
-        "searchBarName": string;
+    }
+    interface JplantsSlide {
+        "imgDescr"?: string;
+        "imgSrc"?: string | null;
+        "slideTitle": string;
+    }
+    interface JplantsSlider {
+        "numberOfSlides": number;
+    }
+    interface JplantsSliderOld {
+        "numberOfSlides"?: number;
+        "showStatus": boolean;
     }
     interface JplantsToast {
         "toast": string;
@@ -48,6 +73,11 @@ export namespace Components {
         "toastMessage": string;
         "toastPosition": string;
         "toastTitle": string;
+    }
+    interface JplantsWelcome {
+        "welcomeHeadline": string;
+        "welcomeText1": string;
+        "welcomeText2": string;
     }
 }
 declare global {
@@ -62,6 +92,12 @@ declare global {
     var HTMLJplantsButtonElement: {
         prototype: HTMLJplantsButtonElement;
         new (): HTMLJplantsButtonElement;
+    };
+    interface HTMLJplantsCardElement extends Components.JplantsCard, HTMLStencilElement {
+    }
+    var HTMLJplantsCardElement: {
+        prototype: HTMLJplantsCardElement;
+        new (): HTMLJplantsCardElement;
     };
     interface HTMLJplantsCustomergalleryElement extends Components.JplantsCustomergallery, HTMLStencilElement {
     }
@@ -87,6 +123,12 @@ declare global {
         prototype: HTMLJplantsMenubarElement;
         new (): HTMLJplantsMenubarElement;
     };
+    interface HTMLJplantsModalElement extends Components.JplantsModal, HTMLStencilElement {
+    }
+    var HTMLJplantsModalElement: {
+        prototype: HTMLJplantsModalElement;
+        new (): HTMLJplantsModalElement;
+    };
     interface HTMLJplantsQualitystatementElement extends Components.JplantsQualitystatement, HTMLStencilElement {
     }
     var HTMLJplantsQualitystatementElement: {
@@ -105,23 +147,53 @@ declare global {
         prototype: HTMLJplantsSearchbarElement;
         new (): HTMLJplantsSearchbarElement;
     };
+    interface HTMLJplantsSlideElement extends Components.JplantsSlide, HTMLStencilElement {
+    }
+    var HTMLJplantsSlideElement: {
+        prototype: HTMLJplantsSlideElement;
+        new (): HTMLJplantsSlideElement;
+    };
+    interface HTMLJplantsSliderElement extends Components.JplantsSlider, HTMLStencilElement {
+    }
+    var HTMLJplantsSliderElement: {
+        prototype: HTMLJplantsSliderElement;
+        new (): HTMLJplantsSliderElement;
+    };
+    interface HTMLJplantsSliderOldElement extends Components.JplantsSliderOld, HTMLStencilElement {
+    }
+    var HTMLJplantsSliderOldElement: {
+        prototype: HTMLJplantsSliderOldElement;
+        new (): HTMLJplantsSliderOldElement;
+    };
     interface HTMLJplantsToastElement extends Components.JplantsToast, HTMLStencilElement {
     }
     var HTMLJplantsToastElement: {
         prototype: HTMLJplantsToastElement;
         new (): HTMLJplantsToastElement;
     };
+    interface HTMLJplantsWelcomeElement extends Components.JplantsWelcome, HTMLStencilElement {
+    }
+    var HTMLJplantsWelcomeElement: {
+        prototype: HTMLJplantsWelcomeElement;
+        new (): HTMLJplantsWelcomeElement;
+    };
     interface HTMLElementTagNameMap {
         "jplant-article": HTMLJplantArticleElement;
         "jplants-button": HTMLJplantsButtonElement;
+        "jplants-card": HTMLJplantsCardElement;
         "jplants-customergallery": HTMLJplantsCustomergalleryElement;
         "jplants-footer": HTMLJplantsFooterElement;
         "jplants-header": HTMLJplantsHeaderElement;
         "jplants-menubar": HTMLJplantsMenubarElement;
+        "jplants-modal": HTMLJplantsModalElement;
         "jplants-qualitystatement": HTMLJplantsQualitystatementElement;
         "jplants-rating-stars": HTMLJplantsRatingStarsElement;
         "jplants-searchbar": HTMLJplantsSearchbarElement;
+        "jplants-slide": HTMLJplantsSlideElement;
+        "jplants-slider": HTMLJplantsSliderElement;
+        "jplants-slider-old": HTMLJplantsSliderOldElement;
         "jplants-toast": HTMLJplantsToastElement;
+        "jplants-welcome": HTMLJplantsWelcomeElement;
     }
 }
 declare namespace LocalJSX {
@@ -135,6 +207,14 @@ declare namespace LocalJSX {
         "buttonHref"?: string;
         "buttonIconClass"?: string;
         "buttonName"?: string;
+        "buttonTarget"?: string;
+    }
+    interface JplantsCard {
+        "filledStars"?: number;
+        "image"?: string;
+        "name"?: string;
+        "price"?: string;
+        "tags"?: string;
     }
     interface JplantsCustomergallery {
     }
@@ -151,6 +231,12 @@ declare namespace LocalJSX {
         "navItemsLinks"?: string;
         "onOnShow"?: (event: CustomEvent<any>) => void;
     }
+    interface JplantsModal {
+        "image"?: string;
+        "price"?: string;
+        "tags"?: string;
+        "title"?: string;
+    }
     interface JplantsQualitystatement {
         "imgsrc"?: string;
         "link"?: string;
@@ -160,7 +246,18 @@ declare namespace LocalJSX {
         "filledStars"?: number;
     }
     interface JplantsSearchbar {
-        "searchBarName"?: string;
+    }
+    interface JplantsSlide {
+        "imgDescr"?: string;
+        "imgSrc"?: string | null;
+        "slideTitle"?: string;
+    }
+    interface JplantsSlider {
+        "numberOfSlides"?: number;
+    }
+    interface JplantsSliderOld {
+        "numberOfSlides"?: number;
+        "showStatus"?: boolean;
     }
     interface JplantsToast {
         "onShow"?: (event: CustomEvent<any>) => void;
@@ -170,17 +267,28 @@ declare namespace LocalJSX {
         "toastPosition"?: string;
         "toastTitle"?: string;
     }
+    interface JplantsWelcome {
+        "welcomeHeadline"?: string;
+        "welcomeText1"?: string;
+        "welcomeText2"?: string;
+    }
     interface IntrinsicElements {
         "jplant-article": JplantArticle;
         "jplants-button": JplantsButton;
+        "jplants-card": JplantsCard;
         "jplants-customergallery": JplantsCustomergallery;
         "jplants-footer": JplantsFooter;
         "jplants-header": JplantsHeader;
         "jplants-menubar": JplantsMenubar;
+        "jplants-modal": JplantsModal;
         "jplants-qualitystatement": JplantsQualitystatement;
         "jplants-rating-stars": JplantsRatingStars;
         "jplants-searchbar": JplantsSearchbar;
+        "jplants-slide": JplantsSlide;
+        "jplants-slider": JplantsSlider;
+        "jplants-slider-old": JplantsSliderOld;
         "jplants-toast": JplantsToast;
+        "jplants-welcome": JplantsWelcome;
     }
 }
 export { LocalJSX as JSX };
@@ -189,14 +297,20 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "jplant-article": LocalJSX.JplantArticle & JSXBase.HTMLAttributes<HTMLJplantArticleElement>;
             "jplants-button": LocalJSX.JplantsButton & JSXBase.HTMLAttributes<HTMLJplantsButtonElement>;
+            "jplants-card": LocalJSX.JplantsCard & JSXBase.HTMLAttributes<HTMLJplantsCardElement>;
             "jplants-customergallery": LocalJSX.JplantsCustomergallery & JSXBase.HTMLAttributes<HTMLJplantsCustomergalleryElement>;
             "jplants-footer": LocalJSX.JplantsFooter & JSXBase.HTMLAttributes<HTMLJplantsFooterElement>;
             "jplants-header": LocalJSX.JplantsHeader & JSXBase.HTMLAttributes<HTMLJplantsHeaderElement>;
             "jplants-menubar": LocalJSX.JplantsMenubar & JSXBase.HTMLAttributes<HTMLJplantsMenubarElement>;
+            "jplants-modal": LocalJSX.JplantsModal & JSXBase.HTMLAttributes<HTMLJplantsModalElement>;
             "jplants-qualitystatement": LocalJSX.JplantsQualitystatement & JSXBase.HTMLAttributes<HTMLJplantsQualitystatementElement>;
             "jplants-rating-stars": LocalJSX.JplantsRatingStars & JSXBase.HTMLAttributes<HTMLJplantsRatingStarsElement>;
             "jplants-searchbar": LocalJSX.JplantsSearchbar & JSXBase.HTMLAttributes<HTMLJplantsSearchbarElement>;
+            "jplants-slide": LocalJSX.JplantsSlide & JSXBase.HTMLAttributes<HTMLJplantsSlideElement>;
+            "jplants-slider": LocalJSX.JplantsSlider & JSXBase.HTMLAttributes<HTMLJplantsSliderElement>;
+            "jplants-slider-old": LocalJSX.JplantsSliderOld & JSXBase.HTMLAttributes<HTMLJplantsSliderOldElement>;
             "jplants-toast": LocalJSX.JplantsToast & JSXBase.HTMLAttributes<HTMLJplantsToastElement>;
+            "jplants-welcome": LocalJSX.JplantsWelcome & JSXBase.HTMLAttributes<HTMLJplantsWelcomeElement>;
         }
     }
 }

@@ -12,3 +12,21 @@
   background-color: #EDF2ED;
 }
 
+body {
+ margin: 0;
+}
+
+.artikelcontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 155px 0px 155px;;
+}
+
+.toaster {
+  display: flex;
+  justify-content: space-between;
+  padding: 70px;
+}
+
+
