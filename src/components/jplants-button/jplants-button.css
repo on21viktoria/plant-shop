@@ -25,7 +25,9 @@ button.white {
   padding: 3px 15px 3px 15px;
 }
 
-
 .bi {
-  margin-right: 5px;
+  vertical-align: middle;
+  display: inline-block;
+  font-family: bootstrap-icons !important;
+  padding: 0px 5px 3px 0px !important;
 }
