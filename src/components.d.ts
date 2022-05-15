@@ -41,7 +41,6 @@ export namespace Components {
         "filledStars": number;
     }
     interface JplantsSearchbar {
-        "searchBarName": string;
     }
     interface JplantsToast {
         "toast": string;
@@ -174,7 +173,6 @@ declare namespace LocalJSX {
         "filledStars"?: number;
     }
     interface JplantsSearchbar {
-        "searchBarName"?: string;
     }
     interface JplantsToast {
         "onShow"?: (event: CustomEvent<any>) => void;
