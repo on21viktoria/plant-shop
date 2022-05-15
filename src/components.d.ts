@@ -6,7 +6,7 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface JplantArticle {
+    interface JplantsArticle {
         "articleImage": string;
         "articleText": string;
         "articleTitle": string;
@@ -63,10 +63,6 @@ export namespace Components {
     interface JplantsSlider {
         "numberOfSlides": number;
     }
-    interface JplantsSliderOld {
-        "numberOfSlides"?: number;
-        "showStatus": boolean;
-    }
     interface JplantsToast {
         "toast": string;
         "toastButtonTitle": string;
@@ -81,11 +77,11 @@ export namespace Components {
     }
 }
 declare global {
-    interface HTMLJplantArticleElement extends Components.JplantArticle, HTMLStencilElement {
+    interface HTMLJplantsArticleElement extends Components.JplantsArticle, HTMLStencilElement {
     }
-    var HTMLJplantArticleElement: {
-        prototype: HTMLJplantArticleElement;
-        new (): HTMLJplantArticleElement;
+    var HTMLJplantsArticleElement: {
+        prototype: HTMLJplantsArticleElement;
+        new (): HTMLJplantsArticleElement;
     };
     interface HTMLJplantsButtonElement extends Components.JplantsButton, HTMLStencilElement {
     }
@@ -159,12 +155,6 @@ declare global {
         prototype: HTMLJplantsSliderElement;
         new (): HTMLJplantsSliderElement;
     };
-    interface HTMLJplantsSliderOldElement extends Components.JplantsSliderOld, HTMLStencilElement {
-    }
-    var HTMLJplantsSliderOldElement: {
-        prototype: HTMLJplantsSliderOldElement;
-        new (): HTMLJplantsSliderOldElement;
-    };
     interface HTMLJplantsToastElement extends Components.JplantsToast, HTMLStencilElement {
     }
     var HTMLJplantsToastElement: {
@@ -178,7 +168,7 @@ declare global {
         new (): HTMLJplantsWelcomeElement;
     };
     interface HTMLElementTagNameMap {
-        "jplant-article": HTMLJplantArticleElement;
+        "jplants-article": HTMLJplantsArticleElement;
         "jplants-button": HTMLJplantsButtonElement;
         "jplants-card": HTMLJplantsCardElement;
         "jplants-customergallery": HTMLJplantsCustomergalleryElement;
@@ -191,13 +181,12 @@ declare global {
         "jplants-searchbar": HTMLJplantsSearchbarElement;
         "jplants-slide": HTMLJplantsSlideElement;
         "jplants-slider": HTMLJplantsSliderElement;
-        "jplants-slider-old": HTMLJplantsSliderOldElement;
         "jplants-toast": HTMLJplantsToastElement;
         "jplants-welcome": HTMLJplantsWelcomeElement;
     }
 }
 declare namespace LocalJSX {
-    interface JplantArticle {
+    interface JplantsArticle {
         "articleImage"?: string;
         "articleText"?: string;
         "articleTitle"?: string;
@@ -255,10 +244,6 @@ declare namespace LocalJSX {
     interface JplantsSlider {
         "numberOfSlides"?: number;
     }
-    interface JplantsSliderOld {
-        "numberOfSlides"?: number;
-        "showStatus"?: boolean;
-    }
     interface JplantsToast {
         "onShow"?: (event: CustomEvent<any>) => void;
         "toast"?: string;
@@ -273,7 +258,7 @@ declare namespace LocalJSX {
         "welcomeText2"?: string;
     }
     interface IntrinsicElements {
-        "jplant-article": JplantArticle;
+        "jplants-article": JplantsArticle;
         "jplants-button": JplantsButton;
         "jplants-card": JplantsCard;
         "jplants-customergallery": JplantsCustomergallery;
@@ -286,7 +271,6 @@ declare namespace LocalJSX {
         "jplants-searchbar": JplantsSearchbar;
         "jplants-slide": JplantsSlide;
         "jplants-slider": JplantsSlider;
-        "jplants-slider-old": JplantsSliderOld;
         "jplants-toast": JplantsToast;
         "jplants-welcome": JplantsWelcome;
     }
@@ -295,7 +279,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "jplant-article": LocalJSX.JplantArticle & JSXBase.HTMLAttributes<HTMLJplantArticleElement>;
+            "jplants-article": LocalJSX.JplantsArticle & JSXBase.HTMLAttributes<HTMLJplantsArticleElement>;
             "jplants-button": LocalJSX.JplantsButton & JSXBase.HTMLAttributes<HTMLJplantsButtonElement>;
             "jplants-card": LocalJSX.JplantsCard & JSXBase.HTMLAttributes<HTMLJplantsCardElement>;
             "jplants-customergallery": LocalJSX.JplantsCustomergallery & JSXBase.HTMLAttributes<HTMLJplantsCustomergalleryElement>;
@@ -308,7 +292,6 @@ declare module "@stencil/core" {
             "jplants-searchbar": LocalJSX.JplantsSearchbar & JSXBase.HTMLAttributes<HTMLJplantsSearchbarElement>;
             "jplants-slide": LocalJSX.JplantsSlide & JSXBase.HTMLAttributes<HTMLJplantsSlideElement>;
             "jplants-slider": LocalJSX.JplantsSlider & JSXBase.HTMLAttributes<HTMLJplantsSliderElement>;
-            "jplants-slider-old": LocalJSX.JplantsSliderOld & JSXBase.HTMLAttributes<HTMLJplantsSliderOldElement>;
             "jplants-toast": LocalJSX.JplantsToast & JSXBase.HTMLAttributes<HTMLJplantsToastElement>;
             "jplants-welcome": LocalJSX.JplantsWelcome & JSXBase.HTMLAttributes<HTMLJplantsWelcomeElement>;
         }
