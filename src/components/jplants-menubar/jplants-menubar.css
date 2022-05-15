@@ -33,10 +33,10 @@ hr {
   left: -300px;
   position: absolute;
   width: 250px;
-  height: 100vh;
+  height: fit-content;
   padding: 10px 0;
   background-color: #EDF2ED ;
-  border: 1px solid black;
+  border-radius: 4px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   transition: 0.5s ease-in;
 }
@@ -45,13 +45,14 @@ hr {
   top: 0px;
   left: 0px;
   position: absolute;
-  width: 300px;
-  height: 100vh;
+  width: 250px;
+  height: fit-content;
   padding: 10px 0;
   background-color: #EDF2ED ;
-  border: 1px solid black;
+  border-radius: 4px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   transition: 0.8s ease-out;
+  z-index: 100;
 }
 
 .nav-title {
@@ -96,16 +97,10 @@ hr {
   opacity: 1;
 }
 
-navigation li a:hover {
+.navigation li a:hover {
   opacity: 0.7;
 }
 
 #bar-two {
   margin: 8px 0;
 }
-
-/* .navigation.hidden {
-  left: -230px;
-  position: absolute;
-
-} */

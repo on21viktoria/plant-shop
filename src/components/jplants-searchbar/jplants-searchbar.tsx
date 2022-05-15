@@ -7,8 +7,6 @@ import { Component, Host, h, Prop } from '@stencil/core';
 })
 export class JplantsSearchbar {
 
-@Prop() searchBarName: string = 'Search';
-
 enterSearch() {
   alert('Sorry, leider besitzt unsere Seite noch keine Suchfunktion.')
 }
@@ -18,7 +16,7 @@ enterSearch() {
       <Host>
         <div class="searchbar-unit">
         <input type="search"></input>
-        <button onClick={() => this.enterSearch()}type="button" name="button">{this.searchBarName}</button>
+        <jplants-button onClick={() => this.enterSearch()} button-color="default" button-href="#" button-name="Suche"></jplants-button>
         </div>
       </Host>
     );
