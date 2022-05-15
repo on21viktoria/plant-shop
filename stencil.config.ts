@@ -9,7 +9,7 @@ export const config: Config = {
       // Muss am Ende noch im Gesamtprojekt implementiert werden!!
       copy: [
         {
-          src: '**/*.{jpg,png}',
+          src: '**/*.{jpg,png,svg}',
           dest: 'dist/components/assets',
           warn: true,
         }
