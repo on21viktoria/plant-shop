@@ -8,8 +8,8 @@ import { Component, Host, h, Prop, State, Watch, getAssetPath } from '@stencil/c
 })
 export class JplantsHeader {
   @Prop() navLinksJson: string;
-  @Prop() logo = 'jplants-logo.png';
-  @Prop() logoHref = '#';
+  @Prop() logo: string;;
+  @Prop() logoHref: string;
 
   @State() navLinks: Array<{ iconClass: string; name: string; href: string }> = [];
 
@@ -32,7 +32,7 @@ export class JplantsHeader {
       <Host>
         <div class="header">
           <jplants-menubar nav-items-links='[{"name":"Shop","href":"#"},{"name":"Angebote","href":"#"},{"name":"Plant-Basics","href":"#"},{"name":"How to care","href":"#"},{"name":"Galerie","href":"#"},{"name":"Blog","href":"#"}]'></jplants-menubar>
-          <a id="logo" href="#">
+          <a id="logo" href={this.logoHref}>
             <img src={imageSrc} />
           </a>
           <nav>
