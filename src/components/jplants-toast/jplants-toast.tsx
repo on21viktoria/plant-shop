@@ -12,7 +12,7 @@ export class JplantsToast {
   @Prop() toastTitle: string;
   @Prop() toastMessage: string;
   @Prop() toastButtonTitle: string;
-  @Prop() toast = "toast.svg";
+  @Prop() toastImg: string;
   @Prop() toastPosition: string = 'right';
   
   @State() toastClass = "toast-hide";
@@ -28,7 +28,7 @@ export class JplantsToast {
   }
 
   render() {
-    const imageSrc = getAssetPath(`/dist/stencil-starter-on/dist/components/assets/${this.toast}`);
+    const imageSrc = getAssetPath(`/dist/stencil-starter-on/dist/components/assets/${this.toastImg}`);
     return (
       <Host>
         <div>

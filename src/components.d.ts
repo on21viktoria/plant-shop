@@ -63,8 +63,8 @@ export namespace Components {
         "numberOfSlides": number;
     }
     interface JplantsToast {
-        "toast": string;
         "toastButtonTitle": string;
+        "toastImg": string;
         "toastMessage": string;
         "toastPosition": string;
         "toastTitle": string;
@@ -244,8 +244,8 @@ declare namespace LocalJSX {
     }
     interface JplantsToast {
         "onShowToast"?: (event: CustomEvent<any>) => void;
-        "toast"?: string;
         "toastButtonTitle"?: string;
+        "toastImg"?: string;
         "toastMessage"?: string;
         "toastPosition"?: string;
         "toastTitle"?: string;
