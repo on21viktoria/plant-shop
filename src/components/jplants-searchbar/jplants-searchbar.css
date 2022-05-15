@@ -18,7 +18,7 @@ input:focus {
   outline-color: #EDF2ED;
 }
 
-.searchbar-unit {
+#searchbar-unit {
   display: flex;
  justify-content: flex-end;
   border: 1px solid #707070;

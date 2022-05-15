@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop } from '@stencil/core';
+import { Component, Host, h, Prop, Element } from '@stencil/core';
 
 @Component({
   tag: 'jplants-searchbar',
@@ -7,15 +7,29 @@ import { Component, Host, h, Prop } from '@stencil/core';
 })
 export class JplantsSearchbar {
 
+@Element() searchbarEl: HTMLElement;
+
+f: HTMLElement;
+q: HTMLInputElement;
+google: string = 'https://www.google.com/search?q=';
+
+componentDidLoad(){
+this.f = this.searchbarEl.shadowRoot.getElementById('searchbar-unit');
+this.q = this.searchbarEl.shadowRoot.getElementById('search-field') as HTMLInputElement;
+}
+
+// Source for the Google-Search-Logic: https://pagedart.com/blog/how-to-add-a-search-bar-in-html/ 
 enterSearch() {
-  alert('Sorry, leider besitzt unsere Seite noch keine Suchfunktion.')
+  const url = this.google + this.q.value;
+  const win = window.open(url, '_blank');
+  win.focus();
 }
 
   render() {
     return (
       <Host>
-        <div class="searchbar-unit">
-        <input type="search"></input>
+        <div id="searchbar-unit">
+        <input id="search-field" type="search"></input>
         <jplants-button onClick={() => this.enterSearch()} button-color="default" button-href="#" button-name="Suche"></jplants-button>
         </div>
       </Host>
