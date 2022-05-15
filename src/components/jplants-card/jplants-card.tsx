@@ -2,7 +2,7 @@ import { Component, Host, h, Prop, Listen } from '@stencil/core';
 
 @Component({
   tag: 'jplants-card',
-  styleUrl: 'jplants-card',
+  styleUrl: 'jplants-card.css',
   shadow: true,
 })
 export class CardComponent {

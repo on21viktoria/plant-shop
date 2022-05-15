@@ -6,21 +6,9 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface CardComponent {
-        "image": string;
-        "name": string;
-        "price": string;
-        "tags"?: string;
-    }
     interface ExampleComponent {
         "exampleProp": string;
         "exampleToUpperCase": () => Promise<void>;
-    }
-    interface JplantsCard {
-        "image": string;
-        "name": string;
-        "price": string;
-        "tags"?: string;
     }
     interface JplantArticle {
         "articleImage": string;
@@ -33,6 +21,12 @@ export namespace Components {
         "buttonIconClass": string;
         "buttonName": string;
     }
+    interface JplantsCard {
+        "image": string;
+        "name": string;
+        "price": string;
+        "tags"?: string;
+    }
     interface JplantsHeader {
         "logo": string;
         "logoHref": string;
@@ -43,23 +37,11 @@ export namespace Components {
     }
 }
 declare global {
-    interface HTMLCardComponentElement extends Components.CardComponent, HTMLStencilElement {
-    }
-    var HTMLCardComponentElement: {
-        prototype: HTMLCardComponentElement;
-        new (): HTMLCardComponentElement;
-    };
     interface HTMLExampleComponentElement extends Components.ExampleComponent, HTMLStencilElement {
     }
     var HTMLExampleComponentElement: {
         prototype: HTMLExampleComponentElement;
         new (): HTMLExampleComponentElement;
-    };
-    interface HTMLJplantsCardElement extends Components.JplantsCard, HTMLStencilElement {
-    }
-    var HTMLJplantsCardElement: {
-        prototype: HTMLJplantsCardElement;
-        new (): HTMLJplantsCardElement;
     };
     interface HTMLJplantArticleElement extends Components.JplantArticle, HTMLStencilElement {
     }
@@ -72,6 +54,12 @@ declare global {
     var HTMLJplantsButtonElement: {
         prototype: HTMLJplantsButtonElement;
         new (): HTMLJplantsButtonElement;
+    };
+    interface HTMLJplantsCardElement extends Components.JplantsCard, HTMLStencilElement {
+    }
+    var HTMLJplantsCardElement: {
+        prototype: HTMLJplantsCardElement;
+        new (): HTMLJplantsCardElement;
     };
     interface HTMLJplantsHeaderElement extends Components.JplantsHeader, HTMLStencilElement {
     }
@@ -86,45 +74,18 @@ declare global {
         new (): HTMLJplantsMenubarElement;
     };
     interface HTMLElementTagNameMap {
-        "card-component": HTMLCardComponentElement;
         "example-component": HTMLExampleComponentElement;
-        "jplants-card": HTMLJplantsCardElement;
         "jplant-article": HTMLJplantArticleElement;
         "jplants-button": HTMLJplantsButtonElement;
+        "jplants-card": HTMLJplantsCardElement;
         "jplants-header": HTMLJplantsHeaderElement;
         "jplants-menubar": HTMLJplantsMenubarElement;
     }
 }
 declare namespace LocalJSX {
-    interface CardComponent {
-        "image"?: string;
-        "name"?: string;
-        "price"?: string;
-        "tags"?: string;
-    }
     interface ExampleComponent {
         "exampleProp"?: string;
         "onExampleEvent"?: (event: CustomEvent<string>) => void;
-    }
-    interface JplantsCard {
-        "image"?: string;
-        "name"?: string;
-        "price"?: string;
-        "tags"?: string;
-    }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
     }
     interface JplantArticle {
         "articleImage"?: string;
@@ -137,6 +98,12 @@ declare namespace LocalJSX {
         "buttonIconClass"?: string;
         "buttonName"?: string;
     }
+    interface JplantsCard {
+        "image"?: string;
+        "name"?: string;
+        "price"?: string;
+        "tags"?: string;
+    }
     interface JplantsHeader {
         "logo"?: string;
         "logoHref"?: string;
@@ -147,12 +114,10 @@ declare namespace LocalJSX {
         "onOnShow"?: (event: CustomEvent<any>) => void;
     }
     interface IntrinsicElements {
-        "card-component": CardComponent;
         "example-component": ExampleComponent;
-        "jplants-card": JplantsCard;
-        "my-component": MyComponent;
         "jplant-article": JplantArticle;
         "jplants-button": JplantsButton;
+        "jplants-card": JplantsCard;
         "jplants-header": JplantsHeader;
         "jplants-menubar": JplantsMenubar;
     }
@@ -161,11 +126,10 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "card-component": LocalJSX.CardComponent & JSXBase.HTMLAttributes<HTMLCardComponentElement>;
             "example-component": LocalJSX.ExampleComponent & JSXBase.HTMLAttributes<HTMLExampleComponentElement>;
-            "jplants-card": LocalJSX.JplantsCard & JSXBase.HTMLAttributes<HTMLJplantsCardElement>;
             "jplant-article": LocalJSX.JplantArticle & JSXBase.HTMLAttributes<HTMLJplantArticleElement>;
             "jplants-button": LocalJSX.JplantsButton & JSXBase.HTMLAttributes<HTMLJplantsButtonElement>;
+            "jplants-card": LocalJSX.JplantsCard & JSXBase.HTMLAttributes<HTMLJplantsCardElement>;
             "jplants-header": LocalJSX.JplantsHeader & JSXBase.HTMLAttributes<HTMLJplantsHeaderElement>;
             "jplants-menubar": LocalJSX.JplantsMenubar & JSXBase.HTMLAttributes<HTMLJplantsMenubarElement>;
         }
