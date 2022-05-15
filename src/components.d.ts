@@ -37,6 +37,12 @@ export namespace Components {
     interface JplantsMenubar {
         "navItemsLinks": string;
     }
+    interface JplantsModal {
+        "image": string;
+        "price": string;
+        "tags"?: string;
+        "title": string;
+    }
     interface JplantsRatingStars {
         "filledStars": number;
     }
@@ -99,6 +105,12 @@ declare global {
         prototype: HTMLJplantsMenubarElement;
         new (): HTMLJplantsMenubarElement;
     };
+    interface HTMLJplantsModalElement extends Components.JplantsModal, HTMLStencilElement {
+    }
+    var HTMLJplantsModalElement: {
+        prototype: HTMLJplantsModalElement;
+        new (): HTMLJplantsModalElement;
+    };
     interface HTMLJplantsRatingStarsElement extends Components.JplantsRatingStars, HTMLStencilElement {
     }
     var HTMLJplantsRatingStarsElement: {
@@ -131,6 +143,7 @@ declare global {
         "jplants-footer": HTMLJplantsFooterElement;
         "jplants-header": HTMLJplantsHeaderElement;
         "jplants-menubar": HTMLJplantsMenubarElement;
+        "jplants-modal": HTMLJplantsModalElement;
         "jplants-rating-stars": HTMLJplantsRatingStarsElement;
         "jplants-searchbar": HTMLJplantsSearchbarElement;
         "jplants-toast": HTMLJplantsToastElement;
@@ -170,6 +183,12 @@ declare namespace LocalJSX {
         "navItemsLinks"?: string;
         "onOnShow"?: (event: CustomEvent<any>) => void;
     }
+    interface JplantsModal {
+        "image"?: string;
+        "price"?: string;
+        "tags"?: string;
+        "title"?: string;
+    }
     interface JplantsRatingStars {
         "filledStars"?: number;
     }
@@ -197,6 +216,7 @@ declare namespace LocalJSX {
         "jplants-footer": JplantsFooter;
         "jplants-header": JplantsHeader;
         "jplants-menubar": JplantsMenubar;
+        "jplants-modal": JplantsModal;
         "jplants-rating-stars": JplantsRatingStars;
         "jplants-searchbar": JplantsSearchbar;
         "jplants-toast": JplantsToast;
@@ -214,6 +234,7 @@ declare module "@stencil/core" {
             "jplants-footer": LocalJSX.JplantsFooter & JSXBase.HTMLAttributes<HTMLJplantsFooterElement>;
             "jplants-header": LocalJSX.JplantsHeader & JSXBase.HTMLAttributes<HTMLJplantsHeaderElement>;
             "jplants-menubar": LocalJSX.JplantsMenubar & JSXBase.HTMLAttributes<HTMLJplantsMenubarElement>;
+            "jplants-modal": LocalJSX.JplantsModal & JSXBase.HTMLAttributes<HTMLJplantsModalElement>;
             "jplants-rating-stars": LocalJSX.JplantsRatingStars & JSXBase.HTMLAttributes<HTMLJplantsRatingStarsElement>;
             "jplants-searchbar": LocalJSX.JplantsSearchbar & JSXBase.HTMLAttributes<HTMLJplantsSearchbarElement>;
             "jplants-toast": LocalJSX.JplantsToast & JSXBase.HTMLAttributes<HTMLJplantsToastElement>;
