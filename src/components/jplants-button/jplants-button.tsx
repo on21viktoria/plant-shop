@@ -11,7 +11,6 @@ export class JplantsButton {
 @Prop() buttonHref: string;
 @Prop() buttonIconClass: string;
 @Prop() buttonColor: string;
-@Prop() buttonTarget: string;
 
 willShowButton(){
   if(this.buttonName && this.buttonHref){
@@ -25,7 +24,7 @@ willShowButton(){
     return <Host>
       {
         this.willShowButton() &&
-        <a target={this.buttonTarget} href={this.buttonHref}>
+        <a href={this.buttonHref}>
           <button type="button" class={this.buttonColor}>
           <i class={this.buttonIconClass}></i>
           <slot></slot>

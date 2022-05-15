@@ -16,7 +16,6 @@ export namespace Components {
         "buttonHref": string;
         "buttonIconClass": string;
         "buttonName": string;
-        "buttonTarget": string;
     }
     interface JplantsCard {
         "filledStars": number;
@@ -196,7 +195,6 @@ declare namespace LocalJSX {
         "buttonHref"?: string;
         "buttonIconClass"?: string;
         "buttonName"?: string;
-        "buttonTarget"?: string;
     }
     interface JplantsCard {
         "filledStars"?: number;
