@@ -1,12 +1,8 @@
-:host{
-  display: inline-block;            
-}
-
 #container {
   width: 300px;
   margin: 0 auto;
   margin-top: 20vh;
-  margin: 20vh 5vh 0 5vh;
+  margin: 20px 20px 0 20px;
 }
 
 img {
