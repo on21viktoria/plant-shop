@@ -19,6 +19,14 @@ img {
   box-shadow: 3px 5px 5px #888888;
 }
 
+#button.white {
+  padding-left: 0;
+}
+
+.price {
+  padding-bottom: 15px;
+}
+
 .tag {
   padding: 4px 8px;
   border: 1px solid #e5eaed;

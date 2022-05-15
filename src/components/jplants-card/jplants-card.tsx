@@ -30,6 +30,7 @@ export class CardComponent {
               <div>
                 <div class="name">{this.name}</div>
                 <div class="price">{this.price}€</div>
+                <jplants-button button-name="Zum Artikel" button-href="#" button-color="default"></jplants-button>
               </div>
             </div>
           </div>
