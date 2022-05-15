@@ -30,7 +30,7 @@ enterSearch() {
       <Host>
         <div id="searchbar-unit">
         <input id="search-field" type="search"></input>
-        <jplants-button onClick={() => this.enterSearch()} button-color="default" button-href="#" button-name="Suche"></jplants-button>
+        <jplants-button onClick={() => this.enterSearch()} button-icon-class="bi bi-search" button-color="default" button-href="#" button-name="Suche"></jplants-button>
         </div>
       </Host>
     );

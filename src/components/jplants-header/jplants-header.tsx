@@ -38,8 +38,7 @@ export class JplantsHeader {
           <nav>
             <ul class="nav">
               {this.navLinks.map(navLink => (
-                <jplants-button button-name={navLink.name} button-href={navLink.href} button-color="white">
-                  <i class={navLink.iconClass}></i>
+                <jplants-button button-icon-class={navLink.iconClass} button-name={navLink.name} button-href={navLink.href} button-color="white">
                 </jplants-button>
               ))}
             </ul>
