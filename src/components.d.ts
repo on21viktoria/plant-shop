@@ -50,6 +50,11 @@ export namespace Components {
         "toastPosition": string;
         "toastTitle": string;
     }
+    interface JplantsWelcome {
+        "welcomeHeadline": string;
+        "welcomeText1": string;
+        "welcomeText2": string;
+    }
 }
 declare global {
     interface HTMLJplantArticleElement extends Components.JplantArticle, HTMLStencilElement {
@@ -112,6 +117,12 @@ declare global {
         prototype: HTMLJplantsToastElement;
         new (): HTMLJplantsToastElement;
     };
+    interface HTMLJplantsWelcomeElement extends Components.JplantsWelcome, HTMLStencilElement {
+    }
+    var HTMLJplantsWelcomeElement: {
+        prototype: HTMLJplantsWelcomeElement;
+        new (): HTMLJplantsWelcomeElement;
+    };
     interface HTMLElementTagNameMap {
         "jplant-article": HTMLJplantArticleElement;
         "jplants-button": HTMLJplantsButtonElement;
@@ -123,6 +134,7 @@ declare global {
         "jplants-rating-stars": HTMLJplantsRatingStarsElement;
         "jplants-searchbar": HTMLJplantsSearchbarElement;
         "jplants-toast": HTMLJplantsToastElement;
+        "jplants-welcome": HTMLJplantsWelcomeElement;
     }
 }
 declare namespace LocalJSX {
@@ -172,6 +184,11 @@ declare namespace LocalJSX {
         "toastPosition"?: string;
         "toastTitle"?: string;
     }
+    interface JplantsWelcome {
+        "welcomeHeadline"?: string;
+        "welcomeText1"?: string;
+        "welcomeText2"?: string;
+    }
     interface IntrinsicElements {
         "jplant-article": JplantArticle;
         "jplants-button": JplantsButton;
@@ -183,6 +200,7 @@ declare namespace LocalJSX {
         "jplants-rating-stars": JplantsRatingStars;
         "jplants-searchbar": JplantsSearchbar;
         "jplants-toast": JplantsToast;
+        "jplants-welcome": JplantsWelcome;
     }
 }
 export { LocalJSX as JSX };
@@ -199,6 +217,7 @@ declare module "@stencil/core" {
             "jplants-rating-stars": LocalJSX.JplantsRatingStars & JSXBase.HTMLAttributes<HTMLJplantsRatingStarsElement>;
             "jplants-searchbar": LocalJSX.JplantsSearchbar & JSXBase.HTMLAttributes<HTMLJplantsSearchbarElement>;
             "jplants-toast": LocalJSX.JplantsToast & JSXBase.HTMLAttributes<HTMLJplantsToastElement>;
+            "jplants-welcome": LocalJSX.JplantsWelcome & JSXBase.HTMLAttributes<HTMLJplantsWelcomeElement>;
         }
     }
 }
