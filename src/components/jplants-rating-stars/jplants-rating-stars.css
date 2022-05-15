@@ -1,5 +1,7 @@
 :host {
   display: block;
+  padding: 0;
+
 }
 
 .rating-stars {
@@ -13,8 +15,10 @@
 
 #rating-stars-filled {
   color: #468f06 !important;
+  margin: 5px 0;
 }
 
 #rating-stars-empty {
   color: rgb(211, 208, 208) !important;
+  margin: 5px 0;
 }

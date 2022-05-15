@@ -18,6 +18,7 @@ export namespace Components {
         "buttonName": string;
     }
     interface JplantsCard {
+        "filledStars": number;
         "image": string;
         "name": string;
         "price": string;
@@ -150,6 +151,7 @@ declare namespace LocalJSX {
         "buttonName"?: string;
     }
     interface JplantsCard {
+        "filledStars"?: number;
         "image"?: string;
         "name"?: string;
         "price"?: string;
