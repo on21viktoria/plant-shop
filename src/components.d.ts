@@ -17,6 +17,12 @@ export namespace Components {
         "buttonIconClass": string;
         "buttonName": string;
     }
+    interface JplantsCard {
+        "image": string;
+        "name": string;
+        "price": string;
+        "tags"?: string;
+    }
     interface JplantsCustomergallery {
     }
     interface JplantsFooter {
@@ -62,6 +68,12 @@ declare global {
     var HTMLJplantsButtonElement: {
         prototype: HTMLJplantsButtonElement;
         new (): HTMLJplantsButtonElement;
+    };
+    interface HTMLJplantsCardElement extends Components.JplantsCard, HTMLStencilElement {
+    }
+    var HTMLJplantsCardElement: {
+        prototype: HTMLJplantsCardElement;
+        new (): HTMLJplantsCardElement;
     };
     interface HTMLJplantsCustomergalleryElement extends Components.JplantsCustomergallery, HTMLStencilElement {
     }
@@ -114,6 +126,7 @@ declare global {
     interface HTMLElementTagNameMap {
         "jplant-article": HTMLJplantArticleElement;
         "jplants-button": HTMLJplantsButtonElement;
+        "jplants-card": HTMLJplantsCardElement;
         "jplants-customergallery": HTMLJplantsCustomergalleryElement;
         "jplants-footer": HTMLJplantsFooterElement;
         "jplants-header": HTMLJplantsHeaderElement;
@@ -135,6 +148,12 @@ declare namespace LocalJSX {
         "buttonHref"?: string;
         "buttonIconClass"?: string;
         "buttonName"?: string;
+    }
+    interface JplantsCard {
+        "image"?: string;
+        "name"?: string;
+        "price"?: string;
+        "tags"?: string;
     }
     interface JplantsCustomergallery {
     }
@@ -173,6 +192,7 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "jplant-article": JplantArticle;
         "jplants-button": JplantsButton;
+        "jplants-card": JplantsCard;
         "jplants-customergallery": JplantsCustomergallery;
         "jplants-footer": JplantsFooter;
         "jplants-header": JplantsHeader;
@@ -189,6 +209,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "jplant-article": LocalJSX.JplantArticle & JSXBase.HTMLAttributes<HTMLJplantArticleElement>;
             "jplants-button": LocalJSX.JplantsButton & JSXBase.HTMLAttributes<HTMLJplantsButtonElement>;
+            "jplants-card": LocalJSX.JplantsCard & JSXBase.HTMLAttributes<HTMLJplantsCardElement>;
             "jplants-customergallery": LocalJSX.JplantsCustomergallery & JSXBase.HTMLAttributes<HTMLJplantsCustomergalleryElement>;
             "jplants-footer": LocalJSX.JplantsFooter & JSXBase.HTMLAttributes<HTMLJplantsFooterElement>;
             "jplants-header": LocalJSX.JplantsHeader & JSXBase.HTMLAttributes<HTMLJplantsHeaderElement>;
