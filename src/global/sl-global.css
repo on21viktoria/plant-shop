@@ -5,6 +5,13 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+.flexbox {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #EDF2ED;
+}
+
 body {
  margin: 0;
 }

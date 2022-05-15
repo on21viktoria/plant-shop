@@ -45,6 +45,11 @@ export namespace Components {
         "tags"?: string;
         "title": string;
     }
+    interface JplantsQualitystatement {
+        "imgsrc": string;
+        "link"?: string;
+        "text": string;
+    }
     interface JplantsRatingStars {
         "filledStars": number;
     }
@@ -124,6 +129,12 @@ declare global {
         prototype: HTMLJplantsModalElement;
         new (): HTMLJplantsModalElement;
     };
+    interface HTMLJplantsQualitystatementElement extends Components.JplantsQualitystatement, HTMLStencilElement {
+    }
+    var HTMLJplantsQualitystatementElement: {
+        prototype: HTMLJplantsQualitystatementElement;
+        new (): HTMLJplantsQualitystatementElement;
+    };
     interface HTMLJplantsRatingStarsElement extends Components.JplantsRatingStars, HTMLStencilElement {
     }
     var HTMLJplantsRatingStarsElement: {
@@ -175,6 +186,7 @@ declare global {
         "jplants-header": HTMLJplantsHeaderElement;
         "jplants-menubar": HTMLJplantsMenubarElement;
         "jplants-modal": HTMLJplantsModalElement;
+        "jplants-qualitystatement": HTMLJplantsQualitystatementElement;
         "jplants-rating-stars": HTMLJplantsRatingStarsElement;
         "jplants-searchbar": HTMLJplantsSearchbarElement;
         "jplants-slide": HTMLJplantsSlideElement;
@@ -225,6 +237,11 @@ declare namespace LocalJSX {
         "tags"?: string;
         "title"?: string;
     }
+    interface JplantsQualitystatement {
+        "imgsrc"?: string;
+        "link"?: string;
+        "text"?: string;
+    }
     interface JplantsRatingStars {
         "filledStars"?: number;
     }
@@ -264,6 +281,7 @@ declare namespace LocalJSX {
         "jplants-header": JplantsHeader;
         "jplants-menubar": JplantsMenubar;
         "jplants-modal": JplantsModal;
+        "jplants-qualitystatement": JplantsQualitystatement;
         "jplants-rating-stars": JplantsRatingStars;
         "jplants-searchbar": JplantsSearchbar;
         "jplants-slide": JplantsSlide;
@@ -285,6 +303,7 @@ declare module "@stencil/core" {
             "jplants-header": LocalJSX.JplantsHeader & JSXBase.HTMLAttributes<HTMLJplantsHeaderElement>;
             "jplants-menubar": LocalJSX.JplantsMenubar & JSXBase.HTMLAttributes<HTMLJplantsMenubarElement>;
             "jplants-modal": LocalJSX.JplantsModal & JSXBase.HTMLAttributes<HTMLJplantsModalElement>;
+            "jplants-qualitystatement": LocalJSX.JplantsQualitystatement & JSXBase.HTMLAttributes<HTMLJplantsQualitystatementElement>;
             "jplants-rating-stars": LocalJSX.JplantsRatingStars & JSXBase.HTMLAttributes<HTMLJplantsRatingStarsElement>;
             "jplants-searchbar": LocalJSX.JplantsSearchbar & JSXBase.HTMLAttributes<HTMLJplantsSearchbarElement>;
             "jplants-slide": LocalJSX.JplantsSlide & JSXBase.HTMLAttributes<HTMLJplantsSlideElement>;
