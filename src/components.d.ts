@@ -29,6 +29,7 @@ export namespace Components {
     interface JplantsFooter {
         "footerLinksJson": string;
         "logo": string;
+        "rightText": string;
     }
     interface JplantsHeader {
         "logo": string;
@@ -208,6 +209,7 @@ declare namespace LocalJSX {
     interface JplantsFooter {
         "footerLinksJson"?: string;
         "logo"?: string;
+        "rightText"?: string;
     }
     interface JplantsHeader {
         "logo"?: string;
