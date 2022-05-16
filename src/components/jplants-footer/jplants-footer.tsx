@@ -10,6 +10,7 @@ export class jplantsFooter {
 
   @Prop() footerLinksJson: string;
   @Prop() logo = "jplants-logo.png";
+  @Prop() rightText: string;
   
   @Watch('footerLinksJson')
   handleFooterLinksJasonChanged(){
@@ -41,7 +42,7 @@ export class jplantsFooter {
               <br></br>
               <a href={footerlink.href3}>{footerlink.zeile3}</a>
               </li>))}
-             <p>© 2021 JPlants, Inc. All rights reserved.</p>
+             <p id="right-text">{this.rightText}</p>
           </ul>
         </footer>   
       </Host>

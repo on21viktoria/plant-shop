@@ -11,6 +11,7 @@ export class CardComponent {
   @Prop() image: string;
   @Prop() tags?: string;
   @Prop() icon?: string;
+  @Prop() filledStars: number;
 
   @Element() cardEl: HTMLElement
   iconButton: HTMLButtonElement;
@@ -61,6 +62,7 @@ export class CardComponent {
               })}
               </div>
               <div>
+                <jplants-rating-stars filled-stars={this.filledStars}></jplants-rating-stars>
                 <div class="name">{this.name}</div>
                 <div class="price">{this.price}€</div>
                 <jplants-button button-name="Zum Artikel" button-href="#" button-color="default"></jplants-button>

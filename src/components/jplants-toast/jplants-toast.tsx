@@ -12,12 +12,12 @@ export class JplantsToast {
   @Prop() toastTitle: string;
   @Prop() toastMessage: string;
   @Prop() toastButtonTitle: string;
-  @Prop() toast = "toast.svg";
+  @Prop() toastImg: string;
   @Prop() toastPosition: string = 'right';
   
   @State() toastClass = "toast-hide";
 
-  @Event() show: EventEmitter;
+  @Event() showToast: EventEmitter;
 
 
   @Listen('showNotification')
@@ -30,11 +30,11 @@ export class JplantsToast {
   }
 
   render() {
-    const imageSrc = getAssetPath(`/dist/stencil-starter-on/dist/components/assets/${this.toast}`);
+    const imageSrc = getAssetPath(`/dist/stencil-starter-on/dist/components/assets/${this.toastImg}`);
     return (
       <Host>
         <div>
-          <jplants-button button-name={this.toastButtonTitle} button-href='#' button-color='default' onClick={() => this.displayToast()}></jplants-button>
+          <jplants-button button-name={this.toastButtonTitle} button-href='#toaster' button-color='default' onClick={() => this.displayToast()}></jplants-button>
         </div>
         <div class={this.toastPosition}>
         <div class={this.toastClass}>
