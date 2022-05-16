@@ -17,6 +17,15 @@ img {
   background-color: #fafafa;
   border-radius: 12px;
   box-shadow: 3px 5px 5px #888888;
+  position: relative;
+}
+
+#iconButton {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 50;
+  background-color: white;
 }
 
 .price {

@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop } from '@stencil/core';
+import { Component, Host, h, Prop, Element, EventEmitter, Event } from '@stencil/core';
 
 @Component({
   tag: 'jplants-card',
@@ -10,10 +10,42 @@ export class CardComponent {
   @Prop() price: string;
   @Prop() image: string;
   @Prop() tags?: string;
+  @Prop() icon?: string;
 
+  @Element() cardEl: HTMLElement
+  iconButton: HTMLButtonElement;
+
+  @Event() showNotification: EventEmitter;
+
+  showNotificationOnClick() {
+    this.toggle();
+    console.log("hallo")
+    this.showNotification.emit();
+  }
+  
+  componentDidLoad(){
+    this.iconButton = this.cardEl.shadowRoot.querySelector("#iconButton") as HTMLButtonElement;
+    this.iconButton.style.backgroundColor = "white";
+    this.iconButton.addEventListener("click", () => {
+      this.showNotificationOnClick();
+    })
+  }
+
+  
   getTags(): string[]{
     const tags = this.tags.split(',');
     return tags
+  }
+
+  toggle() {
+    if(this.iconButton.style.backgroundColor === "white"){
+      console.log("I'm in if")
+      this.iconButton.style.backgroundColor = "red"
+    }
+    else{
+      console.log("I'm in else")
+      this.iconButton.style.backgroundColor = "white"
+    }
   }
 
   render() {
@@ -22,6 +54,7 @@ export class CardComponent {
         <div id="container">
           <div class="card">
             <img src={this.image} />
+            <button id="iconButton">heart</button>
             <div class="card__details">
               <div> {this.getTags().map(tag => {
                 return <span class="tag">{tag}</span>
