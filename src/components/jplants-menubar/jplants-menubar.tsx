@@ -1,5 +1,4 @@
-import { Component, Host, h, Prop, State, Event } from '@stencil/core';
-import { EventEmitter } from '../../../dist/types/stencil-public-runtime';
+import { Component, Host, h, Prop, State } from '@stencil/core';
 
 @Component({
   tag: 'jplants-menubar',
@@ -12,8 +11,6 @@ export class JplantsMenubar {
   @State() navlinks: Array<{ name: string; href: string }> = [];
   @State() showSidebar = false;
   @State() menubarClass = "navigation hide"
-
-  @Event() onShow: EventEmitter;
 
   componentWillLoad() {
     this.navlinks = JSON.parse(this.navItemsLinks);

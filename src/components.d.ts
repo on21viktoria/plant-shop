@@ -218,7 +218,6 @@ declare namespace LocalJSX {
     }
     interface JplantsMenubar {
         "navItemsLinks"?: string;
-        "onOnShow"?: (event: CustomEvent<any>) => void;
     }
     interface JplantsModal {
         "image"?: string;
