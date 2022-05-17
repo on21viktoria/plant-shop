@@ -39,7 +39,9 @@ export class ModalComponent {
             </button>
           </div>
           <div class="modal-body">
-            <p>Here is some text</p>
+            <div>
+              <img src='https://plantaddiction.de/media/image/b1/5d/23/aloe-vera-t11L6GAmLWcLe7fe_1920x1920.jpg'/>
+            </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="button">
