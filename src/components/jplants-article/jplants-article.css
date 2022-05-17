@@ -1,7 +1,8 @@
 
 
 .Pflanzentipps {
-  background-color: white;
+  background-color: #fafafa;
+  border-radius: 12px;
   height: 500px;
   width: 250px;
   padding: 20px;
@@ -19,6 +20,7 @@ img {
 p {
   font-size: 12px;
   height: 185px;
+  line-height: 150%;
 }
 
 h3 {
