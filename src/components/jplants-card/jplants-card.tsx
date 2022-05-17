@@ -26,7 +26,7 @@ export class CardComponent {
   
   componentDidLoad(){
     this.iconButton = this.cardEl.shadowRoot.querySelector("#iconButton") as HTMLButtonElement;
-    this.iconButton.style.backgroundColor = "white";
+    this.iconButton.style.color = "white";
     this.iconButton.addEventListener("click", () => {
       this.showNotificationOnClick();
     })
@@ -39,23 +39,20 @@ export class CardComponent {
   }
 
   toggle() {
-    if(this.iconButton.style.backgroundColor === "white"){
-      console.log("I'm in if")
-      this.iconButton.style.backgroundColor = "red"
+    if(this.iconButton.style.color === "white"){
+      this.iconButton.style.color = "#496a43"
     }
     else{
-      console.log("I'm in else")
-      this.iconButton.style.backgroundColor = "white"
+      this.iconButton.style.color = "white"
     }
   }
 
   render() {
     return (
-      <Host>
         <div id="container">
           <div class="card">
             <img src={this.image} />
-            <button id="iconButton">heart</button>
+            <i id="iconButton" class="bi bi-heart-fill"></i>
             <div class="card__details">
               <div> {this.getTags().map(tag => {
                 return <span class="tag">{tag}</span>
@@ -70,7 +67,6 @@ export class CardComponent {
             </div>
           </div>
         </div>
-      </Host>
     );
   }
 }
