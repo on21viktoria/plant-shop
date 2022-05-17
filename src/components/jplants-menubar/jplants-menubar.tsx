@@ -20,19 +20,12 @@ export class JplantsMenubar {
   }
 
   displaySidebar() {
-    // const menubar = document.querySelector('navigation hide');
-    // menubar.classList.remove("hide");
-    // menubar.classList.add('show');
     this.menubarClass = "navigation show"
-    // this.onShow.emit({ visible: this.showSidebar });
   }
 
   hideSidebar() {
-    // const menubar = document.querySelector('navigation hide');
-    // menubar.classList.remove("hide");
-    // menubar.classList.add('show');
     this.menubarClass = "navigation hide"
-    // this.onShow.emit({ visible: this.showSidebar });
+
   }
 
   render() {
@@ -59,9 +52,9 @@ export class JplantsMenubar {
                 </li>
               ))}
             </ul>
+            <slot></slot>
           </nav>
         </div>
-        <slot></slot>
       </Host>
     );
   }
