@@ -38,8 +38,7 @@ export namespace Components {
         "navItemsLinks": string;
     }
     interface JplantsModal {
-        "image": string;
-        "price": string;
+        "image"?: string;
         "tags"?: string;
         "title": string;
     }
@@ -185,7 +184,6 @@ declare namespace LocalJSX {
     }
     interface JplantsModal {
         "image"?: string;
-        "price"?: string;
         "tags"?: string;
         "title"?: string;
     }
