@@ -1,4 +1,5 @@
 import { Component, h, Prop, Element } from '@stencil/core';
+import { IPlant, IPlantInformation, plants } from '../../utils/utils';
 
 @Component({
   tag: 'jplants-list',
@@ -6,46 +7,40 @@ import { Component, h, Prop, Element } from '@stencil/core';
   shadow: true,
 })
 export class JplantsList {
-  @Prop() icon?: string;
-  @Prop() listTitle?: string;
-  @Prop() listText: string;
-  @Prop() iconPosition?: string;
-  @Prop() alignment?: string;
-  @Prop({ reflect: true, mutable: true }) listItem: string;
+  @Prop() title: string
   @Element() el: HTMLElement;
 
-  getListItems() {
-      const listItems = [];
-      const listItemSlots = this.el.querySelectorAll('[slot="listItem"]')
-      if(listItemSlots) {
-          listItemSlots.forEach((listItemSlot) => {
-              listItems.push(listItemSlot);
-          })
-      }
-      return listItems;
+  listItems: IPlant[];
+  listItemInformation: IPlantInformation[]
+
+  componentWillRender(){
+    this.getListItems();
   }
 
-  getListItemContent() {
-      const listItems = this.getListItems();
-      let jsxContent = []
+  getListItems() {
+      this.listItems = [];
+      this.listItems= plants;
+      console.log(this.listItems);
+      this.getListItemInformation();
+  }
 
-      listItems.map(listItems => jsxContent.push())
+  getListItemInformation(){
+    this.listItems.forEach(listItem => {
+      if(listItem.plant === this.title){
+        this.listItemInformation = listItem.plantInformation;
+      }
+    });
   }
 
   render() {
     return (
       <div>
-        <ul>
-          <div>
-            <li>Hell bis halbschattig</li>
-            <li>1x wöchentlich gießen</li>
-            <li>Luftreinigende Eigenschaften</li>
-            <li>Topfgröße: 15cm</li>
-            <li>Höhe: 25cm</li>
-            <li>Für Anfänger geeignet</li>
-            <li>Haustiergeeignet</li>
-          </div>
-        </ul>
+        <div>
+          {this.listItemInformation.map(listItem => (
+            <jplants-listItem icon={listItem.icon} list-Text={listItem.text}></jplants-listItem>
+          ))}
+        </div>
+        
       </div>
     );
   }

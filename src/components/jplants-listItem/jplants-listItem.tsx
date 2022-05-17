@@ -1,4 +1,4 @@
-import { Component, h, Prop, Element } from '@stencil/core';
+import { Component, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'jplants-listitem',
@@ -7,16 +7,13 @@ import { Component, h, Prop, Element } from '@stencil/core';
 })
 export class JplantsListItem {
   @Prop() icon?: string;
-  @Prop() listTitle?: string;
   @Prop() listText: string;
 
   render() {
     return (
       <div class="container">
-        <div class="context">
-          <h4>{this.listTitle}</h4>
+        <i class={this.icon}></i>
           <p>{this.listText}</p>
-        </div>
       </div>
     );
   }

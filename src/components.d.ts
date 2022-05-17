@@ -23,17 +23,11 @@ export namespace Components {
         "navLinksJson": string;
     }
     interface JplantsList {
-        "alignment"?: string;
-        "icon"?: string;
-        "iconPosition"?: string;
-        "listItem": string;
-        "listText": string;
-        "listTitle"?: string;
+        "title": string;
     }
     interface JplantsListitem {
         "icon"?: string;
         "listText": string;
-        "listTitle"?: string;
     }
     interface JplantsMenubar {
         "navItemsLinks": string;
@@ -103,17 +97,11 @@ declare namespace LocalJSX {
         "navLinksJson"?: string;
     }
     interface JplantsList {
-        "alignment"?: string;
-        "icon"?: string;
-        "iconPosition"?: string;
-        "listItem"?: string;
-        "listText"?: string;
-        "listTitle"?: string;
+        "title"?: string;
     }
     interface JplantsListitem {
         "icon"?: string;
         "listText"?: string;
-        "listTitle"?: string;
     }
     interface JplantsMenubar {
         "navItemsLinks"?: string;
