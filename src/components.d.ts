@@ -184,6 +184,7 @@ declare namespace LocalJSX {
     }
     interface JplantsModal {
         "image"?: string;
+        "onClose"?: (event: CustomEvent<any>) => void;
         "tags"?: string;
         "title"?: string;
     }

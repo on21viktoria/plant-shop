@@ -1,5 +1,4 @@
-import { Component, Host, h, Prop, Element, Method, EventEmitter, Event } from '@stencil/core';
-import { shouldTransform } from '@stencil/core/testing/jest/jest-preprocessor';
+import { Component, Host, h, Prop, Element, Event, EventEmitter } from '@stencil/core';
 
 @Component({
   tag: 'jplants-modal',
@@ -13,19 +12,20 @@ export class ModalComponent {
     mutable: true,
     reflect: true,
   })
-  @Prop() title: string;
+  @Prop()
+  title: string;
   @Prop() image?: string;
   @Prop() tags?: string;
+  @Event() close: EventEmitter
 
   openModal() {
-    this.modal.style.display = "block";
+    this.modal.style.display = 'block';
   }
 
   closeModal() {
-    console.log("Hello");
+    console.log('Hello');
     console.log(this.modal);
-    modal.style.display = "none";
-    //this.close.emit();
+    this.close.emit()
   }
 
   render() {
@@ -42,7 +42,9 @@ export class ModalComponent {
             <p>Here is some text</p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="button">Schließen</button>
+            <button type="button" class="button">
+              Schließen
+            </button>
           </div>
         </div>
       </Host>
