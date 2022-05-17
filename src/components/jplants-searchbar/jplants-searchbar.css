@@ -1,0 +1,30 @@
+:host {
+  display: flex;
+  justify-content: end;
+}
+
+* {
+  font-family: Montserrat, sans-serif;
+}
+
+input {
+  border: none;
+  width: 380px;
+  height: 25px;
+  margin-right: 10px;
+}
+
+input:focus {
+  outline-color: #EDF2ED;
+}
+
+#searchbar-unit {
+  display: flex;
+ justify-content: flex-end;
+  border: 1px solid #707070;
+  min-width: 410px;
+  height: 20px;
+  padding: 10px 10px 15px 10px;
+  margin: 10px;
+  border-radius: 10px;
+}

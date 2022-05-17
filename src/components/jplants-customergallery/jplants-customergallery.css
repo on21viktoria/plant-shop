@@ -1,0 +1,47 @@
+:host {
+    display: block;
+    /* margin-left: 50px; */
+}
+
+img {
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+    object-position: top center;
+    opacity: 60%;
+}
+
+h3 {
+    text-align: center;
+}
+
+.grid-container {
+  padding: 0 135px;
+}
+
+.img-grid {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+}
+
+@media(min-width: 600px) {
+  .grid-container {
+    padding: 0 135px;
+  }
+
+    .img-grid {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+.grow {
+    transition: all 0.5s ease;
+}
+
+.grow:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+    opacity: 100%;
+}

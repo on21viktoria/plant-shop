@@ -1,5 +1,4 @@
-import { Component, Host, h, Prop, State, Event } from '@stencil/core';
-import { EventEmitter } from '../../../dist/types/stencil-public-runtime';
+import { Component, Host, h, Prop, State } from '@stencil/core';
 
 @Component({
   tag: 'jplants-menubar',
@@ -13,26 +12,17 @@ export class JplantsMenubar {
   @State() showSidebar = false;
   @State() menubarClass = "navigation hide"
 
-  @Event() onShow: EventEmitter;
-
   componentWillLoad() {
     this.navlinks = JSON.parse(this.navItemsLinks);
   }
 
   displaySidebar() {
-    // const menubar = document.querySelector('navigation hide');
-    // menubar.classList.remove("hide");
-    // menubar.classList.add('show');
     this.menubarClass = "navigation show"
-    // this.onShow.emit({ visible: this.showSidebar });
   }
 
   hideSidebar() {
-    // const menubar = document.querySelector('navigation hide');
-    // menubar.classList.remove("hide");
-    // menubar.classList.add('show');
     this.menubarClass = "navigation hide"
-    // this.onShow.emit({ visible: this.showSidebar });
+
   }
 
   render() {
@@ -59,9 +49,9 @@ export class JplantsMenubar {
                 </li>
               ))}
             </ul>
+            <slot></slot>
           </nav>
         </div>
-        <slot></slot>
       </Host>
     );
   }

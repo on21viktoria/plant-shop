@@ -1,5 +1,24 @@
+/* TODO check if needed */
+.slider-image {
+  width: 300px;
+  margin: 10px;
+}
 .artikelcontainer {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0px 155px 0px 155px;
+}
+
+.cardContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 155px 0px 155px;;
+}
+
+.toaster {
+    display: flex;
+    justify-content: space-between;
+    padding: 70px;
 }
