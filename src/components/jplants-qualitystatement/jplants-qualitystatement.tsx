@@ -1,3 +1,6 @@
+// flip-logic inspiriert von https://stackoverflow.com/questions/52239265/how-can-i-make-a-card-flip-with-css-click-event-using-an-input-box
+// und https://codepen.io/desandro/pen/LmWoWe
+
 import { Component, Host, h, Prop, Element } from '@stencil/core';
 
 @Component({

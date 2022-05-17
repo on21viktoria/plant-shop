@@ -1,3 +1,5 @@
+// inspiriert von https://programmingduck.com/articles/javascript-carousel
+
 import { Component, h, Host, Prop, State, Element } from '@stencil/core';
 
 @Component({
