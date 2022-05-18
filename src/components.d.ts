@@ -13,7 +13,7 @@ export namespace Components {
     }
     interface JplantsButton {
         "buttonColor": string;
-        "buttonHref": string;
+        "buttonHref"?: string;
         "buttonIconClass": string;
         "buttonName": string;
     }
@@ -39,7 +39,7 @@ export namespace Components {
     }
     interface JplantsModal {
         "image"?: string;
-        "tags"?: string;
+        "showModal": boolean;
         "title": string;
     }
     interface JplantsRatingStars {
@@ -184,8 +184,7 @@ declare namespace LocalJSX {
     }
     interface JplantsModal {
         "image"?: string;
-        "onClose"?: (event: CustomEvent<any>) => void;
-        "tags"?: string;
+        "showModal"?: boolean;
         "title"?: string;
     }
     interface JplantsRatingStars {

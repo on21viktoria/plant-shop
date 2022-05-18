@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop, Element, Event, EventEmitter } from '@stencil/core';
+import { Component, Host, h, Prop, Element, Event, EventEmitter, State, Watch, Method } from '@stencil/core';
 
 @Component({
   tag: 'jplants-modal',
@@ -6,49 +6,65 @@ import { Component, Host, h, Prop, Element, Event, EventEmitter } from '@stencil
   shadow: true,
 })
 export class ModalComponent {
-  @Element() modal: HTMLElement;
+  @Element() el: HTMLElement;
 
-  @Prop({
-    mutable: true,
-    reflect: true,
-  })
   @Prop()
   title: string;
   @Prop() image?: string;
-  @Prop() tags?: string;
-  @Event() close: EventEmitter
+  @Prop({mutable: true, reflect: true}) showModal = true;
+  @State() show = false;
 
-  openModal() {
-    this.modal.style.display = 'block';
+  componentWillLoad(){
+    console.log(this.showModal);
+  }
+  componentWillUpdate() {
+    console.log("Hello in update");
+    console.log(this.showModal);
   }
 
   closeModal() {
-    console.log('Hello');
-    console.log(this.modal);
-    this.close.emit()
+    this.showModal = false;
+    console.log("hallo" + this.showModal)
+  }
+
+  openModal() {
+    this.showModal = true;
+    console.log("hallo" + this.showModal)
   }
 
   render() {
     return (
       <Host>
-        <div class="modal" tabindex="-1" role="dialog">
+        <div class={this.showModal ? 'modal visible' : 'modal'} tabindex="-1" role="dialog">
           <div class="modal-header">
             <h4 modal-title>{this.title}</h4>
-            <button type="button" class="button-close" aria-label="Modal schließen" onClick={this.closeModal}>
+            <button type="button" class="button-close" aria-label="Modal schließen" onClick={() => this.closeModal()}>
               x
             </button>
           </div>
           <div class="modal-body">
-            <div>
-              <img src='https://plantaddiction.de/media/image/b1/5d/23/aloe-vera-t11L6GAmLWcLe7fe_1920x1920.jpg'/>
+            {this.image ? (
+              <div class="left">
+                <slot name="image" />
+              </div>
+            ) : (
+              <div></div>
+            )}
+            <div class="left">
+              <slot name="image" />
+            </div>
+            <div class="right">
+              <h4>Informationen zur {this.title}</h4>
+              <slot name="information" />
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="button">
+            <button type="button" class="button" onClick={() => this.closeModal()}>
               Schließen
             </button>
           </div>
         </div>
+        <jplants-button button-name="Zum Artikel" button-color="default" onClick={() => this.openModal()}></jplants-button>
       </Host>
     );
   }

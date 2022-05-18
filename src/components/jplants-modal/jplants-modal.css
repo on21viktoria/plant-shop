@@ -2,15 +2,19 @@
   background: white;
   box-shadow: 2px 2px 20px 1px;
   overflow-x: auto;
-  display: flex;
+  display: none;
   flex-direction: column;
-  max-width: 20vw;
-  min-height: 40vh;
+  max-width: 60vw;
   left: calc(50% - 30vw);
   opacity: 1 !important;
   border-radius: 5px;
   padding: 0;
   margin: 30px auto;
+  z-index: 100;
+}
+
+.visible {
+  display: block;
 }
 .modal-header,
 .modal-footer {
@@ -32,6 +36,8 @@
 .modal-body {
   position: relative;
   padding: 20px 10px;
+  display: flex;
+  padding: 20px;
 }
 
 .button-close {
@@ -55,4 +61,20 @@
 .modal-fade-enter-active,
 .modal-fade-leave-active {
   transition: opacity 0.5s ease;
+}
+
+.right, .left {
+  padding: 10px;
+  width: 50%;
+  border-radius: 10px;
+}
+
+.button {
+  margin: auto;
+  background-color: #4aae9b;
+  font-family: "Montserrat", sans-serif;
+  border-radius: 5px;
+  padding: 10px;
+  color: white;
+  border: none;
 }

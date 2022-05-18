@@ -8,12 +8,12 @@ import { Component, Host, h, Prop} from '@stencil/core';
 export class JplantsButton {
 
 @Prop() buttonName: string;
-@Prop() buttonHref: string;
+@Prop() buttonHref?: string;
 @Prop() buttonIconClass: string;
 @Prop() buttonColor: string;
 
 willShowButton(){
-  if(this.buttonName && this.buttonHref){
+  if(this.buttonName){
     return true;
   } else {
     return false;
