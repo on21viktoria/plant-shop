@@ -244,7 +244,6 @@ declare namespace LocalJSX {
         "numberOfSlides"?: number;
     }
     interface JplantsToast {
-        "onShowToast"?: (event: CustomEvent<any>) => void;
         "toastButtonTitle"?: string;
         "toastImg"?: string;
         "toastMessage"?: string;
