@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop, State, EventEmitter, Event, getAssetPath } from '@stencil/core';
+import { Component, Host, h, Prop, State, getAssetPath } from '@stencil/core';
 
 @Component({
   tag: 'jplants-toast',
@@ -16,8 +16,6 @@ export class JplantsToast {
   @Prop() toastPosition: string = 'right';
   
   @State() toastClass = "toast-hide";
-
-  @Event() showToast: EventEmitter;
 
   displayToast() {
     this.toastClass = "toast-show"
