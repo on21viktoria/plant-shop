@@ -47,7 +47,7 @@ export class CardComponent {
         </div>
         <jplants-modal title={this.name} showModal={this.modal}>
           <img slot="image" src={this.image} />
-          <p slot="information">Hallo ich bin neu</p>
+          <div slot="information"></div>
         </jplants-modal>
       </Host>
     );

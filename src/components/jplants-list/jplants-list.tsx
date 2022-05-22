@@ -20,7 +20,6 @@ export class JplantsList {
   getListItems() {
       this.listItems = [];
       this.listItems= plants;
-      console.log(this.listItems);
       this.getListItemInformation();
   }
 

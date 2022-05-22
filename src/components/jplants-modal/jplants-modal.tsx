@@ -50,9 +50,6 @@ export class ModalComponent {
             ) : (
               <div></div>
             )}
-            <div class="left">
-              <slot name="image" />
-            </div>
             <div class="right">
               <h4>Informationen zur {this.title}</h4>
               <slot name="information" />
