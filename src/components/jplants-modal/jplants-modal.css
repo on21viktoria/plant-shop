@@ -1,0 +1,89 @@
+.modal {
+  background: white;
+  box-shadow: 2px 2px 20px 1px;
+  overflow-x: auto;
+  display: none;
+  flex-direction: column;
+  width: 60vw;
+  height: 80vh;
+  left: calc(50% - 30vw);
+  opacity: 1 !important;
+  border-radius: 5px;
+  padding: 0;
+  margin: 30px auto;
+  z-index: 100;
+}
+
+.visible {
+  display: block;
+  position: fixed;
+  top: calc(50% - 40vh);
+  left: calc(50% - 30vw);
+}
+.modal-header,
+.modal-footer {
+  padding: 15px;
+  display: flex;
+}
+
+.modal-header {
+  position: relative;
+  border-bottom: 1px solid #eeeeee;
+  color: #4aae9b;
+}
+
+.modal-footer {
+  border-top: 1px solid #eeeeee;
+  margin-top: 10px;
+}
+
+.modal-body {
+  position: relative;
+  padding: 20px 10px;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.button-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+  font-size: 20px;
+  padding: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #4aae9b;
+  background: transparent;
+}
+
+.modal-fade-enter,
+.modal-fade-leave-to {
+  opacity: 0;
+}
+
+.modal-fade-enter-active,
+.modal-fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.modal-body > .right, .left {
+  padding: 10px;
+  width: 50%;
+  border-radius: 10px;
+}
+
+.button {
+  margin: auto;
+  background-color: #4aae9b;
+  font-family: "Montserrat", sans-serif;
+  border-radius: 5px;
+  padding: 10px;
+  color: white;
+  border: none;
+}
+
+img {
+    width: 100%
+}

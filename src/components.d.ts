@@ -13,7 +13,7 @@ export namespace Components {
     }
     interface JplantsButton {
         "buttonColor": string;
-        "buttonHref": string;
+        "buttonHref"?: string;
         "buttonIconClass": string;
         "buttonName": string;
     }
@@ -36,13 +36,19 @@ export namespace Components {
         "logoHref": string;
         "navLinksJson": string;
     }
+    interface JplantsList {
+        "title": string;
+    }
+    interface JplantsListitem {
+        "icon"?: string;
+        "listText": string;
+    }
     interface JplantsMenubar {
         "navItemsLinks": string;
     }
     interface JplantsModal {
         "image": string;
-        "price": string;
-        "tags"?: string;
+        "showModal": boolean;
         "title": string;
     }
     interface JplantsQualitystatement {
@@ -113,6 +119,18 @@ declare global {
         prototype: HTMLJplantsHeaderElement;
         new (): HTMLJplantsHeaderElement;
     };
+    interface HTMLJplantsListElement extends Components.JplantsList, HTMLStencilElement {
+    }
+    var HTMLJplantsListElement: {
+        prototype: HTMLJplantsListElement;
+        new (): HTMLJplantsListElement;
+    };
+    interface HTMLJplantsListitemElement extends Components.JplantsListitem, HTMLStencilElement {
+    }
+    var HTMLJplantsListitemElement: {
+        prototype: HTMLJplantsListitemElement;
+        new (): HTMLJplantsListitemElement;
+    };
     interface HTMLJplantsMenubarElement extends Components.JplantsMenubar, HTMLStencilElement {
     }
     var HTMLJplantsMenubarElement: {
@@ -174,6 +192,8 @@ declare global {
         "jplants-customergallery": HTMLJplantsCustomergalleryElement;
         "jplants-footer": HTMLJplantsFooterElement;
         "jplants-header": HTMLJplantsHeaderElement;
+        "jplants-list": HTMLJplantsListElement;
+        "jplants-listitem": HTMLJplantsListitemElement;
         "jplants-menubar": HTMLJplantsMenubarElement;
         "jplants-modal": HTMLJplantsModalElement;
         "jplants-qualitystatement": HTMLJplantsQualitystatementElement;
@@ -216,13 +236,19 @@ declare namespace LocalJSX {
         "logoHref"?: string;
         "navLinksJson"?: string;
     }
+    interface JplantsList {
+        "title"?: string;
+    }
+    interface JplantsListitem {
+        "icon"?: string;
+        "listText"?: string;
+    }
     interface JplantsMenubar {
         "navItemsLinks"?: string;
     }
     interface JplantsModal {
         "image"?: string;
-        "price"?: string;
-        "tags"?: string;
+        "showModal"?: boolean;
         "title"?: string;
     }
     interface JplantsQualitystatement {
@@ -262,6 +288,8 @@ declare namespace LocalJSX {
         "jplants-customergallery": JplantsCustomergallery;
         "jplants-footer": JplantsFooter;
         "jplants-header": JplantsHeader;
+        "jplants-list": JplantsList;
+        "jplants-listitem": JplantsListitem;
         "jplants-menubar": JplantsMenubar;
         "jplants-modal": JplantsModal;
         "jplants-qualitystatement": JplantsQualitystatement;
@@ -283,6 +311,8 @@ declare module "@stencil/core" {
             "jplants-customergallery": LocalJSX.JplantsCustomergallery & JSXBase.HTMLAttributes<HTMLJplantsCustomergalleryElement>;
             "jplants-footer": LocalJSX.JplantsFooter & JSXBase.HTMLAttributes<HTMLJplantsFooterElement>;
             "jplants-header": LocalJSX.JplantsHeader & JSXBase.HTMLAttributes<HTMLJplantsHeaderElement>;
+            "jplants-list": LocalJSX.JplantsList & JSXBase.HTMLAttributes<HTMLJplantsListElement>;
+            "jplants-listitem": LocalJSX.JplantsListitem & JSXBase.HTMLAttributes<HTMLJplantsListitemElement>;
             "jplants-menubar": LocalJSX.JplantsMenubar & JSXBase.HTMLAttributes<HTMLJplantsMenubarElement>;
             "jplants-modal": LocalJSX.JplantsModal & JSXBase.HTMLAttributes<HTMLJplantsModalElement>;
             "jplants-qualitystatement": LocalJSX.JplantsQualitystatement & JSXBase.HTMLAttributes<HTMLJplantsQualitystatementElement>;

@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop } from '@stencil/core';
+import { Component, Host, h, Prop, Element } from '@stencil/core';
 
 @Component({
   tag: 'jplants-card',
@@ -12,9 +12,9 @@ export class CardComponent {
   @Prop() tags?: string;
   @Prop() filledStars: number;
 
-  getTags(): string[]{
+  getTags(): string[] {
     const tags = this.tags.split(',');
-    return tags
+    return tags;
   }
 
   render() {
@@ -24,15 +24,21 @@ export class CardComponent {
           <div class="card">
             <img src={this.image} />
             <div class="card__details">
-              <div> {this.getTags().map(tag => {
-                return <span class="tag">{tag}</span>
-              })}
+              <div>
+                {' '}
+                {this.getTags().map(tag => {
+                  return <span class="tag">{tag}</span>;
+                })}
               </div>
               <div>
                 <jplants-rating-stars filled-stars={this.filledStars}></jplants-rating-stars>
                 <div class="name">{this.name}</div>
                 <div class="price">{this.price}€</div>
-                <jplants-button button-name="Zum Artikel" button-href="#" button-color="default"></jplants-button>
+                <jplants-modal title={this.name} image={this.image}>
+                  <div slot="information">
+                    <jplants-list title={this.name}></jplants-list>
+                  </div>
+                </jplants-modal>
               </div>
             </div>
           </div>

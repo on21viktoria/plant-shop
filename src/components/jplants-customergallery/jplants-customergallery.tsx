@@ -47,8 +47,6 @@ images: ApiImg[] =  [
 
 @State() imgPosts: ApiImg[];
   componentWillLoad() {
-    console.log("test")
-    console.log(this.images)
     this.imgPosts = this.images
 }
 
