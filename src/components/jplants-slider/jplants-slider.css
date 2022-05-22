@@ -1,0 +1,63 @@
+:host {
+  display: block;
+}
+
+.slider-container {
+  margin-top: 40px;
+  --current-slide: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  padding: 0;
+  margin: 0.5rem;
+  border-radius: 50%;
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.1s;
+}
+
+.button:hover {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.button.next {
+  right: 0;
+}
+
+.slide-wrapper {
+  margin-bottom: 5px;
+  display: flex;
+  transition: transform 0.5s;
+  transform: translateX(calc(-100% * var(--current-slide)));
+}
+
+.slide-content {
+  flex: 0 0 100%;
+}
+
+.dot-container {
+  text-align: center;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #999999;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,.dot:hover {
+  background-color: #111111;
+}
