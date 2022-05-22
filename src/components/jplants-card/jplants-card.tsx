@@ -12,12 +12,6 @@ export class CardComponent {
   @Prop() tags?: string;
   @Prop() filledStars: number;
 
-  modal = false;
-
-  openModal() {
-    this.modal = true;
-  }
-
   getTags(): string[] {
     const tags = this.tags.split(',');
     return tags;
@@ -40,15 +34,15 @@ export class CardComponent {
                 <jplants-rating-stars filled-stars={this.filledStars}></jplants-rating-stars>
                 <div class="name">{this.name}</div>
                 <div class="price">{this.price}€</div>
-                <jplants-button button-name="Zum Artikel" button-color="default" onClick={() => this.openModal()}></jplants-button>
+                <jplants-modal title={this.name} image={this.image}>
+                  <div slot="information">
+                    <jplants-list title={this.name}></jplants-list>
+                  </div>
+                </jplants-modal>
               </div>
             </div>
           </div>
         </div>
-        <jplants-modal title={this.name} showModal={this.modal}>
-          <img slot="image" src={this.image} />
-          <div slot="information"></div>
-        </jplants-modal>
       </Host>
     );
   }

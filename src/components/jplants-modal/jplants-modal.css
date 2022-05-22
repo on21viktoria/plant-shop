@@ -4,7 +4,8 @@
   overflow-x: auto;
   display: none;
   flex-direction: column;
-  max-width: 60vw;
+  width: 60vw;
+  height: 80vh;
   left: calc(50% - 30vw);
   opacity: 1 !important;
   border-radius: 5px;
@@ -15,6 +16,9 @@
 
 .visible {
   display: block;
+  position: fixed;
+  top: calc(50% - 40vh);
+  left: calc(50% - 30vw);
 }
 .modal-header,
 .modal-footer {
@@ -37,6 +41,7 @@
   position: relative;
   padding: 20px 10px;
   display: flex;
+  justify-content: space-between;
   padding: 20px;
 }
 
@@ -63,7 +68,7 @@
   transition: opacity 0.5s ease;
 }
 
-.right, .left {
+.modal-body > .right, .left {
   padding: 10px;
   width: 50%;
   border-radius: 10px;
@@ -77,4 +82,8 @@
   padding: 10px;
   color: white;
   border: none;
+}
+
+img {
+    width: 100%
 }

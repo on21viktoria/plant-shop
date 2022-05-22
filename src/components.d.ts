@@ -47,7 +47,7 @@ export namespace Components {
         "navItemsLinks": string;
     }
     interface JplantsModal {
-        "image"?: string;
+        "image": string;
         "showModal": boolean;
         "title": string;
     }
