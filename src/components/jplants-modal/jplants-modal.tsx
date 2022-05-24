@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop, Element } from '@stencil/core';
+import { Component, Host, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'jplants-modal',
@@ -6,12 +6,11 @@ import { Component, Host, h, Prop, Element } from '@stencil/core';
   shadow: true,
 })
 export class ModalComponent {
-  @Element() el: HTMLElement;
-
   @Prop()
   title: string;
   @Prop() image: string;
-  @Prop({ mutable: true, reflect: true }) showModal = false;
+
+  showModal = false;
 
   closeModal() {
     this.showModal = false;
@@ -25,6 +24,7 @@ export class ModalComponent {
     return (
       <Host>
         <jplants-button button-name="Zum Artikel" button-color="default" onClick={() => this.openModal()}></jplants-button>
+        
         <div class={this.showModal ? 'modal visible' : 'modal'} tabindex="-1" role="dialog">
           <div class="modal-header">
             <h4 modal-title>{this.title}</h4>

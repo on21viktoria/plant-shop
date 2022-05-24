@@ -48,7 +48,6 @@ export namespace Components {
     }
     interface JplantsModal {
         "image": string;
-        "showModal": boolean;
         "title": string;
     }
     interface JplantsQualitystatement {
@@ -248,7 +247,6 @@ declare namespace LocalJSX {
     }
     interface JplantsModal {
         "image"?: string;
-        "showModal"?: boolean;
         "title"?: string;
     }
     interface JplantsQualitystatement {

@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop, Element } from '@stencil/core';
+import { Component, Host, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'jplants-card',
@@ -25,10 +25,10 @@ export class CardComponent {
             <img src={this.image} />
             <div class="card__details">
               <div>
-                {' '}
-                {this.getTags().map(tag => {
+                {this.tags ?
+                this.getTags().map(tag => {
                   return <span class="tag">{tag}</span>;
-                })}
+                }) : <div></div> }
               </div>
               <div>
                 <jplants-rating-stars filled-stars={this.filledStars}></jplants-rating-stars>
