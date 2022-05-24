@@ -9,8 +9,8 @@ export class JplantsButton {
 
 @Prop() buttonName: string;
 @Prop() buttonHref?: string;
-@Prop() buttonIconClass: string;
-@Prop() buttonColor: string;
+@Prop() buttonIconClass?: string;
+@Prop() buttonColor?: string;
 
 willShowButton(){
   if(this.buttonName){
