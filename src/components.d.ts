@@ -12,9 +12,9 @@ export namespace Components {
         "articleTitle": string;
     }
     interface JplantsButton {
-        "buttonColor": string;
+        "buttonColor"?: string;
         "buttonHref"?: string;
-        "buttonIconClass": string;
+        "buttonIconClass"?: string;
         "buttonName": string;
     }
     interface JplantsCard {
