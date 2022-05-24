@@ -32,6 +32,7 @@ export class JplantsRatingStars {
         this.filledStarArray.push('★');
       }
       this.filledStarsAsString = this.filledStarArray.join('');
+      console.log('The number of stars exceeded the maximum of 5.')
     }
   }
 
