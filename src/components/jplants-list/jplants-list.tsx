@@ -7,7 +7,7 @@ import { IPlant, IPlantInformation, plants } from '../../utils/utils';
   shadow: true,
 })
 export class JplantsList {
-  @Prop() title: string
+  @Prop() name: string
   @Element() el: HTMLElement;
 
   listItems: IPlant[];
@@ -25,7 +25,7 @@ export class JplantsList {
 
   getListItemInformation(){
     this.listItems.forEach(listItem => {
-      if(listItem.plant === this.title){
+      if(listItem.plant === this.name){
         this.listItemInformation = listItem.plantInformation;
       }
     });

@@ -7,10 +7,9 @@ import { Component, Host, h, Prop } from '@stencil/core';
 })
 export class ModalComponent {
   @Prop()
-  title: string;
+  name: string;
   @Prop() image: string;
-
-  showModal = false;
+  @Prop({ mutable: true, reflect: true }) showModal = false;
 
   closeModal() {
     this.showModal = false;
@@ -27,7 +26,7 @@ export class ModalComponent {
         
         <div class={this.showModal ? 'modal visible' : 'modal'} tabindex="-1" role="dialog">
           <div class="modal-header">
-            <h4 modal-title>{this.title}</h4>
+            <h4 modal-title>{this.name}</h4>
             <button type="button" class="button-close" aria-label="Modal schließen" onClick={() => this.closeModal()}>
               x
             </button>
@@ -37,7 +36,7 @@ export class ModalComponent {
               <img src={this.image}/>
             </div>
             <div class="right">
-              <h4>Informationen zur {this.title}</h4>
+              <h4>Informationen zur {this.name}</h4>
               <slot name="information"/>
             </div>
           </div>

@@ -34,9 +34,9 @@ export class CardComponent {
                 <jplants-rating-stars filled-stars={this.filledStars}></jplants-rating-stars>
                 <div class="name">{this.name}</div>
                 <div class="price">{this.price}€</div>
-                <jplants-modal title={this.name} image={this.image}>
+                <jplants-modal name={this.name} image={this.image}>
                   <div slot="information">
-                    <jplants-list title={this.name}></jplants-list>
+                    <jplants-list name={this.name}></jplants-list>
                   </div>
                 </jplants-modal>
               </div>

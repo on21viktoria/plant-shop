@@ -37,7 +37,7 @@ export namespace Components {
         "navLinksJson": string;
     }
     interface JplantsList {
-        "title": string;
+        "name": string;
     }
     interface JplantsListitem {
         "icon"?: string;
@@ -48,7 +48,8 @@ export namespace Components {
     }
     interface JplantsModal {
         "image": string;
-        "title": string;
+        "name": string;
+        "showModal": boolean;
     }
     interface JplantsQualitystatement {
         "imgsrc": string;
@@ -236,7 +237,7 @@ declare namespace LocalJSX {
         "navLinksJson"?: string;
     }
     interface JplantsList {
-        "title"?: string;
+        "name"?: string;
     }
     interface JplantsListitem {
         "icon"?: string;
@@ -247,7 +248,8 @@ declare namespace LocalJSX {
     }
     interface JplantsModal {
         "image"?: string;
-        "title"?: string;
+        "name"?: string;
+        "showModal"?: boolean;
     }
     interface JplantsQualitystatement {
         "imgsrc"?: string;
